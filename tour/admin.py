@@ -1,0 +1,20 @@
+from django.contrib import admin
+from .models import Tour,TourImage,Destination
+from django import forms
+
+# Register your models here.
+
+admin.site.register(Destination)
+
+class TourImageAdmin(admin.StackedInline):
+    model = TourImage
+
+class TourAdmin(admin.ModelAdmin):
+    inlines =[TourImageAdmin]
+    def get_form(self, request, obj=None, **kwargs):
+        form = super(TourAdmin, self).get_form(request, obj, **kwargs)
+        form.base_fields['destinations'].widget = forms.CheckboxSelectMultiple()
+        return form
+
+
+admin.site.register(Tour,TourAdmin)

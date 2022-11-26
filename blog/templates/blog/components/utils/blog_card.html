@@ -1,0 +1,26 @@
+{% load static %}
+
+
+<div class="blog-card">
+    <div class="blog-img">
+        <img src="{{blog.getthumbnail}}" style="height:250px" alt="" class="img-fluid">
+        <div class="blog-date"><i class="flaticon-calendar"></i>{{blog.last_modified |date}}</div>
+    </div>
+    <div class="blog-details">
+        <div class="blog-info">
+            <a class="blog-writer"><i class="flaticon-user"></i>{{blog.author.user.username}}</a>
+            <a class="blog-comment">
+                <img style="height:20px; width:20px;" src="{% static 'mainapp/assets/icons/view.png' %}"><span>1k</span>
+            </a>
+        </div>
+        <a style="font-size:15px" href="{{blog.get_absolute_url}}" class="blog-title">
+            {{blog.title}}
+        </a>
+        <div>
+            <p>{{blog.overview |truncatewords:20}}</p>
+        </div>
+        <div class="blog-btn">
+            <a href="{{blog.get_absolute_url}}" class="btn-common-sm">Read More</a>
+        </div>
+    </div>
+</div>

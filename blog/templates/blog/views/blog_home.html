@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- ===============  breadcrumb area start =============== -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="breadcrumb-wrap">
+                        <h2>Blog Sidebar</h2>
+                        <ul class="breadcrumb-links">
+                            <li>
+                                <a href="index.html">Home</a>
+                                <i class="bx bx-chevron-right"></i>
+                            </li>
+                            <li>Blog Sidebar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============  breadcrumb area end =============== -->
+
+    <!-- ===============  Blog wrapper area start =============== -->
+    <div class="blog-sidebar-wrapper pt-90">
+        <div class="container">
+            <div class="row">
+                {% comment %} left column {% endcomment %}
+                <div class="col-lg-8">
+                    {% if page_obj.object_list %}
+                        {% include 'blog/components/utils/blog_paginator.html' %}
+                    {% else %}
+                        <div class="alert alert-warning" role="alert">
+                            0 result
+                        </div>
+                    {% endif %}
+                </div>
+
+                
+                {% comment %} right column {% endcomment %}
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar mt-30">
+                            {% include 'blog/components/utils/search_sidebar.html' %}
+                            
+
+                            <div class="row">
+                                {% include 'blog/components/utils/category_sidebar.html' %}
+                                {% include 'blog/components/utils/popularblog_sidebar.html' with title="Popular blogs" %}
+                            </div>
+
+                            <div class="row">
+                                {% include 'blog/components/utils/tags_sidebar.html' %}
+                                {% include 'components/special_offer_sidebar.html' %}
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============  Blog wrapper area end =============== -->
+
+{% endblock content %}

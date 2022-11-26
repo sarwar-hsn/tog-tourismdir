@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+
+
+<div class="col-lg-12 col-md-6">
+    <div class="sidebar-categorie">
+        <h5 class="categorie-head">Filter Tours</h5>
+        <form method="get",action="">
+            {{filter.form |crispy}}
+            <button type="submit" class="btn btn-dark">Submit</button>
+            {% if hasFilter %}
+                <a href="{% url 'tour-home' %}" class="btn btn-dark">Clear</a>
+            {% endif %}
+        </form>
+    </div>
+</div>

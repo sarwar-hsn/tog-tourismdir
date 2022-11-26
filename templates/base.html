@@ -1,0 +1,68 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>Ottoman Group Tourism</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
+    <!-- wow css -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/bootstrap.min.css' %}">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/boxicons.min.css' %}">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/font/flaticon.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
+
+</head>
+<body>
+     <!-- =============== Topbar area start =============== -->
+        <div>
+            {% include 'components/topbar.html' %}
+        </div>
+     <!-- =============== Topbar area end =============== -->
+    <!-- ===============  header area start =============== -->
+    <header>
+        <div class="header-area">
+            {% include 'components/navbar.html' %}
+        </div>
+    </header>
+    <!-- ===============  header area end =============== -->
+    <!-- ===============  main app =============== -->
+    {% block content %}
+    {% endblock content %}
+    <!-- ===============  mainapp end=============== -->
+    
+    <!-- ==============  Footer area start================= -->
+        {% include 'components/footer.html' %}
+    <!-- ==============  Footer area end================= -->
+      
+
+
+    <!--Javascript -->
+    <script src="{% static 'mainapp/assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'mainapp/assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'mainapp/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mainapp/assets/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'mainapp/assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'mainapp/assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'mainapp/assets/js/wow.min.js' %}"></script>
+    {% comment %} <script src="{% static 'mainapp/assets/js/typed.js' %}"></script> {% endcomment %}
+    <!-- Custom JavaScript -->
+    <script src="{% static 'mainapp/assets/js/main.js' %}"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<div class="package-card">
+    <div class="package-thumb">
+        <img src="{{tour.getthumbnail.image.url}}" alt = "" style="height:225px;width:100%"  class="img-fluid">
+    </div>
+    <div class="package-details">
+        <div class="package-info">
+            <h5><span>{{tour.price}} {{tour.currency}}</span>/Per Person</h5>
+            
+        </div>
+        <h3><i class="flaticon-arrival"></i>
+            <a href="{{tour.get_absolute_url}}">{{tour.title}}</a>
+        </h3>
+        <div class="package-info">
+            <h5><i class="flaticon-calendar"></i>5 Days/6 night</h5>
+        </div>
+        {% comment %} <div class="package-rating">
+        <strong><i class='bx bxs-star'></i><span>8K+</span> Rating</strong>
+        </div> {% endcomment %}
+    </div>
+</div>

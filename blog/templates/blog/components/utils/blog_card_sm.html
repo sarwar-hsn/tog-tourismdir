@@ -1,0 +1,19 @@
+
+{% load static %}
+
+<li class="blog-card-sm">
+    <div class="blog-img-sm">
+        <img src="{{blog.getthumbnail}}" alt="">
+    </div>
+    <div class="blog-details-sm">
+        <a href="{{blog.get_absolute_url}}" class="blog-title-sm">{{blog.title}}</a>
+        <div class="blog-info">
+            {% comment %} <a class="blog-writer" href="#">
+                <i class="flaticon-user"></i>
+                Dina Jems
+            </a> {% endcomment %}
+            <a  class="blog-date"> <i class="flaticon-calendar"></i>  {{blog.last_modified |date }}</a>
+            
+        </div>
+    </div>
+</li>

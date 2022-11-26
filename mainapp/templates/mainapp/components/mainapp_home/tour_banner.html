@@ -1,0 +1,16 @@
+<div class="slider-item"
+    style="
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(48, 79, 71, 0.65)), to(rgba(48, 79, 71, 0.65))), url({{ banner.getthumbnail.image.url }});
+    background: linear-gradient(rgba(48, 79, 71, 0.65) 100%, rgba(48, 79, 71, 0.65) 100%), url({{ banner.getthumbnail.image.url }});
+    background-size: cover;
+    background-position: center;">
+    <div class="container">
+        <div class="slider-content wow fadeInLeft animated" data-wow-delay="500ms" data-wow-duration="1500ms" >
+            <h2>{{ banner.title }}</h2>
+                <h5>{{banner.durations}}</h5>
+                <div class="banner-btn">
+                    <a href="{{banner.get_absolute_url}}" class="btn-common">Book Now</a>
+                </div>
+        </div>
+    </div>
+</div>

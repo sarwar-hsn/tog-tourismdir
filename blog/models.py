@@ -99,7 +99,7 @@ class Post(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     content = RichTextField(blank=True,null=True)
     author = models.ForeignKey(Author,null=True, on_delete=models.SET_NULL)
-    thumbnail = models.ImageField(blank=True,null=True,upload_to=post_directory_path)
+    thumbnail = models.ImageField(upload_to=post_directory_path)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag,blank=True)
     featured = models.BooleanField(default=False)

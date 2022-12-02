@@ -13,7 +13,7 @@
     <!-- ===============  Main banner area end =============== -->
 
     <!-- ===============  findfrom area start ============= -->
-    <div class="find-form">
+    {% comment %} <div class="find-form">
         <div class="container">
             <form class="findfrom-wrapper">
                 <div class="row align-items-center justify-content-center">
@@ -28,7 +28,7 @@
                 </div>
             </form> 
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- ===============  findfrom area end =============== -->
 
      <!-- =============== Best Package  area start =============== -->
@@ -42,6 +42,9 @@
     <!-- =============== achievement area start =============== -->
         {% include 'mainapp/components/mainapp_home/achivements.html' %}
     <!-- =============== achievement area end =============== -->
+    <!-- ===============  Blog area start =============== -->
+        {% include 'mainapp/components/mainapp_home/bloghighlight.html' %}
+    <!-- ===============  Blog area end =============== -->
         
     <!-- =============== Review area start =============== -->
         {% include 'mainapp/components/mainapp_home/customer_review.html' %}
@@ -51,9 +54,6 @@
         {% include 'mainapp/components/mainapp_home/featured_packages.html' %}
     <!-- ===============  Feature area end =============== -->
 
-    <!-- ===============  Blog area start =============== -->
-        {% include 'mainapp/components/mainapp_home/bloghighlight.html' %}
-    <!-- ===============  Blog area end =============== -->
 
     <!-- ===============  Newsletter area start =============== -->
         {% include 'mainapp/components/mainapp_home/newsletter.html' %}

@@ -9,13 +9,71 @@ from django.urls import reverse
 # Create your models here.
 
 
-class Destination(models.Model):
-    city = models.CharField(max_length=20,null=True,blank=True)
-    country = models.CharField(max_length=20,null=True,blank=True)
+def destination_thumb_path(instance,filename,*args, **kwargs):
+    base,ext = os.path.splitext(filename)
+    ext = ext.lower()
+    t = datetime.today()
+    return f"dest_thumbnails/{instance.country}/{instance.city}/{base}{ext}"
 
+def get_cities(country,list):
+    return list.get('country');
+class Destination(models.Model):
+    country_options = [
+        ('turkey','turkey'),
+    ]
+    cities = {
+        ("istanbul","Istanbul"),
+        ("antalya","Antalya"),
+        ("muğla","Muğla"),
+        ("aydın","Aydın"),
+        ("izmir","İzmir"),
+        ("nevşehir","Nevşehir"),
+        ("edirne","Edirne"),
+        ("bursa","Bursa"),
+        ("konya","Konya"),
+        ("sanlıurfa","Şanlıurfa"),
+        ("ankara","Ankara")
+    }
+    country = models.CharField(max_length=20,null=True,blank=True,default='turkey')
+    city = models.CharField(choices=cities, max_length=30,null=True,blank=True,unique=True)
+    thumbnail = models.ImageField(upload_to=destination_thumb_path,default=None,null=True,blank=True)
+    
     
     def __str__(self):
-        return self.city
+        return str(self.city)
+
+@receiver(models.signals.post_delete, sender=Destination)
+def auto_delete_dest_file_on_delete(sender, instance, **kwargs):
+    """
+    Deletes file from filesystem
+    when corresponding `MediaFile` object is deleted.
+    """
+
+    if instance.thumbnail:
+        if os.path.isfile(instance.thumbnail.path):
+            os.remove(instance.thumbnail.path)
+
+@receiver(models.signals.pre_save, sender=Destination)
+def auto_delete_dest_file_on_change(sender, instance, **kwargs):
+    """
+    Deletes old file from filesystem
+    when corresponding `MediaFile` object is updated
+    with new file.
+    """
+    if not instance.pk:
+        return False
+    try:
+        old_file = Destination.objects.get(pk=instance.pk).thumbnail
+    except Destination.DoesNotExist:
+        return False
+    try:
+        new_file = instance.thumbnail
+        if not old_file == new_file:
+            if os.path.isfile(old_file.path):
+                os.remove(old_file.path)
+    except:
+        print("exception found")
+
     
 
 class Tour(models.Model):
@@ -83,6 +141,7 @@ post_save.connect(_tour_slug, sender=Tour)
 
 
 
+    
 def tourimagedirectorypath(instance,filename,*args, **kwargs):
     base,ext = os.path.splitext(filename)
     ext = ext.lower()

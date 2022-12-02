@@ -25,14 +25,14 @@
                             {{blog.content | safe}}
                         </div>
                         <div class="blog-bottom">
-                            <div class="blog-tags">
+                            {% comment %} <div class="blog-tags">
                                 <h5>tags:</h5>
                                 <ul>
-                                    <li><a href="#">Trip</a></li>
-                                    <li><a href="#">Travel Forest</a></li>
-                                    <li><a href="#">Tourist</a></li>
+                                    {% for tag in tags %}
+                                        <li><a href="#">{{tag}}</a></li>
+                                    {% endfor %}
                                 </ul>
-                            </div>
+                            </div> {% endcomment %}
                             <div class="blog-social">
                                 <ul>
                                     <li>

@@ -7,18 +7,20 @@
 
 {% block content %}
     <!-- ===============  breadcrumb area start =============== -->
-    <div class="breadcrumb-area">
+    <div
+        class="breadcrumb-area" 
+        style="background-image: url('{% static 'mainapp/assets/images/night_bg.jpg' %}');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="breadcrumb-wrap">
-                        <h2>Package Sidebar</h2>
+                        <h2>Tour Packages</h2>
                         <ul class="breadcrumb-links">
                             <li>
                                 <a href="{% url 'mainapp:mainapp-home' %}">Home</a>
                                 <i class="bx bx-chevron-right"></i>
                             </li>
-                            <li>Package Sidebar</li>
+                            <li>packages</li>
                         </ul>
                     </div>
                 </div>

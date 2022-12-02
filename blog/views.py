@@ -28,7 +28,8 @@ def build_pagination(request,itemlist,iter_per_page):
 # Create your views here.
 def index(request):
     ctg = Category.objects.all()
-    posts = Post.objects.filter(status=Post.PUBLISHED).exclude(featured=True)
+    # posts = Post.objects.filter(status=Post.PUBLISHED).exclude(featured=True)
+    posts = Post.objects.filter(status=Post.PUBLISHED)
     featured = Post.objects.filter(featured=True,status=Post.PUBLISHED)
     tags = Tag.objects.all()
 
@@ -44,9 +45,12 @@ def index(request):
 
 def categorydetails(request,category_slug):
     posts = Post.objects.filter(category__slug=category_slug)
-    
+    page_obj = build_pagination(request, posts, 6)
     context ={
-        'posts':posts,
+        'page_obj':page_obj,
+        'categories':Category.objects.all(),
+        'tags':Tag.objects.all(),
+        'category_slug':category_slug,
     }
     return render(request,'blog/views/category_details.html',context=context)
 
@@ -93,6 +97,7 @@ def blog_search(request):
 
 
 def blog_tags(request,hashtag):
+    
     try:
         tag = Tag.objects.get(name=hashtag)
     except:
@@ -103,7 +108,11 @@ def blog_tags(request,hashtag):
     else:
         posts = []
     
+
+
+    page_obj = build_pagination(request, posts, 6)
+    
     context = {
-        'posts' : posts
+        'page_obj' : page_obj
     }
-    return render(request, 'blog_tags.html',context=context)
+    return render(request, 'blog/views/blog_tags.html',context=context)

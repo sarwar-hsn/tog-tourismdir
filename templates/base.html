@@ -28,11 +28,12 @@
 
 </head>
 <body>
-     <!-- =============== Topbar area start =============== -->
-        <div>
-            {% include 'components/topbar.html' %}
-        </div>
-     <!-- =============== Topbar area end =============== -->
+    <!-- =============== Topbar area start =============== -->
+    <div>
+        {% include 'components/topbar.html' %}
+    </div>
+    <!-- =============== Topbar area end =============== -->
+
     <!-- ===============  header area start =============== -->
     <header>
         <div class="header-area">
@@ -40,10 +41,13 @@
         </div>
     </header>
     <!-- ===============  header area end =============== -->
+
+
     <!-- ===============  main app =============== -->
     {% block content %}
     {% endblock content %}
     <!-- ===============  mainapp end=============== -->
+    
     
     <!-- ==============  Footer area start================= -->
         {% include 'components/footer.html' %}

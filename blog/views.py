@@ -113,6 +113,7 @@ def blog_tags(request,hashtag):
     page_obj = build_pagination(request, posts, 6)
     
     context = {
-        'page_obj' : page_obj
+        'page_obj' : page_obj,
+        'tag':hashtag,
     }
     return render(request, 'blog/views/blog_tags.html',context=context)

@@ -21,6 +21,7 @@ from mainapp import urls as appurls
 from django.conf import settings
 from django.conf.urls.static import static
 from tour import urls as toururls
+from newsletterapp import urls as newsletterurls
 
 urlpatterns = [
     
@@ -28,6 +29,7 @@ urlpatterns = [
     path('blogs/',include(blogurls)),
     path('tours/',include(toururls)),
     path('auth/',include('django.contrib.auth.urls')),
+    path('newsletter/',include(newsletterurls)),
     path('',include(appurls)),
     
     

@@ -2,6 +2,10 @@
 
 
 {% block content %}
+
+    {% if messages %}
+        {% include 'components/messages.html' with messages=messages %}
+    {% endif %}
     <!-- ===============  Main banner area start =============== -->
     <div class="main-banner">
         <div class="banner-slider owl-carousel">
@@ -12,25 +16,8 @@
     </div>
     <!-- ===============  Main banner area end =============== -->
 
-    <!-- ===============  findfrom area start ============= -->
-    {% comment %} <div class="find-form">
-        <div class="container">
-            <form class="findfrom-wrapper">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-3">
-                        <input type="text" name="whereto" placeholder="Where To...">
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="find-btn">
-                            <a href="#" class="btn-second"><i class='bx bx-search-alt'></i> Find now</a>
-                        </div>
-                    </div>
-                </div>
-            </form> 
-        </div>
-    </div> {% endcomment %}
-    <!-- ===============  findfrom area end =============== -->
-
+    
+    
      <!-- =============== Best Package  area start =============== -->
         {% include 'mainapp/components/mainapp_home/best_packages.html' %}
      <!-- ===============  Package  area end =============== -->
@@ -54,6 +41,7 @@
         {% include 'mainapp/components/mainapp_home/featured_packages.html' %}
     <!-- ===============  Feature area end =============== -->
 
+    
 
     <!-- ===============  Newsletter area start =============== -->
         {% include 'mainapp/components/mainapp_home/newsletter.html' %}

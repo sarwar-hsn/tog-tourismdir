@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from tour.models import Tour
-
+from newsletterapp.forms import NewsletterForm
 # Create your views here.
-def index(request):
+def index(request,*args, **kwargs):
     banners = Tour.objects.all()
     populardestinations = popular_destinations("istanbul", "gebze", "antalya")
     featured= feautured_packages()
@@ -12,6 +12,7 @@ def index(request):
         "bestpackages": bestpackages(),
         "populardestinations":populardestinations,
         "featured": featured,
+        "form":NewsletterForm,
     }
     return render(request, 'mainapp/views/mainapp_home.html',context=context)
 

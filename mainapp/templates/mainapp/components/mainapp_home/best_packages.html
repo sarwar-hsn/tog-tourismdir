@@ -13,25 +13,9 @@
             </div>
         </div>
         <div class="row">
-            {% for package in bestpackages %}
+            {% for tour in bestpackages %}
                 <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp animated" data-wow-duration="1500ms" data-wow-delay="0ms">
-                    <div class="package-card">
-                        <div class="package-thumb">
-                            <img src="{{package.getthumbnail.image.url}}" alt = "" style="height:225px;width:100%"  class="img-fluid">
-                        </div>
-                        <div class="package-details">
-                            <div class="package-info">
-                                <h5><span>{{package.price}} {{package.currency}}</span>/Per Person</h5>
-                                <h5><i class="flaticon-calendar"></i>5 Days/6 night</h5>
-                            </div>
-                            <h3><i class="flaticon-arrival"></i>
-                                <a href="{{package.get_absolute_url}}">{{package.title}}</a>
-                            </h3>
-                            <div class="package-rating">
-                            <strong><i class='bx bxs-star'></i><span>8K+</span> Rating</strong>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'tour/components/tour_card.html' %}
                 </div>
             {% endfor %}
         </div>

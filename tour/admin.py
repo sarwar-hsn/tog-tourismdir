@@ -1,10 +1,15 @@
 from django.contrib import admin
-from .models import Tour,TourImage,Destination
+from .models import Tour,TourImage,Destination,Booking
 from django import forms
 
 # Register your models here.
 
 admin.site.register(Destination)
+
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    ordering=['-created_at']
 
 class TourImageAdmin(admin.StackedInline):
     model = TourImage

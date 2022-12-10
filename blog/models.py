@@ -29,6 +29,7 @@ class Author(models.Model):
 class Category(models.Model):
     title = models.CharField(max_length=20)
     slug = models.SlugField(unique=True,blank=True,null=True)
+    view_count = models.PositiveIntegerField(default=0)
     # thumbnail = models.ImageField()
 
     def is_uniqueslug(self):
@@ -66,6 +67,7 @@ class Category(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=30)
+    view_count = models.PositiveIntegerField(default=0)
     
     def __str__(self):
         return self.name
@@ -105,6 +107,7 @@ class Post(models.Model):
     featured = models.BooleanField(default=False)
     status = models.CharField(max_length=20,default=DRAFT,choices=post_status)
     rating = models.IntegerField(default=0)
+    view_count = models.PositiveIntegerField(default=0)
 
     def is_uniqueslug(self):
         #trying to find a slug by category name 
@@ -169,8 +172,6 @@ def _remove_unused_photo(sender,instance,*args, **kwargs):
                     pass
     except:
         pass
-
-
 
 
 

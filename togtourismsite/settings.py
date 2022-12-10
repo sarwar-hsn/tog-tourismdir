@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'tour',
     'mainapp',
     'newsletterapp',
+    'analyticsapp',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -164,3 +165,7 @@ CKEDITOR_CONFIGS = {
         'width': 1200,
     },
 }
+
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025

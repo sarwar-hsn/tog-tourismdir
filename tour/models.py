@@ -1,12 +1,33 @@
+import os
 from django.db import models
 from django.db.models.signals import post_delete,pre_save,post_save
 from django.dispatch import receiver
 from django.template.defaultfilters import slugify
 from datetime import datetime
-import os
 from django.urls import reverse
 
 # Create your models here.
+
+class Booking(models.Model):
+    contact_choice = [
+        ('whatsapp','whatsapp'),
+        ('email','email'),
+        ('phone','phone')
+    ]
+    name = models.CharField(max_length=50)
+    email = models.EmailField( max_length=254)
+    phone_number = models.CharField(max_length=15)
+    contact_pref = models.CharField(max_length=20,choices=contact_choice)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True,editable=False)
+    def __str__(self):
+        return f"{self.email}-{self.name}"
+    
+    
+
+
+
+
 
 
 def destination_thumb_path(instance,filename,*args, **kwargs):

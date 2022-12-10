@@ -7,6 +7,9 @@
 
 {% block content %}
     <!-- ===============  breadcrumb area start =============== -->
+    {% if messages %}
+        {% include 'components/messages.html' with messages=messages%}
+    {% endif %}
     <div
         class="breadcrumb-area" 
         style="background-image: url('{% static 'mainapp/assets/images/night_bg.jpg' %}');">
@@ -59,24 +62,3 @@
     
 
 {% endblock content %}
-
-
-{% comment %} <div class="row mt-5">
-    <div class="col-8"> 
-        <div class="container d-flex flex-row flex-wrap ">
-                {% for tour in filter.qs %}
-                        <div class="mr-5">
-                            {% include 'components/tour_card.html' with tour=tour %}
-                        </div>
-                {% endfor %}
-        </div>        
-    </div>
-    <div class="col-3">
-        <form method="get",action="">
-            {{filter.form |crispy}}
-            <button type="submit">submit</button>
-        </form>
-        
-        
-    </div>
-</div>  {% endcomment %}

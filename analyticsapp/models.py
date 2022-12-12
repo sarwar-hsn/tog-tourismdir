@@ -31,8 +31,6 @@ def post_viewed(sender,**kwargs):
     ip = get_client_ip(request)
     instance.view_count+=1;
     instance.save()
-    #store the value in the session
-    utils.recently_visited_posts(request=request, postid=instance.id)
     
 
 @receiver(object_view_signal, sender=Category)

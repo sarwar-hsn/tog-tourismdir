@@ -1,45 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.core.paginator import Paginator
 from .models import Post,Category,Tag
 from .forms import BlogSearchForm
 from django.db.models import Q
 from analyticsapp.signals import object_view_signal
-
-
-
-def build_pagination(request,itemlist,iter_per_page):
-    paginator = Paginator(itemlist, 6)
-    page_num = request.GET.get('page',1)
-
-    try:
-        if int(page_num) <= 0:
-            page_num = 1
-        elif int(page_num) > paginator.num_pages:
-            page_num = paginator.num_pages
-    except:
-        page_num = 1;
-    try:
-        page_obj = paginator.get_page(page_num)
-    except:
-        page_obj = []
-    return page_obj
+from . import utils
 
 
 # Create your views here.
 def index(request):
     ctg = Category.objects.all()
     # posts = Post.objects.filter(status=Post.PUBLISHED).exclude(featured=True)
-    posts = Post.objects.filter(status=Post.PUBLISHED)
+    posts = Post.objects.filter(status=Post.PUBLISHED).order_by('created_at')
     featured = Post.objects.filter(featured=True,status=Post.PUBLISHED)
     tags = Tag.objects.all()
 
-    page_obj = build_pagination(request,posts, 6)
-
+    page_obj = utils.build_pagination(request,posts, 6)
+    pb = utils.popular_blogs()
     context = {
         'categories':ctg,
         'page_obj' : page_obj,
-        'featured' : featured,
+        'popular_blogs' : pb,
         'tags':tags,
     }
     return render(request, 'blog/views/blog_home.html',context=context)
@@ -47,7 +28,7 @@ def index(request):
 
 def categorydetails(request,category_slug):
     posts = Post.objects.filter(category__slug=category_slug)
-    page_obj = build_pagination(request, posts, 6)
+    page_obj = utils.build_pagination(request, posts, 6)
     context ={
         'page_obj':page_obj,
         'categories':Category.objects.all(),
@@ -65,24 +46,30 @@ def categorydetails(request,category_slug):
 
 
 def blogdetails(request,category_slug,blog_slug):
-    try:
-        post = Post.objects.get(slug=blog_slug)
-        try:
-            tags = post.tags.all()
-            ctg = Category.objects.all()
-        except:
-            tags = None
-    except:
-        post = None
+    
+    context = utils.build_blog_details(request,blog_slug)
+    blog = context.get('blog',None)
+    
+    if blog is not None:
+        object_view_signal.send(sender=blog.__class__ , instance = blog, request = request);
+        #setting recent post for the session
+        if utils.RCTPST not in request.session:
+            request.session[utils.RCTPST] = [blog.id]
+        else:
+            #retriving the last read list
+            if blog.id in request.session: 
+                request.session[utils.RCTPST].remove(blog.id)                
+            recent_blogs  =  Post.objects.filter(pk__in=request.session[utils.RCTPST])
+            #adding the current blog to the read list
+            request.session[utils.RCTPST].insert(0,blog.id)
+            request.session.modified = True
+            #allowing only 6 items
+            if len(request.session[utils.RCTPST]) > 6:
+                request.session[utils.RCTPST].pop()
+            context['recent_blogs']=recent_blogs
 
-    context ={
-        'blog':post,
-        'tags':tags,
-        'categories':ctg,
-    }
-    if post is not None:
-        object_view_signal.send(sender=post.__class__ , instance = post, request = request);
     return render(request, 'blog/views/blog_detail.html',context=context)
+    
 
 
 def blog_search(request):
@@ -98,7 +85,7 @@ def blog_search(request):
     ctg = Category.objects.all()
     tags = Tag.objects.all()
 
-    page_obj = build_pagination(request,results, 6)
+    page_obj = utils.build_pagination(request,results, 6)
 
     context = {
         'form':form,
@@ -124,7 +111,7 @@ def blog_tags(request,hashtag):
     else:
         posts = []
 
-    page_obj = build_pagination(request, posts, 6)
+    page_obj = utils.build_pagination(request, posts, 6)
     context = {
         'page_obj' : page_obj,
         'tag':hashtag,

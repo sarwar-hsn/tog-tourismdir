@@ -10,7 +10,7 @@
         <div class="blog-info">
             <a class="blog-writer"><i class="flaticon-user"></i>{{blog.author.user.username}}</a>
             <a class="blog-comment">
-                <img style="height:20px; width:20px;" src="{% static 'mainapp/assets/icons/view.png' %}"><span>1k</span>
+                <img style="height:20px; width:20px;" src="{% static 'mainapp/assets/icons/view.png' %}"><span>{{blog.view_count}}</span>
             </a>
         </div>
         <a style="font-size:15px" href="{{blog.get_absolute_url}}" class="blog-title">

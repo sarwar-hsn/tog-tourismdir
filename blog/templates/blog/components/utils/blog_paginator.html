@@ -31,10 +31,6 @@
                         <a href="?page={{ i }}">{{ i }}</a>
                     {% endif %}
                 {% endfor %}
-                {% comment %} <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a> {% endcomment %}
                 
                 {% if page_obj.has_next %}
                     <a href="?page={{ page_obj.next_page_number }}"><i class="bx bx-chevron-right"></i></a>

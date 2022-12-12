@@ -55,6 +55,7 @@ class Category(models.Model):
 
 
     class Meta:
+        ordering = ['-id']
         verbose_name = "category"
         verbose_name_plural = 'categories'
 
@@ -108,6 +109,9 @@ class Post(models.Model):
     status = models.CharField(max_length=20,default=DRAFT,choices=post_status)
     rating = models.IntegerField(default=0)
     view_count = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['-id']
 
     def is_uniqueslug(self):
         #trying to find a slug by category name 

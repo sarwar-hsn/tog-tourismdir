@@ -6,11 +6,12 @@ from .models import Tour
 from .filter import TourFilter
 from .forms import BookingForm
 from django.core.mail import send_mail,BadHeaderError
+from analyticsapp.signals import object_view_signal
 
 # Create your views here.
 
 def home(request):
-    tours = Tour.objects.all()
+    tours = Tour.objects.all().order_by('-created_at')
     f = TourFilter(request.GET, queryset=tours)
     has_filter = any(field in request.GET for field in set(f.get_fields()))
     paginator = Paginator(f.qs, 6)
@@ -31,17 +32,23 @@ def home(request):
         'filter':f,
         'page_obj':page_obj,
         'hasFilter':has_filter,
+        'form':BookingForm,
     }
     return render(request, 'tour/views/tour_home.html',context=context)
 
 def detail(request,tour_slug):
     try:
         tour = Tour.objects.get(slug=tour_slug)
+        popular_tours = Tour.objects.order_by('view_count','-created_at')[:4]
     except:
         tour = None
+        popular_tours = None
+    if tour is not None:
+        object_view_signal.send(sender=tour.__class__,instance=tour,request=request)
     context = {
         'tour':tour,
         'form':BookingForm,
+        'popular_tours':popular_tours,
     }
     return render(request, 'tour/views/tour_detail.html',context=context)
 

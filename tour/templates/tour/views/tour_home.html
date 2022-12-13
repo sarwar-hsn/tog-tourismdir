@@ -48,10 +48,12 @@
                 </div>
                 {% comment %} right side {% endcomment %}
                 <div class="col-lg-4">
-                    <div class="package-sidebar">
+                    <div class="package-d-sidebar">
                         <div class="row">
                             {% include 'tour/components/filter_tour.html' %}
-                            {% include 'components/special_offer_sidebar.html' %}
+                            <div class="mt-40">
+                                {% include 'tour/components/request_tour.html' %}
+                            </div>
                         </div>
                     </div>
                 </div>

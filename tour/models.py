@@ -24,12 +24,6 @@ class Booking(models.Model):
         return f"{self.email}-{self.name}"
     
     
-
-
-
-
-
-
 def destination_thumb_path(instance,filename,*args, **kwargs):
     base,ext = os.path.splitext(filename)
     ext = ext.lower()
@@ -58,6 +52,7 @@ class Destination(models.Model):
     country = models.CharField(max_length=20,null=True,blank=True,default='turkey')
     city = models.CharField(choices=cities, max_length=30,null=True,blank=True,unique=True)
     thumbnail = models.ImageField(upload_to=destination_thumb_path,default=None,null=True,blank=True)
+    view_count = models.PositiveIntegerField(default=0)
     
     
     def __str__(self):
@@ -125,6 +120,11 @@ class Tour(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     isActive = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
+    view_count = models.PositiveIntegerField(default=0)
+
+
+    class Meta:
+        ordering = ['-created_at']
 
     def get_absolute_url(self):
         return reverse("tour-detail", kwargs={"tour_slug": self.slug})

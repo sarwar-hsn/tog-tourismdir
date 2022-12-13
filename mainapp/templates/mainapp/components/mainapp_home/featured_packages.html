@@ -12,28 +12,9 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="section-head pb-60">
-                    <h5>Feature Tours</h5>
-                    <h2>See Our Best Popular Package</h2>
+                    <h5>Ottoman Travels</h5>
+                    <h2>A journey of thousand miles begins with a small step</h2>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="feature-slider owl-carousel">
-                    {% for tour in featured %}
-                        <div class="feature-card">
-                            <div class="feature-img">
-                                <img src="{{tour.getthumbnail.image.url}}" style="" alt="" class="img-fluid">
-                            </div>
-                            <div class="feature-content">
-                                <a href="{{tour.get_absolute_url}}" class="title">{{tour.title}}</a>
-                                <h5><i class='bx bxs-star'></i><span> 7K+</span>Rating</h5>
-                                <strong>{{tour.price}} <span>{{tour.currency}}</span></strong>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    
-                </div> 
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from tour.models import Tour,Destination
 from newsletterapp.forms import NewsletterForm
+from blog.models import Post
 
 
 # Create your views here.
@@ -15,18 +16,19 @@ def popular_destinations(city1, city2 , city3):
     return {dest_one:dest_set_one,dest_two:dest_set_two,dest_three:dest_set_three}
     
 def index(request,*args, **kwargs):
-    banners = Tour.objects.all()
     CITY1='istanbul'
     CITY2='antalya'
     CITY3='edirne'
     populardestinations = popular_destinations(CITY1,CITY2,CITY3)
-    featured= feautured_packages()
+    fp= feautured_packages()
+    fb= featured_blogs()
+
     context = {
-        "banners":banners,
+        "banners":fp,
         "bestpackages": bestpackages(),
         "populardestinations":populardestinations,
-        "featured": featured,
         "form":NewsletterForm,
+        "blogs":fb
     }
     return render(request, 'mainapp/views/mainapp_home.html',context=context)
 
@@ -35,12 +37,12 @@ def about(request):
     return render(request, 'mainapp/views/mainapp_about.html', context=context)
 
 def bestpackages():
-    packages = Tour.objects.all()
-    if(len(packages) > 6):
-        packages = packages[0:6]
+    packages = Tour.objects.order_by('view_count','-created_at')[:6]
     return packages
 
 
 def feautured_packages():
-    return Tour.objects.filter(featured=True)
-    
+    return Tour.objects.filter(featured=True)[:3]
+
+def featured_blogs():
+    return Post.objects.filter(featured=True)[:3]

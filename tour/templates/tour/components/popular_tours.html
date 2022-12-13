@@ -1,0 +1,19 @@
+<h5 class="package-d-head">Popular Packages</h5>
+<ul class="package-cards">
+    {% for tour in popular_tours %}
+        <li class="package-card-sm">
+            <div class="p-sm-img">
+                <img src="{{tour.getthumbnail.image.url}}" alt="">
+            </div>
+            <div class="package-info">
+                <div class="package-date-sm">
+                    <strong><i class="flaticon-calendar"></i>{{tour.durations}}</strong>
+                </div>
+                <h3><i class="flaticon-arrival"></i>
+                    <a href="package-details.html">{{tour.title}}</a>
+                </h3>
+                <h5><span>{{tour.price}}{{tour.currency}}</span>/ Per Person</h5>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

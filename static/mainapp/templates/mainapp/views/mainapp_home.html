@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    {% if messages %}
+        {% include 'components/messages.html' with messages=messages %}
+    {% endif %}
+    <!-- ===============  Main banner area start =============== -->
+    <div class="main-banner">
+        <div class="banner-slider owl-carousel">
+            {% for banner  in banners %}
+                {% include 'mainapp/components/mainapp_home/tour_banner.html' with banner=banner %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- ===============  Main banner area end =============== -->
+
+    
+    
+     <!-- =============== Best Package  area start =============== -->
+        {% include 'mainapp/components/mainapp_home/best_packages.html' %}
+     <!-- ===============  Package  area end =============== -->
+
+     <!-- =============== Destinations area start =============== -->
+        {% include 'mainapp/components/mainapp_home/popular_city_pacakages.html' %}
+     <!-- =============== Destinations area end =============== -->
+     
+    <!-- =============== achievement area start =============== -->
+        {% include 'mainapp/components/mainapp_home/achivements.html' %}
+    <!-- =============== achievement area end =============== -->
+    <!-- ===============  Blog area start =============== -->
+        {% include 'mainapp/components/mainapp_home/bloghighlight.html' with blogs=blogs %}
+    <!-- ===============  Blog area end =============== -->
+        
+    <!-- =============== Review area start =============== -->
+        {% include 'mainapp/components/mainapp_home/customer_review.html' %}
+    <!-- =============== Review area end =============== -->
+
+    <!-- ===============  Feature area start =============== -->
+        {% include 'mainapp/components/mainapp_home/featured_packages.html' %}
+    <!-- ===============  Feature area end =============== -->
+
+    
+
+    <!-- ===============  Newsletter area start =============== -->
+        {% include 'mainapp/components/mainapp_home/newsletter.html' %}
+    <!-- ===============  Newsletter area end =============== -->
+
+{% endblock content %}

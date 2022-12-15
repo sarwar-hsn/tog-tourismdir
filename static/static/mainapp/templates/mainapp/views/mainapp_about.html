@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!-- ===============  breadcrumb area start =============== -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="breadcrumb-wrap">
+                        <h2>About Us</h2>
+                        <ul class="breadcrumb-links">
+                            <li>
+                                <a href="{% url 'mainapp:mainapp-home' %}">Home</a>
+                                <i class="bx bx-chevron-right"></i>
+                            </li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============  breadcrumb area end =============== -->
+    <!-- ===============  About wrapper area start =============== -->
+    <div class="about-wrapper mt-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12">
+                    <div class="about-wrapper-left">
+                        <div class="about-img wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <img src="{% static 'mainapp/assets/images/about-1.png' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-video wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms"> 
+                             <img src="{% static 'mainapp/assets/images/about-2.png' %}" alt="" class="img-fluid">
+                             <a class="video-icon" href="https://youtu.be/-tJYN-eG1zk"><i class="flaticon-play-button-arrowhead"></i>
+                             </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="about-wrapper-right section-head head-left">
+                        <h5>About TourX</h5>
+                        <h2>The Best Travel Agency 
+                            Company.</h2>
+                        <p>Fusce aliquam luctus est, eget tincidunt velit scelerisque 
+                            rhoncus. Aliquam lacinia ipsum ornare, porttitor risus nec, 
+                            mattis mauris. Nunc nec ornare nisi, vel elementum est. 
+                            Proin malesuada venenatis ex, eu fringilla justo scelerisque
+                            sit amet. Sed fringilla nec purus non venenatis. Aliquam 
+                            nec turpis pharetra, bibendum lorem in, sollicitudin nibh. 
+                            Nulla sit amet lacus diam.</p>
+
+                        <ul class="about-list">
+                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
+                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
+                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
+                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
+                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
+                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
+                        </ul>
+                        <div class="about-wrapper-btn">
+                            <a href="#" class="btn-common">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============  About wrapper area end =============== -->
+    <!-- ===============  Guide wrapper start =============== -->
+    <div class="guide-wrapper mt-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="section-head head-left pb-40">
+                        <h5>Officials</h5>
+                        <h2>We are a team of expert members</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-slider owl-carousel">
+                <div class="guide-card">
+                    <div class="guide-thumb">
+                        <img src="{% static 'mainapp/assets/images/guide/guide-1.png' %}" alt="" class="img-fluid">
+                        <div class="guide-info">
+                            <strong>Shihab Ahmed</strong>
+                            <p>Founder & CEO</p>
+    
+                            <ul class="guide-links">
+                                <li>
+                                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-thumb">
+                        <img src="{% static 'mainapp/assets/images/guide/guide-3.png' %}" alt="" class="img-fluid">
+                        <div class="guide-info">
+                            <strong>Abdus Salam</strong>
+                            <p>Boss Public</p>
+    
+                            <ul class="guide-links">
+                                <li>
+                                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-thumb">
+                        <img src="{% static 'mainapp/assets/images/guide/guide-4.png' %}" alt="" class="img-fluid">
+                        <div class="guide-info">
+                            <strong>Billal Hossain</strong>
+                            <p>Boss Public+</p>
+    
+                            <ul class="guide-links">
+                                <li>
+                                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-thumb">
+                        <img src="{% static 'mainapp/assets/images/guide/guide-2.png' %}" alt="" class="img-fluid">
+                        <div class="guide-info">
+                            <strong>Sakura Chen</strong>
+                            <p>Tour Guide</p>
+    
+                            <ul class="guide-links">
+                                <li>
+                                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===============  Guide wrapper end =============== -->
+
+{% endblock content %}

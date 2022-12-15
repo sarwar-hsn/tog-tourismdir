@@ -254,6 +254,7 @@
 
     // destinations-1 slider
     $('.destinations-1').owlCarousel({
+        stagePadding: 1,
         items: 3,
         loop: true,
         margin: 20,
@@ -465,14 +466,14 @@
     });
 
     //Type js
-    var element = $(".element");
-    $(function () {
-        element.typed({
-            strings: ["Hampshire", "Indonesia", "Madagascar "],
-            typeSpeed: 190,
-            loop: true,
-        });
-    });
+    // var element = $(".element");
+    // $(function () {
+    //     element.typed({
+    //         strings: ["Hampshire", "Indonesia", "Madagascar "],
+    //         typeSpeed: 190,
+    //         loop: true,
+    //     });
+    // });
 
 
 }(jQuery));

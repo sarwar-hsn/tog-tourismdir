@@ -32,15 +32,7 @@
     <div>
         {% include 'components/topbar.html' %}
     </div>
-    <!-- =============== Topbar area end =============== -->
-
-    <!-- ===============  header area start =============== -->
-    <header>
-        <div class="header-area">
-            {% include 'components/navbar.html' %}
-        </div>
-    </header>
-    <!-- ===============  header area end =============== -->
+    {% include 'components/navbar.html' %}
 
 
     <!-- ===============  main app =============== -->
@@ -56,17 +48,19 @@
 
 
     <!--Javascript -->
-    <script src="{% static 'mainapp/assets/js/jquery-3.6.0.min.js' %}"></script>
-    <script src="{% static 'mainapp/assets/js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'mainapp/assets/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'mainapp/assets/js/jquery-ui.min.js' %}"></script>
-    <script src="{% static 'mainapp/assets/js/popper.min.js' %}"></script>
-    <script src="{% static 'mainapp/assets/js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'mainapp/assets/js/wow.min.js' %}"></script>
-    {% comment %} <script src="{% static 'mainapp/assets/js/typed.js' %}"></script> {% endcomment %}
-    <!-- Custom JavaScript -->
-    <script src="{% static 'mainapp/assets/js/main.js' %}"></script>
-
+    {% block scripts %}
+        <script src="{% static 'mainapp/assets/js/jquery-3.6.0.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/owl.carousel.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/bootstrap.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/jquery-ui.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/popper.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/jquery.magnific-popup.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/wow.min.js' %}" defer></script>
+        <script src="{% static 'mainapp/assets/js/typed.js' %}" defer></script> 
+        <!-- Custom JavaScript -->
+        <script src="{% static 'mainapp/assets/js/main.js' %}" defer></script>
+    
+    {% endblock scripts %}
     
 </body>
 </html>

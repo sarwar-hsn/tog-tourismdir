@@ -1,0 +1,20 @@
+
+<div id="newsletter" class="newsletter-area pt-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="newsletter-wrapper">
+                    <h2>Subscribe To Our Newsletter 
+                        For Latest Update</h2>
+                    <form action="{% url 'newsletter-subscribe' %}" method="post">
+                        {% csrf_token %}
+                        <div class="input-group newsletter-input">
+                            {{form.email}}
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Subscribe</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

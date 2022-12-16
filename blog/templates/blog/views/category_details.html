@@ -1,8 +1,13 @@
 {% extends 'blog/views/blog_home.html' %}
 
     {% block seo %}
-        <title>category-{{category.title|lower}}</title>
-        <meta property="og:title" content="category-{{category.title|lower}}">
+        {% if category is not None %}
+            <title>category-{{category.title|lower}}</title>
+            <meta property="og:title" content="category-{{category.title|lower}}">
+        {% else %}
+            <title>category ottoman tours and travels</title>
+            <meta property="og:title" content="category-ottoman tours and travels">
+        {% endif %}
     {% endblock seo %}
 
     {% block breadcrumb %}

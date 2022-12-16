@@ -8,6 +8,7 @@ from .forms import BookingForm
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
+from mainapp.utils import get_seo
 # Create your views here.
 
 def home(request):
@@ -29,19 +30,15 @@ def home(request):
     except:
         page_obj = []
 
-    seo = Seo.objects.filter(page='tour')
-    if seo is not None:
-        seo = seo[0]
     context = {
         'filter':f,
         'page_obj':page_obj,
         'hasFilter':has_filter,
         'form':BookingForm,
-        'seo':seo,
+        'seo':get_seo('tour'),
         'contact':retrive_contacts(),
 
     }
-
     return render(request, 'tour/views/tour_home.html',context=context)
 
 def detail(request,tour_slug):

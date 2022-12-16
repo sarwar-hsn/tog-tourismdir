@@ -1,0 +1,16 @@
+{% if seo is not None %}
+    <title>{{seo.title}}</title>
+    <meta property="og:title" content="{{seo.title}}">
+    <meta name="description" content="{{seo.description}}">
+    <meta property="og:description" content="{{seo.description}}">
+    <meta name="keywords" content="{{seo.keywords}}">
+    <meta name="og:keywords" content="{{seo.keywords}}">
+    {% if seo.imagelink %}
+        <meta property="og:image" content="{{seo.imagelink}}">
+    {% endif %}
+{% elif title is not None%}
+    <title>{{title}}</title>
+    <meta property="og:title" content="{{title}}">
+{% else %}
+    <title>ottoman tours and travels</title>
+{% endif %}

@@ -6,6 +6,7 @@ from django.db.models import Q
 from analyticsapp.signals import object_view_signal
 from . import utils
 from mainapp.models import Seo
+from mainapp.utils import get_seo 
 
 
 # Create your views here.
@@ -17,15 +18,12 @@ def index(request):
 
     page_obj = utils.build_pagination(request,posts, 6)
     pb = utils.popular_blogs()
-    seo = Seo.objects.filter(page='blog')
-    if seo is not None:
-        seo = seo[0]
     context = {
         'categories':ctg,
         'page_obj' : page_obj,
         'popular_blogs' : pb,
         'tags':tags,
-        'seo':seo,
+        'seo':get_seo('blog'),
         'contact':utils.retrive_contacts()
     }
     return render(request, 'blog/views/blog_home.html',context=context)

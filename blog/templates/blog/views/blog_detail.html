@@ -5,14 +5,16 @@
 
 
 {% block seo %}
-    <title>{{blog.title}}</title>
-    <meta property="og:title" content="{{blog.title}}">
-    <meta name="description" content="{{blog.overview}}">
-    <meta property="og:description" content="{{blog.overview}}">
-    <meta name="keywords" content="{{blog.meta}}">
-    <meta name="og:keywords" content="{{blog.meta}}">
-    {% if blog.imagelink %}
-        <meta property="og:image" content="{{blog.imagelink}}">
+    {% if blog is not None %}
+        <title>{{blog.title}}</title>
+        <meta property="og:title" content="{{blog.title}}">
+        <meta name="description" content="{{blog.overview}}">
+        <meta property="og:description" content="{{blog.overview}}">
+        <meta name="keywords" content="{{blog.meta}}">
+        <meta name="og:keywords" content="{{blog.meta}}">
+        {% if blog.imagelink %}
+            <meta property="og:image" content="{{blog.imagelink}}">
+        {% endif %}
     {% endif %}
 {% endblock seo %}
 

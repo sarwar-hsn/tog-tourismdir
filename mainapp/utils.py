@@ -3,11 +3,10 @@ from blog.models import Post
 
 def get_seo(page_name):
     seo = Seo.objects.filter(page=page_name)
-    if seo is not None:
-        seo = seo[0]
+    if len(seo) == 0:
+        return None
     else:
-        seo = None
-    return seo
+        return seo[0]
 
 
 def bestpackages():
@@ -22,8 +21,7 @@ def featured_blogs():
 
 def retrive_contacts():
     contact = SocialMedia.objects.all()
-    if contact is not None:
-        contact = contact[0]
+    if len(contact) == 0:
+        return None
     else:
-        contact = None
-    return contact
+        return contact[0]

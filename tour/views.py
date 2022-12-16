@@ -7,7 +7,7 @@ from .filter import TourFilter
 from .forms import BookingForm
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
-
+from mainapp.models import Seo,SocialMedia
 # Create your views here.
 
 def home(request):
@@ -28,12 +28,20 @@ def home(request):
         page_obj = paginator.get_page(page_num)
     except:
         page_obj = []
+
+    seo = Seo.objects.filter(page='tour')
+    if seo is not None:
+        seo = seo[0]
     context = {
         'filter':f,
         'page_obj':page_obj,
         'hasFilter':has_filter,
         'form':BookingForm,
+        'seo':seo,
+        'contact':retrive_contacts(),
+
     }
+
     return render(request, 'tour/views/tour_home.html',context=context)
 
 def detail(request,tour_slug):
@@ -49,14 +57,10 @@ def detail(request,tour_slug):
         'tour':tour,
         'form':BookingForm,
         'popular_tours':popular_tours,
+        'contact':retrive_contacts(),
     }
     return render(request, 'tour/views/tour_detail.html',context=context)
 
-
-
-def create_msgbody(booking_obj):
-    #
-    msg = "\n".join(booking_obj)
 
 def booking(request):
     if request.POST:
@@ -82,3 +86,14 @@ def booking(request):
         else:
             messages.error(request, "invalid form input")
     return redirect("tour-home")
+
+
+
+#utilities
+def retrive_contacts():
+    contact = SocialMedia.objects.all()
+    if contact is not None:
+        contact = contact[0]
+    else:
+        contact = None
+    return contact

@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load thumbnail %}
 
+
+
+{% block seo %}
+    <title>{{blog.title}}</title>
+    <meta property="og:title" content="{{blog.title}}">
+    <meta name="description" content="{{blog.overview}}">
+    <meta property="og:description" content="{{blog.overview}}">
+    <meta name="keywords" content="{{blog.meta}}">
+    <meta name="og:keywords" content="{{blog.meta}}">
+    {% if blog.imagelink %}
+        <meta property="og:image" content="{{blog.imagelink}}">
+    {% endif %}
+{% endblock seo %}
 
 
 {% block content %}
-
-        <!-- ===============  Blog wrapper area start =============== -->
     <div class="blog-details-wrapper pt-90">
         <div class="container">
             <div class="row">
@@ -18,7 +30,9 @@
                             </div>
                         </div>
                         <div class="blog-img-xl">
-                            <img src="{{blog.getthumbnail}}" alt="blog.alttag" class="img-fluid">
+                            {%thumbnail blog.getthumbnail '400x450' quality=75 as im%}
+                                <img src="{{im.url|resolution:"2x"}}" alt="{{blog.alttag}}" width={{im.width}} >
+                            {%endthumbnail%}
                             <div class="blog-date"><i class="flaticon-calendar"></i>{{blog.last_modified | date}}</div>
                         </div>
                         <div class="blog-texts mt-30">
@@ -28,10 +42,17 @@
                             <div class="blog-social">
                                 <ul>
                                     <li>
-                                        <a href="#"><i class='bx bxl-instagram' ></i></a>
-                                        <a href="#"><i class='bx bxl-facebook' ></i></a>
-                                        <a href="#"><i class='bx bxl-twitter' ></i></a>
-                                        <a href="#"><i class='bx bxl-whatsapp' ></i></a>
+                                        {% with base_url="https://ottomantravels.com" %} 
+                                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ base_url|urlencode }}{{ request.get_full_path|urlencode }}&t={{ object.title }}">
+                                                <i class='bx bxl-facebook' ></i>
+                                            </a> 
+                                            <a target="_blank" href="https://twitter.com/share?url={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                                <i class='bx bxl-twitter' ></i>
+                                            </a> 
+                                            <a target="_blank" href="https://wa.me/?text={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                             <i class='bx bxl-whatsapp' ></i>
+                                            </a>
+                                        {% endwith %}
                                     </li>
                                 </ul>
                             </div>

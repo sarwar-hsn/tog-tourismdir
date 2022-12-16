@@ -1,9 +1,12 @@
 
 {% load static %}
+{% load thumbnail %}
 
 <li class="blog-card-sm">
     <div class="blog-img-sm">
-        <img src="{{blog.getthumbnail}}" alt="blog.alttag">
+        {%thumbnail blog.getthumbnail '200x100' as im%}
+        <img src="{{im.url}}" style="height:100px;width:135px" alt="{{blog.alttag}}">
+        {%endthumbnail%}
     </div>
     <div class="blog-details-sm">
         <a href="{{blog.get_absolute_url}}" class="blog-title-sm">{{blog.title}}</a>

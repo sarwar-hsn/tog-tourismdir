@@ -3,7 +3,7 @@
         <h5 class="categorie-head">{{title}}</h5>
         <ul>
             {% for blog in blogs %}
-                {% include 'blog/components/utils/blog_card_sm.html' %}
+                {% include 'blog/components/utils/blog_card_sm.html' with blog=blog%}
             {% endfor %}
             
         </ul>

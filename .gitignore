@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io
 
+
+
+
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -35,6 +38,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+static/
+media/
 env/
 venv
 build/

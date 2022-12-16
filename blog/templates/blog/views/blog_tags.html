@@ -1,6 +1,9 @@
 {% extends 'blog/views/category_details.html' %}
 
-
+{% block seo %}
+    <title>tags-{{tag.name|lower}}</title>
+    <meta property="og:title" content="tags-{{tag.name|lower}}">
+{% endblock seo %}
 
 {% block breadcrumb %}
     <div class="breadcrumb-area">

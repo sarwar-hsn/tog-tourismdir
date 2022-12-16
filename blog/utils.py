@@ -2,6 +2,7 @@ import datetime
 from django.conf import settings
 from .models import Post,Tag,Category
 from django.core.paginator import Paginator
+from mainapp.models import SocialMedia
 
 
 RCTPST = 'recent_blogs'
@@ -54,6 +55,10 @@ def build_blog_details(request,blog_slug):
     }
     return context
 
-
-
-
+def retrive_contacts():
+    contact = SocialMedia.objects.all()
+    if contact is not None:
+        contact = contact[0]
+    else:
+        contact = None
+    return contact

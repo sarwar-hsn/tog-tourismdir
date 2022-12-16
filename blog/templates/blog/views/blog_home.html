@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block seo %}
+    {% if seo is not None %}
+        <title>{{seo.title}}</title>
+        <meta property="og:title" content="{{seo.title}}">
+        <meta name="description" content="{{seo.description}}">
+        <meta property="og:description" content="{{seo.description}}">
+        <meta name="keywords" content="{{seo.keywords}}">
+        <meta name="og:keywords" content="{{seo.keywords}}">
+        {% if seo.imagelink %}
+            <meta property="og:image" content="{{seo.imagelink}}">
+        {% endif %}
+    {% else %}
+        <title>blogs</title>
+        <meta property="og:title" content="blogs">
+    {% endif %}
+{% endblock seo %}
+
+    
+
+
+
+
+
 {% block content %}
     {% block breadcrumb %}
         <div 
@@ -31,11 +55,12 @@
 
     
     <!-- ===============  Blog wrapper area start =============== -->
-    <div class="blog-sidebar-wrapper pt-90">
+    <div class="blog-sidebar-wrapper mt-30">
         <div class="container">
             <div class="row">
                 {% block left %}
-                    <div class="col-lg-8">
+                    {% include 'blog/components/utils/search_sidebar.html' %}
+                    <div class="col-lg-8 mt-30">
                         {% if page_obj.object_list %}
                             {% include 'blog/components/utils/blog_paginator.html' %}
                         {% else %}
@@ -48,8 +73,8 @@
 
                 {% block right %}
                     <div class="col-lg-4">
-                        <div class="blog-sidebar mt-30">
-                            {% include 'blog/components/utils/search_sidebar.html' %}
+                        <div class="blog-sidebar">
+                            
                             <div class="row">
                                 {% include 'blog/components/utils/category_sidebar.html' %}
                                 {% include 'blog/components/utils/popularblog_sidebar.html' with title="Popular blogs" blogs=popular_blogs %}

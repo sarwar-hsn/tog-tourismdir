@@ -1,6 +1,9 @@
 {% extends 'blog/views/blog_home.html' %}
 
-
+    {% block seo %}
+        <title>category-{{category.title|lower}}</title>
+        <meta property="og:title" content="category-{{category.title|lower}}">
+    {% endblock seo %}
 
     {% block breadcrumb %}
         <div class="breadcrumb-area">
@@ -18,7 +21,7 @@
                                     <a href="{% url 'blog-home' %}">Blogs</a>
                                     <i class="bx bx-chevron-right"></i>
                                 </li>
-                                <li>{{category_slug}}</li>
+                                <li>{{category.title}}</li>
                             </ul>
                         </div>
                     </div>

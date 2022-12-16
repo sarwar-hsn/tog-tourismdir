@@ -2,9 +2,32 @@
 {% load static %}
 
 
+
+{% block seo %}
+    {% if seo is not None %}
+        <title>{{seo.title}}</title>
+        <meta property="og:title" content="{{seo.title}}">
+        <meta name="description" content="{{seo.description}}">
+        <meta property="og:description" content="{{seo.description}}">
+        <meta name="keywords" content="{{seo.keywords}}">
+        <meta name="og:keywords" content="{{seo.keywords}}">
+        {% if seo.imagelink %}
+            <meta property="og:image" content="{{seo.imagelink}}">
+        {% endif %}
+    {% else %}
+        <title>About-Ottoman Tours and Travels</title>
+    {% endif %}
+{% endblock seo %}
+
+
+
+
+
 {% block content %}
     <!-- ===============  breadcrumb area start =============== -->
-    <div class="breadcrumb-area">
+    <div 
+    class="breadcrumb-area"
+    style="background-image: url('{% static 'mainapp/assets/images/banners/world-1920.jpg' %}');">>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -184,3 +207,15 @@
     <!-- ===============  Guide wrapper end =============== -->
 
 {% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'mainapp/assets/js/jquery-3.6.0.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/owl.carousel.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/bootstrap.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/jquery-ui.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/popper.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/jquery.magnific-popup.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/wow.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/typed.js' %}" defer></script> 
+    <script src="{% static 'mainapp/assets/js/main.js' %}" defer></script>
+{% endblock scripts %}

@@ -5,23 +5,28 @@ from .forms import BlogSearchForm
 from django.db.models import Q
 from analyticsapp.signals import object_view_signal
 from . import utils
+from mainapp.models import Seo
 
 
 # Create your views here.
 def index(request):
     ctg = Category.objects.all()
-    # posts = Post.objects.filter(status=Post.PUBLISHED).exclude(featured=True)
     posts = Post.objects.filter(status=Post.PUBLISHED).order_by('created_at')
     featured = Post.objects.filter(featured=True,status=Post.PUBLISHED)
     tags = Tag.objects.all()
 
     page_obj = utils.build_pagination(request,posts, 6)
     pb = utils.popular_blogs()
+    seo = Seo.objects.filter(page='blog')
+    if seo is not None:
+        seo = seo[0]
     context = {
         'categories':ctg,
         'page_obj' : page_obj,
         'popular_blogs' : pb,
         'tags':tags,
+        'seo':seo,
+        'contact':utils.retrive_contacts()
     }
     return render(request, 'blog/views/blog_home.html',context=context)
 
@@ -29,12 +34,7 @@ def index(request):
 def categorydetails(request,category_slug):
     posts = Post.objects.filter(category__slug=category_slug)
     page_obj = utils.build_pagination(request, posts, 6)
-    context ={
-        'page_obj':page_obj,
-        'categories':Category.objects.all(),
-        'tags':Tag.objects.all(),
-        'category_slug':category_slug,
-    }
+    
     #if the category is available , then send a signal that it was viewed
     try:
         catg = Category.objects.get(slug=category_slug);
@@ -42,11 +42,17 @@ def categorydetails(request,category_slug):
         catg = None
     if catg is not None:
         object_view_signal.send(sender=catg.__class__ , instance = catg, request = request);
+    context ={
+        'page_obj':page_obj,
+        'categories':Category.objects.all(),
+        'tags':Tag.objects.all(),
+        'category':catg,
+        'contact':utils.retrive_contacts(),
+    }
     return render(request,'blog/views/category_details.html',context=context)
 
 
 def blogdetails(request,category_slug,blog_slug):
-    
     context = utils.build_blog_details(request,blog_slug)
     blog = context.get('blog',None)
     
@@ -67,7 +73,7 @@ def blogdetails(request,category_slug,blog_slug):
             if len(request.session[utils.RCTPST]) > 6:
                 request.session[utils.RCTPST].pop()
             context['recent_blogs']=recent_blogs
-
+            context['contact']=utils.retrive_contacts()
     return render(request, 'blog/views/blog_detail.html',context=context)
     
 
@@ -93,12 +99,12 @@ def blog_search(request):
         'categories':ctg,
         'tags':tags,
         'page_obj':page_obj,
+        'contact':utils.retrive_contacts(),
     }
     return render(request, 'blog/views/search_result.html',context=context)
 
 
 def blog_tags(request,hashtag):
-    
     try:
         tag = Tag.objects.get(name=hashtag)
     except:
@@ -106,14 +112,20 @@ def blog_tags(request,hashtag):
 
     if tag is not None:
         posts = tag.post_set.all()
+        page_obj = utils.build_pagination(request, posts, 6)
         #send a signal
         object_view_signal.send(sender=tag.__class__ , instance=tag, request=request);
     else:
         posts = []
 
-    page_obj = utils.build_pagination(request, posts, 6)
     context = {
         'page_obj' : page_obj,
-        'tag':hashtag,
+        'tag':tag,
+        'tags':Tag.objects.all(),
+        'categories':Category.objects.all(),
+        'popular_blogs':utils.popular_blogs(),
+        'contact':utils.retrive_contacts(),
+        
     }
     return render(request, 'blog/views/blog_tags.html',context=context)
+

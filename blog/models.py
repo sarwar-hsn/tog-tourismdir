@@ -96,11 +96,10 @@ class Post(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-
     title = models.CharField(max_length=100)
-    
     slug = models.SlugField(unique=True,blank=True,null=True)
     meta = models.CharField(max_length=50)
+    imagelink = models.URLField(null=True,blank=True)
     author = models.ForeignKey(Author,null=True, on_delete=models.SET_NULL)
     thumbnail = models.ImageField(upload_to=post_directory_path)
     alttag = models.CharField(max_length=100)

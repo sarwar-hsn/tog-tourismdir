@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% if seo is not None %}
+    {% block seo %}
+    <title>{{seo.title}}</title>
+    <meta property="og:title" content="{{seo.title}}">
+    <meta name="description" content="{{seo.description}}">
+    <meta property="og:description" content="{{seo.description}}">
+    <meta name="keywords" content="{{seo.keywords}}">
+    <meta name="og:keywords" content="{{seo.keywords}}">
+    {% if seo.imagelink %}
+        <meta property="og:image" content="{{seo.imagelink}}">
+    {% endif %}
+    <meta name="robots" content="index, follow">
+    {% endblock seo %}
+{% endif %}
+
+
+
 {% block content %}
     {% block breadcrumb %}
         <div 
@@ -17,7 +34,7 @@
                             <h2>Blogs</h2>
                             <ul class="breadcrumb-links">
                                 <li>
-                                    <a href="{% url 'mainapp:mainapp-home' %}">Home</a>
+                                    <a href="{% url 'mainapp:mainapp-home' %}">{{seo.title}}</a>
                                     <i class="bx bx-chevron-right"></i>
                                 </li>
                                 <li>Blogs</li>
@@ -29,7 +46,7 @@
         </div>
     {% endblock breadcrumb %}
 
-    
+
     <!-- ===============  Blog wrapper area start =============== -->
     <div class="blog-sidebar-wrapper pt-90">
         <div class="container">

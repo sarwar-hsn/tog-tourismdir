@@ -88,6 +88,7 @@ class Tour(models.Model):
     overview = models.CharField( max_length=250,null=True,blank=True)
     description = models.TextField()
     meta=models.CharField(max_length=300,blank=True,null=True)
+    imagelink = models.URLField(blank=True,null=True)
     created_at = models.DateTimeField(auto_now=True)
     isActive = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
@@ -103,19 +104,16 @@ class Tour(models.Model):
 
     
     def getthumbnail(self):
-        thumbnail = None
-        images = self.tourimage_set.all()
-        if images is not None:
-            thumbnail = images[0]
+        thumbnail = self.tourimage_set.all().first()
         return thumbnail
 
-    def getgalleryimages(self):
-        galleryphotos = None
+    def getgallary(self):
         images = self.tourimage_set.all()
         if len(images) >= 2:
             galleryphotos = images[1:]
-        return galleryphotos
-
+            return galleryphotos
+        else:
+            return None
 
     def __str__(self):
         return f"{self.pk}_{self.title}"

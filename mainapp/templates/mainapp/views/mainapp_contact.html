@@ -1,8 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
 
+
+{% block seo %}
+    {% if seo is not None %}
+        <title>{{seo.title}}</title>
+        <meta property="og:title" content="{{seo.title}}">
+        <meta name="description" content="{{seo.description}}">
+        <meta property="og:description" content="{{seo.description}}">
+        <meta name="keywords" content="{{seo.keywords}}">
+        <meta name="og:keywords" content="{{seo.keywords}}">
+        {% if seo.imagelink %}
+            <meta property="og:image" content="{{seo.imagelink}}">
+        {% endif %}
+    {% else %}
+        <title>contact-ottoman tours and travels</title>
+    {% endif %}
+{% endblock seo %}
+
+
+{% block cssfiles %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/font/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
+{% endblock cssfiles %}
 
 {% block content %}
-
  <!-- ===============  breadcrumb area start =============== -->
 <div class="breadcrumb-area">
     <div class="container">
@@ -33,7 +62,7 @@
                         </div>
                         <div class="contact-info">
                             <h5>Address</h5>
-                            <p>971-949 8th Ave 949 New York, NY</p>
+                            <p>{{contact.address}}</p>
                         </div>
                     </div>
                 </div>
@@ -44,8 +73,9 @@
                         </div>
                         <div class="contact-info">
                             <h5>Email & Phone</h5>
-                            <p>(123) 456 7890
-                                hello@gmail.com</p>
+                            <br>
+                            <p>{{contact.phone}}
+                                {{contact.email}}</p>
                         </div>
                     </div>
                 </div>
@@ -56,11 +86,12 @@
                         </div>
                         <div class="contact-info">
                             <h5>Social Media</h5>
+                            <br>
                             <ul class="contact-icons">
-                                <li><a href="#"><i class='bx bxl-instagram'></i></a></li>
-                                <li><a href="#"><i class='bx bxl-facebook'></i></a></li>
-                                <li><a href="#"><i class='bx bxl-twitter'></i></a></li>
-                                <li><a href="#"><i class='bx bxl-whatsapp'></i></a></li>
+                                <li><a target="_blank" href="{{contact.instagram}}"><i class='bx bxl-instagram'></i></a></li>
+                                <li><a target="_blank" href="{{contact.facebook}}"><i class='bx bxl-facebook'></i></a></li>
+                                <li><a target="_blank" href="{{contact.twitter}}"><i class='bx bxl-twitter'></i></a></li>
+                                <li><a target="_blank" href="{{contact.whatsapp}}"><i class='bx bxl-whatsapp'></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -101,8 +132,8 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         <form action="#" method="post">
-                            <h5 class="contact-d-head">Contact Us</h5>
-                            <div class="row">
+                            {% include 'tour/components/request_tour.html' with title="Contact Us" btn="Send" %}
+                            {% comment %} <div class="row">
                                 <div class="col-lg-6">
                                     <input type="text" placeholder="Full Name">
                                 </div>
@@ -121,7 +152,7 @@
                                 <div class="col-lg-12">
                                     <input type="submit" value="Submit Now">
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </form>
                     </div>
                 </div>
@@ -133,3 +164,15 @@
 
 
 {% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'mainapp/assets/js/jquery-3.6.0.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/owl.carousel.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/bootstrap.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/jquery-ui.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/popper.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/jquery.magnific-popup.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/wow.min.js' %}" defer></script>
+    <script src="{% static 'mainapp/assets/js/typed.js' %}" defer></script> 
+    <script src="{% static 'mainapp/assets/js/main.js' %}" defer></script>
+{% endblock scripts %}

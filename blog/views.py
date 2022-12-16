@@ -6,7 +6,7 @@ from django.db.models import Q
 from analyticsapp.signals import object_view_signal
 from . import utils
 from mainapp.models import Seo
-from mainapp.utils import get_seo 
+from mainapp.utils import get_seo,retrive_contacts
 
 
 # Create your views here.
@@ -71,7 +71,7 @@ def blogdetails(request,category_slug,blog_slug):
             if len(request.session[utils.RCTPST]) > 6:
                 request.session[utils.RCTPST].pop()
             context['recent_blogs']=recent_blogs
-            context['contact']=utils.retrive_contacts()
+            context['contact']=retrive_contacts()
     return render(request, 'blog/views/blog_detail.html',context=context)
     
 
@@ -97,7 +97,7 @@ def blog_search(request):
         'categories':ctg,
         'tags':tags,
         'page_obj':page_obj,
-        'contact':utils.retrive_contacts(),
+        'contact':retrive_contacts(),
     }
     return render(request, 'blog/views/search_result.html',context=context)
 
@@ -122,7 +122,7 @@ def blog_tags(request,hashtag):
         'tags':Tag.objects.all(),
         'categories':Category.objects.all(),
         'popular_blogs':utils.popular_blogs(),
-        'contact':utils.retrive_contacts(),
+        'contact':retrive_contacts(),
         
     }
     return render(request, 'blog/views/blog_tags.html',context=context)

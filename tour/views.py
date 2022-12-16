@@ -8,7 +8,7 @@ from .forms import BookingForm
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
-from mainapp.utils import get_seo
+from mainapp.utils import get_seo,retrive_contacts
 # Create your views here.
 
 def home(request):
@@ -84,13 +84,3 @@ def booking(request):
             messages.error(request, "invalid form input")
     return redirect("tour-home")
 
-
-
-#utilities
-def retrive_contacts():
-    contact = SocialMedia.objects.all()
-    if contact is not None:
-        contact = contact[0]
-    else:
-        contact = None
-    return contact

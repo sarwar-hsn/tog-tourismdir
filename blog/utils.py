@@ -55,10 +55,4 @@ def build_blog_details(request,blog_slug):
     }
     return context
 
-def retrive_contacts():
-    contact = SocialMedia.objects.all()
-    if contact is not None:
-        contact = contact[0]
-    else:
-        contact = None
-    return contact
+

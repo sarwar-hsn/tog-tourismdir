@@ -24,7 +24,7 @@ def index(request):
         'popular_blogs' : pb,
         'tags':tags,
         'seo':get_seo('blog'),
-        'contact':utils.retrive_contacts()
+        'contact':retrive_contacts()
     }
     return render(request, 'blog/views/blog_home.html',context=context)
 
@@ -45,7 +45,7 @@ def categorydetails(request,category_slug):
         'categories':Category.objects.all(),
         'tags':Tag.objects.all(),
         'category':catg,
-        'contact':utils.retrive_contacts(),
+        'contact':retrive_contacts(),
     }
     return render(request,'blog/views/category_details.html',context=context)
 

@@ -38,8 +38,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-static/
-media/
+staticfiles/
+mediafiles/
 env/
 venv
 build/

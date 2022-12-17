@@ -32,6 +32,9 @@ class Category(models.Model):
     view_count = models.PositiveIntegerField(default=0)
     # thumbnail = models.ImageField()
 
+    def get_absolute_url(self):
+        return reverse('blog-categorydetails', kwargs={"category_slug": self.category.slug})
+
     def is_uniqueslug(self):
         #trying to find a slug by category name 
         try:
@@ -51,9 +54,6 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         super(Category,self).save(*args, **kwargs)  # Call the "real" save() method.
-
-
-
     class Meta:
         ordering = ['-id']
         verbose_name = "category"
@@ -69,9 +69,11 @@ class Category(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=30)
     view_count = models.PositiveIntegerField(default=0)
-    
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse('blog-tags', kwargs={"hashtag": self.name})
     
 
 

@@ -9,6 +9,7 @@ from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
 from mainapp.utils import get_seo,retrive_contacts
+from django.conf import settings
 # Create your views here.
 
 def home(request):
@@ -69,13 +70,13 @@ def booking(request):
             obj.phone_number = str(obj.phone_number)
             obj.message = str(obj.message)
             obj.save()
-            mail_body =f"time: {str(obj.created_at)}\nemail: {obj.email}\nnumber: {obj.phone_number}\nname: {obj.name}\ncontact preference: {obj.contact_pref}\nmessage: {obj.message}\n"
+            mail_body =f"time:{str(obj.created_at)}\nemail:{obj.email}\nnumber:{obj.phone_number}\nname:{obj.name}\ncontact preference:{obj.contact_pref}\nmessage:{obj.message}\n"
             try:
                 send_mail(
                     'booking query',
                     mail_body,
-                    'mail@ottomantravels.com',
-                    ['john@example.com'],
+                    'it@ottomangrp.com',
+                    ['info@ottomantravels.com'],
                 )
                 messages.success(request, "we received your request. we will contact soon")
             except:

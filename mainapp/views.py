@@ -45,3 +45,5 @@ def contact(request):
     return render(request, "mainapp/views/mainapp_contact.html",context=context)
 
 
+def error_404_view(request, exception):
+    return render(request, 'error_404.html')

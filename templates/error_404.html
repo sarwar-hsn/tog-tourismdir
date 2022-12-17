@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block seo %}
+    <title>404-Not Found</title>
+{% endblock seo %}
+
+{% block content %}
+<div class="error-wrapper pt-120">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Oops!</h1>
+            <div class="error-img">
+                <img src="assets/images/404.png" alt="" class="img-fluid">
+            </div>
+            <h2>That Page is Not Found.</h2>
+            <div class="error-btn">
+                <a href="{% url 'mainapp:mainapp-home' %}">GO TO HOME</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+

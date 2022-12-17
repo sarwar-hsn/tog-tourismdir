@@ -22,8 +22,6 @@ class Booking(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True,editable=False)
     
-
-
     def __str__(self):
         return f"{self.email}-{self.name}"
     
@@ -89,7 +87,8 @@ class Tour(models.Model):
     description = models.TextField()
     meta=models.CharField(max_length=300,blank=True,null=True)
     imagelink = models.URLField(blank=True,null=True)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateField(auto_now=True)
     isActive = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
     view_count = models.PositiveIntegerField(default=0)

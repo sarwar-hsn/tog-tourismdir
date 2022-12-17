@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # new
+    'django.contrib.sitemaps', # new 
     #installed app
     'ckeditor',
     'django_filters',
@@ -51,6 +53,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
     'sorl.thumbnail',
+    'robots',
     #myapps
     'authentication',
     'blog',
@@ -58,6 +61,11 @@ INSTALLED_APPS = [
     'mainapp',
     'newsletterapp',
     'analyticsapp',
+]
+
+SITE_ID = 1
+ROBOTS_SITEMAP_URLS = [
+    'https://ottomantravels.com/sitemap.xml',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -171,5 +179,8 @@ CKEDITOR_CONFIGS = {
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'it@ottomangrp.com'
+EMAIL_HOST_PASSWORD = 'grzkzozoticvtnoa'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -101,20 +101,18 @@ WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
 DEVELOPMENT_MODE = os.getenv("DEBUG", "False") == "True"
 
-if DEVELOPMENT_MODE is True:
+if DEVELOPMENT_MODE is False:
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+else:
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }
-
 
 # POSTGRES_DB = os.environ.get("POSTGRES_DB") #database name
 # POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD") # database user password

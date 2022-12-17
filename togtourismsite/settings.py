@@ -25,18 +25,17 @@ AUTH_USER_MODEL = 'authentication.User'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gr_1+dt@iiific8nix-8m(cij8d9=5r-gem@ec@5ekzqdlj&6b'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.environ.get('DEBUG')) == "1" # 1 == True
 
-ALLOWED_HOSTS = ['*']
-
-
-
+ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
+ALLOWED_HOSTS = []
+if not DEBUG:
+    ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,13 +62,12 @@ INSTALLED_APPS = [
     'analyticsapp',
 ]
 
-SITE_ID = 1
+SITE_ID = os.environ.get('SITE_ID') or 1 
 ROBOTS_SITEMAP_URLS = [
-    'https://ottomantravels.com/sitemap.xml',
+    os.environ.get('ROBOTS_SITEMAP_URLS')
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
@@ -102,7 +100,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -112,6 +109,33 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+POSTGRES_DB = os.environ.get("POSTGRES_DB") #database name
+POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD") # database user password
+POSTGRES_USER = os.environ.get("POSTGRES_USER") # database username
+POSTGRES_HOST = os.environ.get("POSTGRES_HOST") # database host
+POSTGRES_PORT = os.environ.get("POSTGRES_PORT") # database port
+
+POSTGRES_READY = (
+    POSTGRES_DB is not None
+    and POSTGRES_PASSWORD is not None
+    and POSTGRES_USER is not None
+    and POSTGRES_HOST is not None
+    and POSTGRES_PORT is not None
+)
+
+if POSTGRES_READY:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": POSTGRES_DB,
+            "USER": POSTGRES_USER,
+            "PASSWORD": POSTGRES_PASSWORD,
+            "HOST": POSTGRES_HOST,
+            "PORT": POSTGRES_PORT,
+        }
+    }
+
 
 
 # Password validation
@@ -149,13 +173,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'
 STATICFILES_DIRS = [
     BASE_DIR / "",
 ]
-
-
 
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles')
@@ -163,7 +184,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
@@ -178,9 +198,16 @@ CKEDITOR_CONFIGS = {
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') or None
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') or None
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'it@ottomangrp.com'
-EMAIL_HOST_PASSWORD = 'grzkzozoticvtnoa'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_READY=(
+    EMAIL_HOST_USER is not None
+    and EMAIL_HOST_PASSWORD is not None
+)
+
+if EMAIL_READY:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True

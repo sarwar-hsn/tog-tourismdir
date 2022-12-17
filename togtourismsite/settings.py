@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
     'sorl.thumbnail',
+    'storages'
     # 'robots',
     #myapps
     'authentication',
@@ -154,11 +155,32 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+if DEBUG:
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    MEDIA_URL ='/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+else:
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+    AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")
+    AWS_S3_OBJECT_PARAMETERS = {
+        "CacheControl": "max-age=86400",
+        "ACL": "public-read"
+    }
+    AWS_LOCATION = os.environ.get("AWS_LOCATION")
 
-MEDIA_URL ='/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+    ]
+    STATIC_URL = 'https://%s/%s/staticfiles/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+
+    DEFAULT_FILE_STORAGE = "trydjango.cdn.backends.MediaRootS3BotoStorage"
+    STATICFILES_STORAGE = 'trydjango.cdn.backends.StaticRootS3BotoStorage'
+
+    MEDIA_URL='media/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media_cdn')
 
 
 # Default primary key field type

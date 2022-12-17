@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
+from .buckets import MediaStorage,StaticStorage
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,7 +53,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
     'sorl.thumbnail',
-    'storages'
+    'storages',
     # 'robots',
     #myapps
     'authentication',
@@ -155,32 +157,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-if DEBUG:
-    STATIC_URL = "/static/"
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    MEDIA_URL ='/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-else:
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-    AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")
-    AWS_S3_OBJECT_PARAMETERS = {
-        "CacheControl": "max-age=86400",
-        "ACL": "public-read"
-    }
-    AWS_LOCATION = os.environ.get("AWS_LOCATION")
+# AWS_ACCESS_KEY_ID=DO00X2UBDTEVEAN7JURY
+# AWS_SECRET_ACCESS_KEY=K3LfSNhLL7jGGMpZSu4PQzLF17IUliJNycLoTpIr1fs
+# AWS_STORAGE_BUCKET_NAME=ottomangrp
+# AWS_S3_ENDPOINT_URL=https://ottomangrp.sgp1.digitaloceanspaces.com
+# AWS_LOCATION=toursandtravelsloc
 
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
-    ]
-    STATIC_URL = 'https://%s/%s/staticfiles/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
+AWS_S3_OBJECT_PARAMETERS = {
+    "CacheControl": "max-age=86400",
+     "ACL": "public-read"
+}
+AWS_LOCATION = os.getenv('AWS_LOCATION')
 
-    DEFAULT_FILE_STORAGE = "trydjango.cdn.backends.MediaRootS3BotoStorage"
-    STATICFILES_STORAGE = 'trydjango.cdn.backends.StaticRootS3BotoStorage'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+DEFAULT_FILE_STORAGE = "togtourismsite.buckets.MediaStorage"
+STATICFILES_STORAGE = 'togtourismsite.buckets.StaticStorage'
 
-    MEDIA_URL='media/'
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media_cdn')
+MEDIA_URL='media/'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
@@ -209,3 +210,4 @@ if EMAIL_READY:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
+

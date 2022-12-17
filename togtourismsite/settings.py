@@ -29,12 +29,8 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.getenv('DEBUG')) == "1" # 1 == True
 
-DJANGO_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-
-ALLOWED_HOSTS = []
-if not DEBUG:
-    ALLOWED_HOSTS += ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -172,8 +168,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR /'workspace/static'
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

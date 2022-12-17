@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'analyticsapp',
 ]
 
-SITE_ID = os.environ.get('SITE_ID') or 1 
+SITE_ID = int(os.environ.get('SITE_ID')) or 1 
 ROBOTS_SITEMAP_URLS = [
     os.environ.get('ROBOTS_SITEMAP_URLS')
 ]

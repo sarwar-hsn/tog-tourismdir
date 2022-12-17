@@ -27,7 +27,7 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.getenv('DEBUG')) == "1" # 1 == True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -97,12 +97,7 @@ WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 
 POSTGRES_DB = os.environ.get("POSTGRES_DB") #database name
 POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD") # database user password
@@ -127,6 +122,13 @@ if POSTGRES_READY:
             "PASSWORD": POSTGRES_PASSWORD,
             "HOST": POSTGRES_HOST,
             "PORT": POSTGRES_PORT,
+        }
+    }
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 

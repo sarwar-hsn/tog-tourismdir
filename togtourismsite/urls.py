@@ -37,12 +37,12 @@ sitemaps={
 
 
 urlpatterns = [
-    path('',include(mailappappurls)),
     path('admin/', admin.site.urls),
     path('blogs/',include(blogurls)),
     path('tours/',include(toururls)),
     path('auth/',include('django.contrib.auth.urls')),
     path('newsletter/',include(newsletterurls)),
+    path('',include(mailappappurls)),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
     # path('robots.txt',include(roboturls)),
@@ -51,5 +51,5 @@ urlpatterns = [
 
 handler404 = 'mainapp.views.error_404_view'
 
-if settings.DEBUG is True:
-    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG is True:
+#     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

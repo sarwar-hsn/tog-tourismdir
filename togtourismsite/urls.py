@@ -25,7 +25,7 @@ from newsletterapp import urls as newsletterurls
 from django.contrib.sitemaps import GenericSitemap # new
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import sitemaps
-from robots import urls as roboturls
+# from robots import urls as roboturls
 
 sitemaps={
     'blog':sitemaps.BlogSiteMap,
@@ -45,7 +45,7 @@ urlpatterns = [
     path('newsletter/',include(newsletterurls)),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
-    path('robots.txt',include(roboturls)),
+    # path('robots.txt',include(roboturls)),
 ]
 
 

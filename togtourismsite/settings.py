@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import os
 
@@ -24,15 +24,15 @@ AUTH_USER_MODEL = 'authentication.User'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get('DEBUG')) == "1" # 1 == True
+DEBUG = True # 1 == True
 
 ENV_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 if not DEBUG:
-    ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
+    ALLOWED_HOSTS += [str(os.environ.get('DJANGO_ALLOWED_HOST'))]
 
 # Application definition
 INSTALLED_APPS = [
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
     'sorl.thumbnail',
-    'robots',
+    # 'robots',
     #myapps
     'authentication',
     'blog',
@@ -61,10 +61,7 @@ INSTALLED_APPS = [
     'analyticsapp',
 ]
 
-SITE_ID = int(os.environ.get('SITE_ID')) or 1 
-ROBOTS_SITEMAP_URLS = [
-    os.environ.get('ROBOTS_SITEMAP_URLS')
-]
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -171,8 +168,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles-cdn'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR/'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / "",
 ]
@@ -197,8 +194,8 @@ CKEDITOR_CONFIGS = {
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') or None
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') or None
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
 
 EMAIL_READY=(
     EMAIL_HOST_USER is not None

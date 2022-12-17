@@ -14,28 +14,19 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
-from .buckets import MediaStorage,StaticStorage
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 #user model
 AUTH_USER_MODEL = 'authentication.User'
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',get_random_secret_key())
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 # DEBUG = True
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -64,10 +55,7 @@ INSTALLED_APPS = [
     'analyticsapp',
 ]
 
-
 SITE_ID=1
-
-
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
@@ -100,17 +88,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-
-
 if DEBUG is False:
     if 'DATABASE_URL' in os.environ:
         DATABASES = {
@@ -142,7 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -162,7 +140,6 @@ USE_TZ = True
 # AWS_STORAGE_BUCKET_NAME=ottomangrp
 # AWS_S3_ENDPOINT_URL=https://ottomangrp.sgp1.digitaloceanspaces.com
 # AWS_LOCATION=toursandtravelsloc
-
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
@@ -172,13 +149,11 @@ AWS_S3_OBJECT_PARAMETERS = {
      "ACL": "public-read"
 }
 AWS_LOCATION = os.getenv('AWS_LOCATION')
+DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.MediaStorage"
+STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-DEFAULT_FILE_STORAGE = "togtourismsite.buckets.MediaStorage"
-STATICFILES_STORAGE = 'togtourismsite.buckets.StaticStorage'
+STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+STATIC_ROOT = 'static/'
 
 MEDIA_URL='media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
@@ -187,8 +162,6 @@ MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -202,9 +175,7 @@ THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
-
 EMAIL_READY=(EMAIL_HOST_USER is not None and EMAIL_HOST_PASSWORD is not None)
-
 if EMAIL_READY:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'

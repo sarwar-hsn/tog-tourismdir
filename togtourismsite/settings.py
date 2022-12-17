@@ -29,11 +29,12 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.getenv('DEBUG')) == "1" # 1 == True
 
-ENV_ALLOWED_HOST = os.environ.get('ENV_ALLOWED_HOST')
+DJANGO_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST') or None
 
-ALLOWED_HOSTS = ['127.0.0.1']
+
+ALLOWED_HOSTS = []
 if not DEBUG:
-    ALLOWED_HOSTS += [ENV_ALLOWED_HOST]
+    ALLOWED_HOSTS += ['*']
 
 # Application definition
 INSTALLED_APPS = [

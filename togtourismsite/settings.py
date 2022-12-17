@@ -132,25 +132,19 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-# AWS_ACCESS_KEY_ID=DO00X2UBDTEVEAN7JURY
-# AWS_SECRET_ACCESS_KEY=K3LfSNhLL7jGGMpZSu4PQzLF17IUliJNycLoTpIr1fs
-# AWS_STORAGE_BUCKET_NAME=ottomangrp
-# AWS_S3_ENDPOINT_URL=https://ottomangrp.sgp1.digitaloceanspaces.com
-# AWS_LOCATION=toursandtravelsloc
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": "max-age=86400",
-     "ACL": "public-read"
 }
 AWS_LOCATION = os.getenv('AWS_LOCATION')
-DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.MediaStorage"
+AWS_DEFAULT_ACL = 'public-read'
+
 STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
+DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.MediaStorage"
+
 
 STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
 STATIC_ROOT = 'static/'

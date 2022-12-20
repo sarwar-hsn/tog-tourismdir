@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 if DEBUG is False:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME':os.getenv('DBNAME'),
-            'USER':os.getenv('DBUSER'),
-            'PASSWORD':os.getenv('DBPASS'),
-            'HOST':os.getenv('DBHOST'),
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME':os.environ.get('DBNAME'),
+            'USER':os.environ.get('DBUSER'),
+            'PASSWORD':os.environ.get('DBPASS'),
+            'HOST':os.environ.get('DBHOST'),
             'PORT':'5432',
             'OPTIONS': {'sslmode': 'require'}
         }

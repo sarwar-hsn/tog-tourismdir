@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 if DEBUG is False:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME':os.getenv('DBNAME'),
             'USER':os.getenv('DBUSER'),
             'PASSWORD':os.getenv('DBPASS'),

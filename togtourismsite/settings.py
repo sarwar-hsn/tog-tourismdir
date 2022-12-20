@@ -113,10 +113,10 @@ if DEBUG is False:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['DBNAME'],
-            'USER': os.environ['DBUSER'],
-            'PASSWORD': os.environ['DBPASS'],
-            'HOST': os.environ['DBHOST'],
+            'NAME': os.environ.get('DBNAME'),
+            'USER': os.environ.get('DBUSER'),
+            'PASSWORD': os.environ.get('DBPASS'),
+            'HOST': os.environ.get('DBHOST'),
             'PORT': '5432',
             'OPTIONS': {
                 'sslmode': 'require',

@@ -22,11 +22,11 @@ AUTH_USER_MODEL = 'authentication.User'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',get_random_secret_key())
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 # DEBUG = True
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -90,16 +90,50 @@ TEMPLATES = [
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-if DEBUG is False:
-    if 'DATABASE_URL' in os.environ:
-        DATABASES = {
-            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# if DEBUG is False:
+#     if 'DATABASE_URL' in os.environ:
+#         DATABASES = {
+#             'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#         }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+if 'DBPASS' in os.environ.keys():
+    # Staging or production database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['DBNAME'],
+            'USER': os.environ['DBUSER'],
+            'PASSWORD': os.environ['DBPASS'],
+            'HOST': os.environ['DBHOST'],
+            'PORT': '5432',
+            'OPTIONS': {
+                'sslmode': 'require',
+            },
         }
+    }
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+            'LOCATION': 'cache_table',
+        }
+    }
 else:
+    # development database
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
         }
     }
 
@@ -132,14 +166,14 @@ USE_L10N = True
 USE_TZ = True
 
 
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = os.environ.get('AWS_S3_ENDPOINT_URL')
 AWS_S3_OBJECT_PARAMETERS = {
     "CacheControl": "max-age=86400",
 }
-AWS_LOCATION = os.getenv('AWS_LOCATION')
+AWS_LOCATION = os.environ.get('AWS_LOCATION')
 AWS_DEFAULT_ACL = 'public-read'
 
 STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'

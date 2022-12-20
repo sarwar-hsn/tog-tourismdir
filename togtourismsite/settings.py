@@ -91,51 +91,60 @@ WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 if DEBUG is False:
-    if 'DATABASE_URL' in os.environ:
-        DATABASES = {
-            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-if 'DBPASS' in os.environ.keys():
-    # Staging or production database
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['DBNAME'],
-            'USER': os.environ['DBUSER'],
-            'PASSWORD': os.environ['DBPASS'],
-            'HOST': os.environ['DBHOST'],
-            'PORT': '5432',
-            'OPTIONS': {
-                'sslmode': 'require',
-            },
+            'NAME':os.getenv('DBNAME'),
+            'USER':os.getenv('DBUSER'),
+            'PASSWORD':os.getenv('DBPASS'),
+            'HOST':os.getenv('DBHOST'),
+            'PORT':'5432',
+            'OPTIONS': {'sslmode': 'require'}
         }
     }
-    # CACHES = {
-    #     'default': {
-    #         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-    #         'LOCATION': 'cache_table',
-    #     }
-    # }
 else:
-    # development database
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-    # CACHES = {
-    #     'default': {
-    #         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    #     }
-    # }
+
+    
+# if 'DBPASS' in os.environ.keys():
+#     # Staging or production database
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': os.environ['DBNAME'],
+#             'USER': os.environ['DBUSER'],
+#             'PASSWORD': os.environ['DBPASS'],
+#             'HOST': os.environ['DBHOST'],
+#             'PORT': '5432',
+#             'OPTIONS': {
+#                 'sslmode': 'require',
+#             },
+#         }
+#     }
+#     # CACHES = {
+#     #     'default': {
+#     #         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#     #         'LOCATION': 'cache_table',
+#     #     }
+#     # }
+# else:
+#     # development database
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+#     # CACHES = {
+#     #     'default': {
+#     #         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+#     #     }
+#     # }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

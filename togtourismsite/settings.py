@@ -117,12 +117,12 @@ if 'DBPASS' in os.environ.keys():
             },
         }
     }
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-            'LOCATION': 'cache_table',
-        }
-    }
+    # CACHES = {
+    #     'default': {
+    #         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+    #         'LOCATION': 'cache_table',
+    #     }
+    # }
 else:
     # development database
     DATABASES = {
@@ -131,11 +131,11 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-        }
-    }
+    # CACHES = {
+    #     'default': {
+    #         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    #     }
+    # }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

@@ -33,12 +33,12 @@
                             <li><a href="{% url 'blog-home' %}">Blogs</a></li>
                             <li><a href="{% url 'mainapp:mainapp-contact' %}">Contact Us </a></li>
                         </ul>
-                        <div class="sidebar-contact">
+                        {% comment %} <div class="sidebar-contact">
                             <ul>
                                 <li class="sidebar-single-contact"><i class='bx bxs-phone'></i> <a href="tel:{{contact.phone}}">+8801746900663</a></li>
                                 <li class="sidebar-single-contact"><i class='bx bxs-envelope'></i><a href="mailto:info@example.com">info@ottomantravels.com</a></li>
                             </ul>
-                        </div>
+                        </div> {% endcomment %}
                     </nav>
                 </div>
             </div>

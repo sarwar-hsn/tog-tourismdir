@@ -155,9 +155,9 @@ if DEBUG is False:
     AZURE_CUSTOM_DOMAIN = os.environ.get('AZURE_CUSTOM_DOMAIN')  # Files URL
 
     STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_STATIC_CONTAINER}/'
+    STATIC_ROOT = 'static/'
+    
     MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_MEDIA_CONTAINER}/'
-
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     # any static paths you want to publish
     # STATICFILES_DIRS = [

@@ -28,8 +28,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['togtourism.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['https://togtourism.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
+# CSRF_TRUSTED_ORIGINS = ['https://togtourism.azurewebsites.net']
 
 
 # Application definition

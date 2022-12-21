@@ -212,7 +212,7 @@ if DEBUG is False:
     DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
     
     AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
-    AZURE_ACCOUNT_NAME = "ottomangrp"  # your account name
+    AZURE_ACCOUNT_NAME = "ottomangrpstorage"  # your account name
     AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')
     AZURE_STATIC_CONTAINER = os.environ.get('AZURE_STATIC_CONTAINER', 'static')
 

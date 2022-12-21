@@ -197,29 +197,32 @@ USE_L10N = True
 
 USE_TZ = True
 
+if DEBUG is False:
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_ENDPOINT_URL = os.environ.get('AWS_S3_ENDPOINT_URL')
+    AWS_S3_OBJECT_PARAMETERS = {
+        "CacheControl": "max-age=86400",
+    }
+    AWS_LOCATION = os.environ.get('AWS_LOCATION')
+    AWS_DEFAULT_ACL = 'public-read'
 
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-# AWS_S3_ENDPOINT_URL = os.environ.get('AWS_S3_ENDPOINT_URL')
-# AWS_S3_OBJECT_PARAMETERS = {
-#     "CacheControl": "max-age=86400",
-# }
-# AWS_LOCATION = os.environ.get('AWS_LOCATION')
-# AWS_DEFAULT_ACL = 'public-read'
-
-# STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
-# DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.MediaStorage"
+    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
+    DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.MediaStorage"
 
 
-# STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-# STATIC_ROOT = 'static/'
+    STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+    STATIC_ROOT = 'static/'
+    MEDIA_URL='media/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+else:
+    STATIC_URL = 'static/'
+    STATIC_ROOT = "static/"
+    MEDIA_URL='media/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL='media/'
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
-STATIC_URL = 'static/'
-STATIC_ROOT = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

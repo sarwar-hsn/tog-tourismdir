@@ -182,7 +182,7 @@ CKEDITOR_CONFIGS = {
         'width': 1200,
     },
 }
-CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
+# CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 

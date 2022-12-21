@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DEBUG', False)=="True"
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
@@ -215,9 +215,11 @@ USE_TZ = True
 # STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
 # STATIC_ROOT = 'static/'
 
-# MEDIA_URL='media/'
-# MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL='media/'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
+STATIC_URL = 'static/'
+STATIC_ROOT = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

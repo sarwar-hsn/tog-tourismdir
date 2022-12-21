@@ -43,8 +43,8 @@ urlpatterns = [
     path('auth/',include('django.contrib.auth.urls')),
     path('newsletter/',include(newsletterurls)),
     path('',include(mailappappurls)),
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-    #      name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
     # path('robots.txt',include(roboturls)),
 ]
 

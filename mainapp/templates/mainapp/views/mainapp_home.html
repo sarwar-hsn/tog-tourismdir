@@ -39,7 +39,7 @@
 
 {% endblock content %}
 
-{% comment %} {% block scripts %}
+{% block scripts %}
     <script src="{% static 'mainapp/assets/js/jquery-3.6.0.min.js' %}" defer></script>
     <script src="{% static 'mainapp/assets/js/owl.carousel.min.js' %}" defer></script>
     <script src="{% static 'mainapp/assets/js/bootstrap.min.js' %}" defer></script>
@@ -49,4 +49,4 @@
     <script src="{% static 'mainapp/assets/js/wow.min.js' %}" defer></script>
     <script src="{% static 'mainapp/assets/js/typed.js' %}" defer></script> 
     <script src="{% static 'mainapp/assets/js/main.js' %}" defer></script>
-{% endblock scripts %} {% endcomment %}
+{% endblock scripts %}

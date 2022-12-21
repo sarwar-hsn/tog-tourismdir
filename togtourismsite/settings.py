@@ -27,9 +27,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 DEBUG = os.environ.get('DEBUG', False)=="True"
 
 
-
-ALLOWED_HOSTS = ['*']
-# CSRF_TRUSTED_ORIGINS = ['https://togtourism.azurewebsites.net']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+CSRF_TRUSTED_ORIGINS = [f"https://{os.environ.get('DJANGO_ALLOWED_HOSTS','127.0.0.1,localhost').split(',')}"]
 
 
 # Application definition
@@ -114,61 +113,6 @@ else:
     }
     }
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# if DEBUG is False:
-#     if 'DATABASE_URL' in os.environ:
-#         DATABASES = {
-#             'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#         }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# if DEBUG is False:
-#     # Staging or production database
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': os.environ.get('DBNAME'),
-#             'USER': os.environ.get('DBUSER'),
-#             'PASSWORD': os.environ.get('DBPASS'),
-#             'HOST': os.environ.get('DBHOST'),
-#             'PORT': '5432',
-#             'OPTIONS': {
-#                 'sslmode': 'require',
-#             },
-#         }
-#     }
-#     # CACHES = {
-#     #     'default': {
-#     #         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#     #         'LOCATION': 'cache_table',
-#     #     }
-#     # }
-# else:
-#     # development database
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-#     # CACHES = {
-#     #     'default': {
-#     #         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-#     #     }
-#     # }
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -197,24 +141,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-# if DEBUG is False:
-#     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#     AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-#     AWS_S3_ENDPOINT_URL = os.environ.get('AWS_S3_ENDPOINT_URL')
-#     AWS_S3_OBJECT_PARAMETERS = {
-#         "CacheControl": "max-age=86400",
-#     }
-#     AWS_LOCATION = os.environ.get('AWS_LOCATION')
-#     AWS_DEFAULT_ACL = 'public-read'
+
 if DEBUG is False:
-    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.AzureStaticStorage'
-    DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
-    
     AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
     AZURE_ACCOUNT_NAME = "ottomangrpstorage"  # your account name
     AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')
     AZURE_STATIC_CONTAINER = os.environ.get('AZURE_STATIC_CONTAINER', 'static')
+
+    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.AzureStaticStorage'
+    DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
 
     # AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.azureedge.net'  # CDN URL
     AZURE_CUSTOM_DOMAIN = os.environ.get('AZURE_CUSTOM_DOMAIN')  # Files URL
@@ -250,12 +185,12 @@ CKEDITOR_CONFIGS = {
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
-# EMAIL_READY=(EMAIL_HOST_USER is not None and EMAIL_HOST_PASSWORD is not None)
-# if EMAIL_READY:
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#     EMAIL_HOST = 'smtp.gmail.com'
-#     EMAIL_PORT = 587
-#     EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
+EMAIL_READY=(EMAIL_HOST_USER is not None and EMAIL_HOST_PASSWORD is not None)
+if EMAIL_READY:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
 

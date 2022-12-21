@@ -24,10 +24,10 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False) == "True"
+DEBUG = os.environ['DEBUG'] == "True"
 
-ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['WEBSITE_HOSTNAME']] if 'WEBSITE_HOSTNAME' in os.environ else []
+ALLOWED_HOSTS = ['togtourism.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['togtourism.azurewebsites.net']
 
 
 # Application definition
@@ -112,19 +112,6 @@ else:
     }
     }
 
-
-# if DEBUG is True:
-#     if 'DATABASE_URL' in os.environ:
-#         DATABASES = {
-#             'default': dj_database_url.parse('host=tourismapp-server.postgres.database.azure.com port=5432 dbname=tourismapp-database user=hrsimzyqxt password=#ottoman2022@DB sslmode=require')
-#         }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # DATABASES = {

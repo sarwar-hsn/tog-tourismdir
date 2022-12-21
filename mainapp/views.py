@@ -10,25 +10,24 @@ from . import utils
 
 #views
 def index(request,*args, **kwargs):
-    return HttpResponse("<h2>fuck this life</h2>")
-    # destinations = PopularDest.objects.all()
-    # popular_dest = {}
-    # for dest in destinations:
-    #     city = str(dest.destination)
-    #     tours = Tour.objects.filter(destinations__city=city)
-    #     popular_dest[dest.destination]=tours
-    # banners =  HomeBanner.objects.all()
-    # fb = utils.featured_blogs()
-    # context = {
-    #     "banners":banners,
-    #     "bestpackages": utils.bestpackages(),
-    #     "populardestinations":popular_dest,
-    #     "form":NewsletterForm,
-    #     "blogs":fb,
-    #     "seo":utils.get_seo('home'),
-    #     "contact":utils.retrive_contacts()
-    # }
-    # return render(request, 'mainapp/views/mainapp_home.html',context=context)
+    destinations = PopularDest.objects.all()
+    popular_dest = {}
+    for dest in destinations:
+        city = str(dest.destination)
+        tours = Tour.objects.filter(destinations__city=city)
+        popular_dest[dest.destination]=tours
+    banners =  HomeBanner.objects.all()
+    fb = utils.featured_blogs()
+    context = {
+        "banners":banners,
+        "bestpackages": utils.bestpackages(),
+        "populardestinations":popular_dest,
+        "form":NewsletterForm,
+        "blogs":fb,
+        "seo":utils.get_seo('home'),
+        "contact":utils.retrive_contacts()
+    }
+    return render(request, 'mainapp/views/mainapp_home.html',context=context)
 
 def about(request):
     context ={

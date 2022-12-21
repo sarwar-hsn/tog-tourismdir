@@ -112,7 +112,7 @@ class Post(models.Model):
     overview = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag,blank=True)
-    content = RichTextField(blank=True,null=True)
+    content = models.TextField(blank=True,null=True)
 
     class Meta:
         ordering = ['-id']

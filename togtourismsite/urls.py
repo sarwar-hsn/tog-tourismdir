@@ -38,10 +38,10 @@ sitemaps={
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('blogs/',include(blogurls)),
-    # path('tours/',include(toururls)),
-    # path('auth/',include('django.contrib.auth.urls')),
-    # path('newsletter/',include(newsletterurls)),
+    path('blogs/',include(blogurls)),
+    path('tours/',include(toururls)),
+    path('auth/',include('django.contrib.auth.urls')),
+    path('newsletter/',include(newsletterurls)),
     path('',include(mailappappurls)),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
     #      name='django.contrib.sitemaps.views.sitemap'),

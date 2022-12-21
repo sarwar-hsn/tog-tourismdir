@@ -42,7 +42,6 @@ urlpatterns = [
     path('tours/',include(toururls)),
     path('auth/',include('django.contrib.auth.urls')),
     path('newsletter/',include(newsletterurls)),
-    path('ckeditor/', include('ckeditor.urls')),
     path('',include(mailappappurls)),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),

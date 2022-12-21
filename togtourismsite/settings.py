@@ -207,20 +207,32 @@ USE_TZ = True
 #     }
 #     AWS_LOCATION = os.environ.get('AWS_LOCATION')
 #     AWS_DEFAULT_ACL = 'public-read'
+if DEBUG is False:
+    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.AzureStaticStorage'
+    DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
+    
+    AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
+    AZURE_ACCOUNT_NAME = "ottomangrp"  # your account name
+    AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')
+    AZURE_STATIC_CONTAINER = os.environ.get('AZURE_STATIC_CONTAINER', 'static')
 
-#     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
-#     DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.MediaStorage"
+    # AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.azureedge.net'  # CDN URL
+    AZURE_CUSTOM_DOMAIN = os.environ.get('AZURE_CUSTOM_DOMAIN')  # Files URL
 
+    STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_STATIC_CONTAINER}/'
+    MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_MEDIA_CONTAINER}/'
 
-#     STATIC_URL = '{}/{}/'.format(AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-#     STATIC_ROOT = 'static/'
-#     MEDIA_URL='media/'
-#     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-# else:
-STATIC_URL = 'static/'
-STATIC_ROOT = "static/"
-MEDIA_URL='media/'
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    # any static paths you want to publish
+    # STATICFILES_DIRS = [
+    #     os.path.join(BASE_DIR, 'demo', 'static')
+    # ]
+else:
+    STATIC_URL = 'static/'
+    STATIC_ROOT = "static/"
+    MEDIA_URL='media/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
 
 

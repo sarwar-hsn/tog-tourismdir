@@ -29,7 +29,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ['togtourism.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['togtourism.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://togtourism.azurewebsites.net']
 
 
 # Application definition

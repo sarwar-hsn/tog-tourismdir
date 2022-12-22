@@ -1,5 +1,5 @@
 {% extends 'blog/views/category_details.html' %}
-
+{% load static %}
 {% block seo %}
     {% if tag is not None %}
         <title>tags-{{tag.name|lower}}</title>

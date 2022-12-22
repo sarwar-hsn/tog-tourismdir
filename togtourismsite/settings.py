@@ -93,8 +93,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
+DB = (os.getenv('DBHOST',None) and os.getenv('DBNAME',None) and os.getenv('DBUSER',None) and os.getenv('DBPASS',None))
 
-if DEBUG is False:
+if DB is not None:
     hostname = os.environ['DBHOST']
     DATABASES = {
         'default': {

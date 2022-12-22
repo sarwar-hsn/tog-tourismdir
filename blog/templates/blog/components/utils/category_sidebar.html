@@ -3,7 +3,7 @@
         <h5 class="categorie-head">Categories</h5>
         <ul>
             {% for catg in categories %}
-                <li><a href="{% url 'blog-categorydetails' catg|lower %}"><i class='bx bxs-chevrons-right'></i>{{catg}}</a></li>
+                <li><a href="{{catg.get_absolute_url}}"><i class='bx bxs-chevrons-right'></i>{{catg}}</a></li>
             {% endfor %}
         </ul>
     </div>

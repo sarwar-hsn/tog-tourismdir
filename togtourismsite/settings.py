@@ -94,24 +94,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
 
-# if DEBUG is False:
-hostname = os.environ['DBHOST']
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DBNAME'],
-        'HOST': hostname + ".postgres.database.azure.com",
-        'USER': os.environ['DBUSER'],
-        'PASSWORD': os.environ['DBPASS'] 
+if DEBUG is False:
+    hostname = os.environ['DBHOST']
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['DBNAME'],
+            'HOST': hostname + ".postgres.database.azure.com",
+            'USER': os.environ['DBUSER'],
+            'PASSWORD': os.environ['DBPASS'] 
+        }
     }
-}
-# else:
-#     DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

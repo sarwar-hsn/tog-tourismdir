@@ -3,7 +3,7 @@
         <h5 class="categorie-head">Tags</h5>
         <ul>
             {% for tag in tags %}
-                <li><a href="{% url 'blog-tags' tag %}">{{tag}}</a></li>
+                <li><a href="{{tag.get_absolute_url}}">{{tag}}</a></li>
             {% endfor %}
             
         </ul>

@@ -24,7 +24,7 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
@@ -167,9 +167,9 @@ if AZURE is not None:
     # ]
 else:
     STATIC_URL = 'static/'
-    STATIC_ROOT = "static/"
+    STATIC_ROOT = "staticfiles/"
     MEDIA_URL='media/'
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'mediafiles')
 
 
 

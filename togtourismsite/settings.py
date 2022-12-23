@@ -28,7 +28,6 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-CSRF_TRUSTED_ORIGINS = ["https://"+os.environ.get('DJANGO_ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -189,13 +188,3 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
-
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
-EMAIL_READY=(EMAIL_HOST_USER is not None and EMAIL_HOST_PASSWORD is not None)
-if EMAIL_READY:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_PORT = 587
-    EMAIL_USE_TLS = True
-

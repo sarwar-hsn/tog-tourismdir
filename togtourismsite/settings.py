@@ -24,7 +24,7 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)=="True"
+DEBUG = False
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
@@ -143,7 +143,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-if DEBUG is False:
+AZURE = os.environ.get('AZURE_STORAGE_KEY', None)
+
+if AZURE is not None:
     AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
     AZURE_ACCOUNT_NAME = "ottomangrpstorage"  # your account name
     AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')

@@ -25,6 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)=="True"
+# DEBUG = True
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', # new
     'django.contrib.sitemaps', # new 
     #installed app
+    'compressor',
     'ckeditor',
     'django_filters',
     "crispy_forms",
@@ -170,6 +172,12 @@ else:
     MEDIA_URL='media/'
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
+
+STATICFILES_FINDERS =( 'django.contrib.staticfiles.finders.FileSystemFinder',  'django.contrib.staticfiles.finders.AppDirectoriesFinder',    'compressor.finders.CompressorFinder',
+) 
+COMPRESS_PRECOMPILERS = (    
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
 
 
 # Default primary key field type

@@ -1,4 +1,3 @@
-
 {% load static %}
 {% load thumbnail %}
 
@@ -19,7 +18,7 @@
             <div class="col-lg-3 col-md-3">
                 <div class="package-slider-wrap">
                     {% thumbnail city.thumbnail "270x372" quality=100 as im  %}
-                        <img src="{{im.url}}"  class="img-fluid"  alt="{{city.alttag}}">
+                        <img src="{{im.url}}"  class="img-fluid" style="width:100%;"  alt="{{city.alttag}}">
                     {% endthumbnail %}
                     
                     <div class="pakage-overlay">
@@ -34,7 +33,7 @@
                         <div class="package-card">
                             <div class="package-thumb">
                                 {% thumbnail destination.getthumbnail.image "310x225" as im %}
-                                    <img src="{{im.url}}" style="height:225px;width:310px;" class="img-fluid" alt="{{destination.getthumbnail.alttag}}">
+                                    <img src="{{im.url}}" style="height:225px;width:100%;" class="img-fluid" alt="{{destination.getthumbnail.alttag}}">
                                 {% endthumbnail %}
                             </div>
                             <div class="package-details">

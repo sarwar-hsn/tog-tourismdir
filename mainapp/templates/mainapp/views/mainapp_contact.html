@@ -7,7 +7,7 @@
 {% endblock seo %}
 
 
-{% block cssfiles %}
+{% comment %} {% block cssfiles %}
     <link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
-{% endblock cssfiles %}
+{% endblock cssfiles %} {% endcomment %}
 
 {% block content %}
  <!-- ===============  breadcrumb area start =============== -->

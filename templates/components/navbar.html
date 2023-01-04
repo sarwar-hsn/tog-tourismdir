@@ -1,5 +1,23 @@
 {% load static %}
 
+
+
+<script type='text/javascript'>
+    window.addEventListener('scroll', function() {
+    var scroll = window.scrollY;
+    if (scroll >= 10) {
+        var image = document.getElementById('nav-logo');
+        image.src ='/static/mainapp/assets/images/logos/OTT_logo_footer_200.png'
+    } else {
+        var image = document.getElementById('nav-logo');
+        image.src='/static/mainapp/assets/images/logos/ott_200.png'
+    }
+    });
+</script>
+
+
+
+
 <header>
     <div class="header-area">
         <div class="container">
@@ -8,7 +26,7 @@
                     <div class="navbar-wrap">
                         <div class="logo d-flex justify-content-between">
                             <a href="{% url 'mainapp:mainapp-home' %}" class="navbar-brand"> 
-                                <img height="100px" src="{% static 'mainapp/assets/images/logos/ott_200.png' %}" 
+                                <img height="100px" id="nav-logo" src="{% static 'mainapp/assets/images/logos/ott_200.png' %}" 
                             alt="logo"></a>
                         </div>
                         <div class="navbar-icons">
@@ -33,12 +51,6 @@
                             <li><a href="{% url 'blog-home' %}">Blogs</a></li>
                             <li><a href="{% url 'mainapp:mainapp-contact' %}">Contact Us </a></li>
                         </ul>
-                        {% comment %} <div class="sidebar-contact">
-                            <ul>
-                                <li class="sidebar-single-contact"><i class='bx bxs-phone'></i> <a href="tel:{{contact.phone}}">+8801746900663</a></li>
-                                <li class="sidebar-single-contact"><i class='bx bxs-envelope'></i><a href="mailto:info@example.com">info@ottomantravels.com</a></li>
-                            </ul>
-                        </div> {% endcomment %}
                     </nav>
                 </div>
             </div>

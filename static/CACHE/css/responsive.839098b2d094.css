@@ -1,0 +1,746 @@
+/*--- Color ---*/
+/*--- Font Family ---*/
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 15, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm .blog-img-sm img {
+    max-width: 85px;
+    border-radius: 10px; }
+  /* line 19, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm a.blog-title-sm {
+    margin-bottom: 15px; }
+  /* line 22, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info a {
+    font-size: 10px; }
+  /* line 25, mainapp/static/mainapp/assets/css/responsive.scss */
+  .organizer-card {
+    display: flex;
+    flex-direction: column; }
+    /* line 29, mainapp/static/mainapp/assets/css/responsive.scss */
+    .organizer-card .organizer-info {
+      margin-top: 20px; }
+  /* line 34, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-details a.blog-title {
+    margin: 28px 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px; }
+  /* line 41, mainapp/static/mainapp/assets/css/responsive.scss */
+  .topbar-area .topbar-contact ul li {
+    margin-right: 30px; }
+  /* line 44, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-title-xl h3 {
+    font-size: 25px;
+    line-height: 36px; }
+  /* line 50, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-gallary img {
+    margin-top: 20px; }
+  /* line 56, mainapp/static/mainapp/assets/css/responsive.scss */
+  .contact-card .contact-info h5 {
+    font-size: 20px; }
+  /* line 59, mainapp/static/mainapp/assets/css/responsive.scss */
+  .contact-card .contact-info p {
+    font-size: 16px;
+    line-height: 26px; }
+  /* line 64, mainapp/static/mainapp/assets/css/responsive.scss */
+  .achievement-card h5 {
+    font-size: 20px;
+    line-height: 30px; }
+  /* line 68, mainapp/static/mainapp/assets/css/responsive.scss */
+  .contact-card .contact-info ul.contact-icons li a i {
+    font-size: 20px; }
+  /* line 72, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .nav-pills button.nav-link {
+    padding: 8px 25px;
+    font-size: 17px; }
+    /* line 76, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-details .package-tab .nav-pills button.nav-link i {
+      font-size: 20px; }
+  /* line 81, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-slider-wrap .pakage-overlay strong {
+    font-size: 30px; }
+  /* line 85, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card .package-details h3 {
+    font-size: 18px;
+    line-height: 24px; } }
+
+@media only screen and (max-width: 1199px) {
+  /* line 93, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 {
+    background-size: cover; }
+  /* line 96, mainapp/static/mainapp/assets/css/responsive.scss */
+  .header-area .account-dropdown {
+    top: 127px; }
+  /* line 100, mainapp/static/mainapp/assets/css/responsive.scss */
+  .sidebar-social {
+    display: block; }
+  /* line 104, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav .sidebar-contact {
+    display: block; }
+  /* line 108, mainapp/static/mainapp/assets/css/responsive.scss */
+  .navber-logo-sm {
+    display: block; }
+  /* line 114, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav ul li .sub-menu > li {
+    border-bottom: none; }
+  /* line 117, mainapp/static/mainapp/assets/css/responsive.scss */
+  header .header-area .main-nav ul li ul.sub-menu > li a.sub-item {
+    color: #fff;
+    padding: 10px 0;
+    display: inline-block; }
+  /* line 122, mainapp/static/mainapp/assets/css/responsive.scss */
+  header .header-area .main-nav {
+    display: block; }
+  /* line 125, mainapp/static/mainapp/assets/css/responsive.scss */
+  .navbar-icons-2 {
+    display: none !important; }
+  /* line 128, mainapp/static/mainapp/assets/css/responsive.scss */
+  .col-lg-2 {
+    width: 100%; }
+  /* line 131, mainapp/static/mainapp/assets/css/responsive.scss */
+  .navbar-icons {
+    display: inline-flex !important;
+    align-items: center; }
+    /* line 135, mainapp/static/mainapp/assets/css/responsive.scss */
+    .navbar-icons .searchbar-open, .navbar-icons .user-dropdown-icon {
+      margin-left: 30px; }
+      /* line 137, mainapp/static/mainapp/assets/css/responsive.scss */
+      .navbar-icons .searchbar-open i, .navbar-icons .user-dropdown-icon i {
+        font-size: 20px;
+        color: #FF7F47; }
+        /* line 141, mainapp/static/mainapp/assets/css/responsive.scss */
+        .navbar-icons .searchbar-open i::before, .navbar-icons .user-dropdown-icon i::before {
+          vertical-align: middle; }
+    /* line 146, mainapp/static/mainapp/assets/css/responsive.scss */
+    .navbar-icons .mobile-menu {
+      margin-left: 40px; }
+  /* line 151, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger {
+    display: block !important;
+    position: relative;
+    width: 40px !important;
+    height: 30px !important;
+    margin: 1.8rem 0;
+    cursor: pointer;
+    border: 3px solid transparent !important;
+    float: right; }
+    /* line 160, mainapp/static/mainapp/assets/css/responsive.scss */
+    .hamburger:focus {
+      border: 3px solid transparent !important; }
+  /* line 166, mainapp/static/mainapp/assets/css/responsive.scss */
+  .top-search-bar {
+    position: absolute;
+    right: 10%;
+    top: 3.5rem; }
+    /* line 170, mainapp/static/mainapp/assets/css/responsive.scss */
+    .top-search-bar a i::before {
+      color: #707070;
+      font-size: 2.4rem; }
+  /* line 176, mainapp/static/mainapp/assets/css/responsive.scss */
+  header .header-area .main-nav ul li ul.sub-menu > li a::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0 !important;
+    height: 2px;
+    content: "";
+    background-color: #FFFFFF;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+  /* line 189, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav > ul > li > a {
+    font-size: 16px !important;
+    color: #fff !important;
+    line-height: 35px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500; }
+  /* line 197, mainapp/static/mainapp/assets/css/responsive.scss */
+  header .header-area .main-nav ul li a {
+    padding: 0 !important; }
+  /* line 200, mainapp/static/mainapp/assets/css/responsive.scss */
+  header .header-area .main-nav ul li a::before {
+    bottom: 0rem !important; }
+  /* line 203, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav ul > li a.active::before {
+    opacity: 1 !important; }
+  /* line 206, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav ul > li a:hover {
+    background: transparent; }
+  /* line 211, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    z-index: 99999;
+    height: 100%;
+    overflow: auto;
+    background: #000;
+    transform: translateX(-250px);
+    transition: transform 0.3s ease-in; }
+  /* line 224, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav > ul > li.has-child-menu:after {
+    display: none !important; }
+  /* line 228, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #FF7F47;
+    display: block;
+    position: absolute;
+    right: 0;
+    transition: all 0.3s; }
+  /* line 238, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger span.h-top {
+    top: 0; }
+  /* line 241, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger span.h-bottom {
+    bottom: 0;
+    width: 27px; }
+  /* line 246, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger span.h-middle {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px; }
+  /* line 251, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger.h-active span {
+    width: 80%; }
+  /* line 254, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger.h-active span.h-top {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -1px; }
+  /* line 259, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger.h-active span.h-middle {
+    transform: translateX(-30px);
+    opacity: 0; }
+  /* line 263, mainapp/static/mainapp/assets/css/responsive.scss */
+  .hamburger.h-active span.h-bottom {
+    transform: rotate(-45deg);
+    bottom: 50%;
+    margin-bottom: -1px; }
+  /* line 270, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav.slidenav {
+    transform: translateX(0); }
+  /* line 273, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav > ul {
+    float: none;
+    margin-top: 50px !important; }
+  /* line 277, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav > ul > li.has-child-menu:after {
+    content: none; }
+  /* line 281, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav > ul > li {
+    display: block;
+    padding: 0;
+    margin-left: 0; }
+  /* line 286, mainapp/static/mainapp/assets/css/responsive.scss */
+  header .header-area .main-nav ul li {
+    display: block;
+    position: relative;
+    padding: 3px 20px; }
+  /* line 294, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav ul li .fl {
+    display: block;
+    line-height: 35px;
+    margin-right: 15px; }
+  /* line 299, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav ul li .sub-menu {
+    position: static;
+    min-width: 200px;
+    background: transparent;
+    border: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+    display: none; }
+  /* line 312, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-nav ul li .sub-menu > li a {
+    display: block;
+    padding: 10px 0;
+    color: #707070;
+    border: none;
+    line-height: 0.8;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s; }
+  /* line 322, mainapp/static/mainapp/assets/css/responsive.scss */
+  li a.active {
+    color: #304F47;
+    font-weight: 600;
+    font-size: 1.5rem; } }
+
+@media only screen and (max-width: 992px) {
+  /*home page responsive*/
+  /* line 333, mainapp/static/mainapp/assets/css/responsive.scss */
+  a.btn-common {
+    font-size: 14px; }
+  /* line 336, mainapp/static/mainapp/assets/css/responsive.scss */
+  .find-form {
+    margin-top: -162px; }
+  /* line 339, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner .slider-item .slider-content {
+    margin-left: 0; }
+  /* line 343, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner .slider-item .slider-content h2 {
+    font-size: 62px;
+    line-height: 70px; }
+  /* line 348, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner .slider-item .slider-content h5 {
+    font-size: 25px;
+    line-height: 30px;
+    margin: 22px 0 40px 0; }
+  /* line 355, mainapp/static/mainapp/assets/css/responsive.scss */
+  .topbar-area .topbar-social {
+    justify-content: flex-start; }
+  /* line 358, mainapp/static/mainapp/assets/css/responsive.scss */
+  .tob-contact-row {
+    display: none; }
+  /* line 361, mainapp/static/mainapp/assets/css/responsive.scss */
+  .topbar-area .topbar-social ul {
+    justify-content: flex-start; }
+  /* line 365, mainapp/static/mainapp/assets/css/responsive.scss */
+  .find-form .findfrom-wrapper {
+    width: auto; }
+    /* line 367, mainapp/static/mainapp/assets/css/responsive.scss */
+    .find-form .findfrom-wrapper input, .find-form .findfrom-wrapper .select-selected {
+      margin-bottom: 15px; }
+  /* line 373, mainapp/static/mainapp/assets/css/responsive.scss */
+  .find-form-2 .findfrom-wrapper {
+    width: auto; }
+    /* line 375, mainapp/static/mainapp/assets/css/responsive.scss */
+    .find-form-2 .findfrom-wrapper input, .find-form-2 .findfrom-wrapper .select-selected {
+      margin-bottom: 15px; }
+  /* line 382, mainapp/static/mainapp/assets/css/responsive.scss */
+  .feature-area .feature-card {
+    margin: 0 auto; }
+  /* line 386, mainapp/static/mainapp/assets/css/responsive.scss */
+  .guide-card {
+    max-height: 397px; }
+  /*About page responsive*/
+  /* line 392, mainapp/static/mainapp/assets/css/responsive.scss */
+  .about-wrapper .about-wrapper-left .about-img {
+    float: left; }
+  /* line 396, mainapp/static/mainapp/assets/css/responsive.scss */
+  .about-wrapper .about-wrapper-right {
+    margin-top: 40px; }
+  /* package page responsive */
+  /* line 401, mainapp/static/mainapp/assets/css/responsive.scss */
+  .p-sidebar-form {
+    margin-top: 40px; }
+  /* line 404, mainapp/static/mainapp/assets/css/responsive.scss */
+  .offer-area {
+    padding-top: 120px; }
+  /* line 407, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-sidebar {
+    margin-top: 80px; }
+  /* line 412, mainapp/static/mainapp/assets/css/responsive.scss */
+  .footer-area .footer-info {
+    text-align: center; }
+    /* line 415, mainapp/static/mainapp/assets/css/responsive.scss */
+    .footer-area .footer-info .footer-social-icons {
+      display: inline-block; }
+    /* line 418, mainapp/static/mainapp/assets/css/responsive.scss */
+    .footer-area .footer-info p {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 35px 0 20px 0; }
+  /* line 424, mainapp/static/mainapp/assets/css/responsive.scss */
+  .footer-links {
+    margin-top: 50px;
+    margin-left: 20px; }
+  /* line 428, mainapp/static/mainapp/assets/css/responsive.scss */
+  .payment-links {
+    text-align: center;
+    margin-left: 0px; }
+    /* line 431, mainapp/static/mainapp/assets/css/responsive.scss */
+    .payment-links .payment-cards {
+      justify-content: center; }
+  /* line 436, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details-wrapper .blog-sidebar {
+    margin-top: 40px; }
+  /* line 440, mainapp/static/mainapp/assets/css/responsive.scss */
+  .grllary-colom-two {
+    margin-top: 15px; }
+  /* line 444, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-gallary img {
+    margin-top: 20px; }
+  /* line 449, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-details a.blog-title {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 28px; }
+  /* line 455, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .nav-pills button.nav-link {
+    padding: 8px 25px;
+    font-size: 16px; }
+    /* line 459, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-details .package-tab .nav-pills button.nav-link i {
+      font-size: 18px; }
+  /* line 464, mainapp/static/mainapp/assets/css/responsive.scss */
+  .section-head h2 {
+    font-size: 36px;
+    line-height: 42px; }
+  /* line 469, mainapp/static/mainapp/assets/css/responsive.scss */
+  .newsletter-area .newsletter-wrapper h2 {
+    font-size: 36px;
+    line-height: 42px; } }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 478, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm .blog-img-sm img {
+    max-width: 68px;
+    border-radius: 10px; }
+  /* line 482, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm {
+    margin-bottom: 15px; }
+    /* line 485, mainapp/static/mainapp/assets/css/responsive.scss */
+    .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm {
+      margin-left: 10px; }
+      /* line 487, mainapp/static/mainapp/assets/css/responsive.scss */
+      .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm a.blog-title-sm {
+        font-size: 16px;
+        margin-bottom: 10px; }
+      /* line 492, mainapp/static/mainapp/assets/css/responsive.scss */
+      .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info a {
+        font-size: 10px; }
+  /* line 498, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h2 {
+    font-size: 70px;
+    line-height: 82px; }
+  /* line 502, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h3 {
+    font-size: 35px;
+    line-height: 40px; }
+  /* line 507, mainapp/static/mainapp/assets/css/responsive.scss */
+  .achievement-card h5 {
+    font-size: 20px;
+    line-height: 30px; }
+  /* line 513, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card .package-details h3 {
+    font-size: 20px;
+    line-height: 28px;
+    padding: 12px 0; }
+  /* line 519, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card-xl .blog-details a.blog-title {
+    font-size: 20px;
+    line-height: 30px; }
+  /* line 524, mainapp/static/mainapp/assets/css/responsive.scss */
+  .feature-card-2 .feature-card-review p {
+    font-size: 14px; }
+  /* line 527, mainapp/static/mainapp/assets/css/responsive.scss */
+  .feature-card-2 .feature-details h3 {
+    font-size: 20px; }
+  /* line 530, mainapp/static/mainapp/assets/css/responsive.scss */
+  .feature-card-2 .feature-thumb .feature-price h5 {
+    font-size: 18px; }
+  /* line 534, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-slider-wrap .pakage-overlay strong {
+    font-size: 24px; }
+  /* line 539, mainapp/static/mainapp/assets/css/responsive.scss */
+  .contact-card .contact-info h5 {
+    font-size: 24px; }
+  /* line 542, mainapp/static/mainapp/assets/css/responsive.scss */
+  .contact-card .contact-info p {
+    font-size: 18px; } }
+
+@media only screen and (max-width: 767.98px) {
+  /* package details page responsive */
+  /* line 551, mainapp/static/mainapp/assets/css/responsive.scss */
+  .gallary-grid-2, .gallary-grid {
+    grid-gap: 15px; }
+  /* line 555, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-slider-wrap img {
+    margin: 0px auto;
+    display: block;
+    width: auto; }
+  /* line 560, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-sidebar .sidebar-range {
+    margin-top: 40px; }
+  /* line 564, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-reply {
+    padding: 30px 25px; }
+  /* line 567, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input {
+    padding: 30px 25px; }
+  /* line 570, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-texts .blog-qoute {
+    margin-left: 10px; }
+  /* line 574, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h3 {
+    font-size: 35px;
+    line-height: 45px; }
+  /* line 578, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h2 {
+    font-size: 65px;
+    line-height: 70px; }
+  /* line 583, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-grid-two {
+    margin-top: 15px; }
+  /* line 586, mainapp/static/mainapp/assets/css/responsive.scss */
+  .find-form-2 {
+    margin-top: 60px; }
+  /* line 590, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card .package-details .package-info h5 {
+    font-size: 11px; }
+    /* line 593, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-card .package-details .package-info h5 span {
+      font-size: 18px; }
+  /* line 598, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card .package-details h3 {
+    font-size: 18px;
+    padding: 12px 0; }
+  /* line 602, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card-xl .package-details-xl {
+    padding: 20px 25px; }
+    /* line 605, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-card-xl .package-details-xl .package-info h5 {
+      font-size: 11px; }
+    /* line 608, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-card-xl .package-details-xl h3 {
+      font-size: 20px;
+      padding: 12px 0; }
+    /* line 612, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-card-xl .package-details-xl p {
+      line-height: 24px; }
+  /* line 617, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .nav-pills button.nav-link {
+    padding: 8px 20px;
+    font-size: 14px; }
+    /* line 621, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-details .package-tab .nav-pills button.nav-link i {
+      font-size: 18px; }
+  /* line 629, mainapp/static/mainapp/assets/css/responsive.scss */
+  .offer-card .offer-details .offer-info h5 {
+    font-size: 12px; }
+  /* line 633, mainapp/static/mainapp/assets/css/responsive.scss */
+  .offer-card .offer-details .offer-info ul.offer-rating li {
+    font-size: 14px; }
+  /* line 638, mainapp/static/mainapp/assets/css/responsive.scss */
+  .offer-card .offer-details h3 {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 20px 0; }
+  /* line 644, mainapp/static/mainapp/assets/css/responsive.scss */
+  .offer-card .offer-details strong {
+    font-size: 22px; }
+  /* line 650, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner .slider-item .slider-content h2 {
+    font-size: 70px;
+    line-height: 78px; }
+  /* line 654, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner .slider-item .slider-content {
+    margin-left: 0; }
+  /* line 659, mainapp/static/mainapp/assets/css/responsive.scss */
+  .error-img img {
+    width: 80%; }
+  /* line 664, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-bottom .blog-tags {
+    margin-bottom: 20px; }
+    /* line 667, mainapp/static/mainapp/assets/css/responsive.scss */
+    .blog-details .blog-bottom .blog-tags ul li {
+      margin-bottom: 10px; }
+  /* line 672, mainapp/static/mainapp/assets/css/responsive.scss */
+  .error-wrapper h2 {
+    margin-top: 80px;
+    font-size: 38px; }
+  /* line 677, mainapp/static/mainapp/assets/css/responsive.scss */
+  .error-wrapper .error-btn a {
+    font-size: 18px;
+    padding: 16px 40px; }
+  /* line 681, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-slider-wrap {
+    margin: 0 auto;
+    margin-top: 20px; }
+  /* line 686, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-slider-wrap .pakage-overlay strong {
+    font-size: 30px; } }
+
+@media only screen and (max-width: 575.98px) {
+  /* home page responsive */
+  /* line 696, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner .slider-item .slider-content {
+    margin-left: 0; }
+    /* line 698, mainapp/static/mainapp/assets/css/responsive.scss */
+    .main-banner .slider-item .slider-content h2 {
+      font-size: 52px;
+      line-height: 62px; }
+    /* line 702, mainapp/static/mainapp/assets/css/responsive.scss */
+    .main-banner .slider-item .slider-content h5 {
+      font-size: 26px; }
+  /* line 709, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card-xl {
+    flex-direction: column; }
+    /* line 713, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-card-xl .package-thumb-xl img {
+      width: 100%; }
+    /* line 717, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-card-xl .package-details-xl {
+      width: 100%; }
+  /* line 722, mainapp/static/mainapp/assets/css/responsive.scss */
+  .newsletter-area .newsletter-wrapper h2 {
+    font-size: 28px;
+    line-height: 37px; }
+  /* line 726, mainapp/static/mainapp/assets/css/responsive.scss */
+  .newsletter-area .newsletter-wrapper .newsletter-input button {
+    width: 110px;
+    font-size: 15px; }
+  /* package details page responsive */
+  /* line 733, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .p-short-info {
+    flex-wrap: wrap;
+    padding-top: 0; }
+    /* line 736, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-details .p-short-info .single-info {
+      margin-top: 20px; }
+  /* line 743, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table .table > :not(caption) > * > * {
+    padding: 10px 10px 10px 20px; }
+  /* line 747, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card {
+    flex-direction: column; }
+    /* line 749, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-avarag {
+      width: 100%;
+      padding: 30px 0; }
+    /* line 753, mainapp/static/mainapp/assets/css/responsive.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-info {
+      width: 100%; }
+  /* line 760, mainapp/static/mainapp/assets/css/responsive.scss */
+  .custom-select.package-option {
+    float: left;
+    margin-top: 30px; }
+  /* line 764, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-title-xl h3 {
+    font-size: 24px;
+    line-height: 35px; }
+  /* line 768, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-texts .blog-qoute strong {
+    font-size: 18px;
+    line-height: 30px; }
+  /* line 772, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h2 {
+    font-size: 55px;
+    line-height: 62px; }
+  /* line 777, mainapp/static/mainapp/assets/css/responsive.scss */
+  .newsletter-area .newsletter-wrapper {
+    padding: 25px; }
+  /* line 781, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info a {
+    font-size: 10px; }
+  /* line 786, mainapp/static/mainapp/assets/css/responsive.scss */
+  .find-form .findfrom-wrapper, .find-form-2 .findfrom-wrapper {
+    padding: 30px; }
+  /* line 790, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-img .blog-date {
+    padding: 10px 10px;
+    font-size: 14px; }
+  /* line 794, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-details .blog-info a.blog-writer, .blog-card .blog-details .blog-info a.blog-comment {
+    font-size: 14px; }
+  /* line 798, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-details a.blog-title {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 20px 0; }
+  /* line 804, mainapp/static/mainapp/assets/css/responsive.scss */
+  .feature-card .feature-content {
+    padding: 20px; }
+    /* line 807, mainapp/static/mainapp/assets/css/responsive.scss */
+    .feature-card .feature-content a.title {
+      font-size: 18px;
+      line-height: 28px; }
+    /* line 811, mainapp/static/mainapp/assets/css/responsive.scss */
+    .feature-card .feature-content strong {
+      font-size: 22px; }
+  /* line 817, mainapp/static/mainapp/assets/css/responsive.scss */
+  .section-head h2 {
+    font-size: 32px;
+    line-height: 38px; }
+  /* line 821, mainapp/static/mainapp/assets/css/responsive.scss */
+  .section-head h5 {
+    font-size: 18px; }
+  /* line 826, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-header .package-title h3 {
+    font-size: 22px; }
+  /* line 830, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-header .pd-review p {
+    line-height: 16px; }
+  /* line 833, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-index {
+    margin-right: 15px; }
+  /* line 837, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-details .package-tab .p-tab-content .tab-content-2 h5 {
+    font-size: 18px; }
+  /* line 840, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-texts .blog-qoute i.qoute-icon {
+    font-size: 38px;
+    margin-right: 18px; }
+  /* line 845, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details h3.sub-title {
+    font-size: 26px;
+    line-height: 36px; }
+  /* line 852, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-bottom .blog-tags h5 {
+    font-size: 20px; }
+  /* line 856, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-details .blog-bottom .blog-tags ul li a {
+    padding: 6px 14px;
+    font-size: 12px; }
+  /* line 862, mainapp/static/mainapp/assets/css/responsive.scss */
+  .error-wrapper h1 {
+    font-size: 60px;
+    margin-bottom: 45px; }
+  /* line 867, mainapp/static/mainapp/assets/css/responsive.scss */
+  .error-wrapper h2 {
+    margin-top: 60px;
+    font-size: 30px; }
+  /* line 872, mainapp/static/mainapp/assets/css/responsive.scss */
+  .error-wrapper .error-btn a {
+    font-size: 16px;
+    padding: 14px 35px; } }
+
+@media only screen and (min-width: 575.98px) and (max-width: 767px) {
+  /* line 878, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-img .blog-date {
+    padding: 10px 10px;
+    font-size: 14px; }
+  /* line 882, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-details .blog-info a.blog-writer, .blog-card .blog-details .blog-info a.blog-comment {
+    font-size: 13px; }
+  /* line 886, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-card .blog-details a.blog-title {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 20px 0; }
+  /* line 892, mainapp/static/mainapp/assets/css/responsive.scss */
+  .guide-card .guide-info ul.guide-links li a {
+    padding: 4px 5px;
+    margin-right: 15px; } }
+
+@media only screen and (max-width: 348px) {
+  /* line 900, mainapp/static/mainapp/assets/css/responsive.scss */
+  .package-card .package-details .package-info h5 {
+    font-size: 12px; }
+  /* line 905, mainapp/static/mainapp/assets/css/responsive.scss */
+  .navbar-icons .searchbar-open .searchbar-open, .navbar-icons .searchbar-open {
+    margin-left: 0px; }
+  /* line 908, mainapp/static/mainapp/assets/css/responsive.scss */
+  .navbar-icons .searchbar-open .user-dropdown-icon, .navbar-icons .user-dropdown-icon {
+    margin-left: 20px; }
+  /* line 911, mainapp/static/mainapp/assets/css/responsive.scss */
+  .navbar-icons .searchbar-open .mobile-menu, .navbar-icons .mobile-menu {
+    margin-left: 25px; }
+  /* line 916, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h2 {
+    font-size: 54px;
+    line-height: 60px; }
+  /* line 920, mainapp/static/mainapp/assets/css/responsive.scss */
+  .main-banner-2 .main-banner-content-2 h3 {
+    font-size: 30px;
+    line-height: 38px; }
+  /* line 925, mainapp/static/mainapp/assets/css/responsive.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm .blog-img-sm img {
+    max-width: 85px; } }

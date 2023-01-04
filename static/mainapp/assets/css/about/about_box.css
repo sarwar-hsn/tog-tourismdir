@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../../fonts/boxicons.eot');
+    src: url('../../fonts/boxicons.eot') format('embedded-opentype'), url('../../fonts/boxicons.woff2') format('woff2'), url('../fonts/boxicons.woff') format('woff'), url('../fonts/boxicons.ttf') format('truetype'), url('../fonts/boxicons.svg?#boxicons') format('svg')
+}
+
+.bx {
+    font-family: 'boxicons' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    display: inline-block;
+    text-transform: none;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.bx-chevron-left:before {
+    content: "\e9af"
+}
+
+.bx-chevron-right:before {
+    content: "\e9b2"
+}
+
+.bx-location-plus:before {
+    content: "\eaaa"
+}
+
+.bx-mail-send:before {
+    content: "\eab5"
+}
+
+.bx-phone:before {
+    content: "\eb14"
+}
+
+.bxs-envelope:before {
+    content: "\ecf4"
+}
+
+.bxs-phone:before {
+    content: "\edbb"
+}
+
+.bxl-dribbble:before {
+    content: "\ee7b"
+}
+
+.bxl-facebook:before {
+    content: "\ee81"
+}
+
+.bxl-instagram:before {
+    content: "\ee93"
+}
+
+.bxl-twitter:before {
+    content: "\eecc"
+}
+
+.bxl-whatsapp:before {
+    content: "\eed2"
+}

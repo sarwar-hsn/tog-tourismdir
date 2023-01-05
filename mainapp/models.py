@@ -55,7 +55,7 @@ class SocialMedia(models.Model):
     whatsapp = models.URLField(blank=True,null=True)
     twitter = models.URLField(blank=True,null=True)
     email = models.EmailField(blank=True,null=True)
-    phone = models.CharField(max_length=15,blank=True,null=True)
+    phone = models.CharField(max_length=25,blank=True,null=True)
     youtube = models.URLField(blank=True,null=True)
     website = models.URLField(blank=True,null=True)
     address = models.TextField(blank=True,null=True)

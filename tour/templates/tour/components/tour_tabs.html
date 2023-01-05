@@ -11,7 +11,7 @@
         <i class="flaticon-traveller"></i>
         <div class="info-texts">
             <strong>Group Size</strong>
-            <p>{{tour.size}} People</p>
+            <p>{{tour.min_size}}-{{tour.max_size}} People</p>
         </div>
     </div>
     <div class="single-info">
@@ -47,11 +47,11 @@
                             <h5>Overview</h5>
                             <p>{{tour.description|linebreaks}}</p>
                         </div>
-                        <div class="p-overview">
+                        <div class="p-overview mt-20">
                             <h5>Accommodation</h5>
                             <p>{{tour.accommodation|linebreaks}}</p>
                         </div>
-                        <div class="p-overview">
+                        <div class="p-overview mt-20">
                             <h5>Transportation</h5>
                             <p>{{tour.transportation|linebreaks}}</p>
                         </div>

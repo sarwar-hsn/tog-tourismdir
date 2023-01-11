@@ -1,10 +1,12 @@
 @charset "UTF-8";
+
 @font-face {
   font-family: "flaticon";
   src: url("./flaticon.ttf?2c5a1d331b80809feb2c65bb347d8792") format("truetype"), url("./flaticon.woff?2c5a1d331b80809feb2c65bb347d8792") format("woff"), url("./flaticon.woff2?2c5a1d331b80809feb2c65bb347d8792") format("woff2"), url("./flaticon.eot?2c5a1d331b80809feb2c65bb347d8792#iefix") format("embedded-opentype"), url("./flaticon.svg?2c5a1d331b80809feb2c65bb347d8792#flaticon") format("svg");
 }
 
-i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
   font-family: flaticon !important;
   font-style: normal;
   font-weight: normal !important;
@@ -110,4 +112,5 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 .flaticon-customer-service:before {
   content: "";
 }
+
 /*# sourceMappingURL=flaticon.css.map */

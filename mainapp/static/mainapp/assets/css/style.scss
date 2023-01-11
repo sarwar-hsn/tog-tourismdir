@@ -2215,6 +2215,7 @@ header>.header-area .nav-right {
   color: #fff;
   box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
   border-radius: 5px;
+  min-height: 95%;
 
   .achievement-icon {
     margin-bottom: 20px;
@@ -4975,6 +4976,7 @@ li.package-card-sm {
   display: flex;
   position: relative;
   overflow: hidden;
+  min-height: 80%;
 
   &:hover {
     &::after {

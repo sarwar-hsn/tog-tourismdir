@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+CSRF_TRUSTED_ORIGINS = ["https://"+os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1")]
 
 
 # Application definition
@@ -149,9 +150,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-AZURE = os.environ.get('AZURE_STORAGE_KEY', None)
-
-if AZURE is not None:
+if DEBUG is False:
     AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
     AZURE_ACCOUNT_NAME = "ottomangrpstorage"  # your account name
     AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')
@@ -185,7 +184,7 @@ if AZURE is not None:
     # ]
 else:
     STATIC_URL = 'static/'
-    STATIC_ROOT = "staticfiles/"
+    STATIC_ROOT = "static/"
     MEDIA_URL='media/'
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     STATICFILES_FINDERS = (
@@ -207,3 +206,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
+EMAIL_READY=(EMAIL_HOST_USER is not None and EMAIL_HOST_PASSWORD is not None)
+if EMAIL_READY:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True

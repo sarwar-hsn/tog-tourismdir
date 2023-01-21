@@ -1,4 +1,6 @@
 {% load static %}
+{% load compress %}
+
 
 <!doctype html>
 <html lang="en">
@@ -20,8 +22,12 @@
         <link rel="stylesheet" href="{% static 'mainapp/assets/css/boxicons.min.css' %}">
         <link rel="stylesheet" href="{% static 'mainapp/assets/font/flaticon.css' %}">
         <link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
-        <link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
+        {% comment %} <link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}"> {% endcomment %}
+        {% compress css %}
+            <link type="text/x-scss" href="{% static 'mainapp/assets/css/style.scss' %}"     rel="stylesheet" media="screen">
+            <link type="text/x-scss" href="{% static 'mainapp/assets/css/responsive.scss' %}"  rel="stylesheet" media="screen">
+        {% endcompress %}
     {% endblock cssfiles %}
 
 </head>

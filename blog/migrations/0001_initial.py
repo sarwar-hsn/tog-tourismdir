@@ -54,7 +54,6 @@ class Migration(migrations.Migration):
                 ('rating', models.IntegerField(default=0)),
                 ('view_count', models.PositiveIntegerField(default=0)),
                 ('overview', models.TextField()),
-                ('content', models.TextField(blank=True, null=True)),
                 ('author', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='blog.author')),
                 ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.category')),
             ],

@@ -7,7 +7,7 @@
 {% endblock seo %}
 
 
-{% block cssfiles %}
+{% comment %} {% block cssfiles %}
     <link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
-{% endblock cssfiles %}
+{% endblock cssfiles %} {% endcomment %}
 
 {% block content %}
  <!-- ===============  breadcrumb area start =============== -->
@@ -101,26 +101,25 @@
                 <div class="col-lg-6">
                     <div class="contact-details">
                         <h5 class="contact-d-head">Get In Touch</h5>
-                        <p>Suspendisse dolor risus, congue ac diam id, viverra facilisis dolor. Cras nec purus
-                            sagittis, varius tortor at, maximus erat. Sed at tellus id tellus lobortis dictum.
-                            Mauris dignissim, turpis vitae ullamcorper fermentum, sapien arcu aliquam arcu, in
-                            viverra quam est ac ex. Cras sed lectus eu.
+                        <p>For more detailed information about tour packages contact us. Our expert team will get back to you shortly. 
+                            Follow us on social media to get regular updates about tours. You can also subscribe to our newletter for latest information.
+                            You can mail us or text us in whatsapp 24/7. 
                         </p>
                         <ul class="office-clock">
                             <li>
                                 <div class="clock-icon"><i class='flaticon-clock-1'></i></div>
                                 <div class="clock-info">
-                                    <h5>Open Hour</h5>
-                                    <p>Sat - Thu At <br> 10.00Am to 10.00PM</p>
+                                    <h5>Working Hour</h5>
+                                    <p>Mon - Sat At <br> 9.00Am to 6.30PM</p>
                                 </div>
                             </li>
-                            <li>
+                            {% comment %} <li>
                                 <div class="clock-icon"><i class='flaticon-clock-1'></i></div>
                                 <div class="clock-info">
                                     <h5>Close Hour</h5>
                                     <p>Friday Office Close</p>
                                 </div>
-                            </li>
+                            </li> {% endcomment %}
                         </ul>
                     </div>
                 </div>

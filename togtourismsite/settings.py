@@ -26,7 +26,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
@@ -41,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', # new
     'django.contrib.sitemaps', # new 
     #installed app
-    'ckeditor',
+    'compressor',
     'django_filters',
     "crispy_forms",
     "crispy_bootstrap5",
@@ -70,6 +69,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
 ]
 
 ROOT_URLCONF = 'togtourismsite.urls'
@@ -103,6 +104,12 @@ if DB is not None:
             'HOST': hostname + ".postgres.database.azure.com",
             'USER': os.environ['DBUSER'],
             'PASSWORD': os.environ['DBPASS'] 
+        }
+    }
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+            'LOCATION': 'cache_table',
         }
     }
 else:
@@ -158,9 +165,20 @@ if AZURE is not None:
 
     STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_STATIC_CONTAINER}/'
     STATIC_ROOT = 'static/'
+    COMPRESS_URL = STATIC_URL
+    COMPRESS_STORAGE=STATICFILES_STORAGE
     
     MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_MEDIA_CONTAINER}/'
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+    )
+    COMPRESS_PRECOMPILERS = (
+        ('text/x-scss', 'django_libsass.SassCompiler'),
+    )
     # any static paths you want to publish
     # STATICFILES_DIRS = [
     #     os.path.join(BASE_DIR, 'demo', 'static')
@@ -169,22 +187,23 @@ else:
     STATIC_URL = 'static/'
     STATIC_ROOT = "staticfiles/"
     MEDIA_URL='media/'
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'mediafiles')
-
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        # other finders..
+        'compressor.finders.CompressorFinder',
+    )
+    COMPRESS_PRECOMPILERS = (
+        ('text/x-scss', 'django_libsass.SassCompiler'),
+    )
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': '50em',
-        'width': 1200,
-    },
-}
 
-CKEDITOR_BASEPATH = "static/ckeditor/ckeditor/"
+
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]

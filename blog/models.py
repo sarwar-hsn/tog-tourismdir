@@ -11,7 +11,6 @@ from django.conf import settings
 from django.db.models.signals import post_delete,post_save,pre_save
 from django.dispatch import receiver
 import shutil
-from ckeditor.fields import RichTextField
 # Create your models here.
 
 

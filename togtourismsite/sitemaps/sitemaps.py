@@ -7,6 +7,7 @@ from blog.models import Post,Category,Tag
 class TourSiteMap(Sitemap):
     changefreq = "weekly"
     priority = 0.6
+    protocol = 'https'
     def items(self):
         return Tour.objects.filter()
     def lastmod(self, obj):
@@ -16,7 +17,7 @@ class TourSiteMap(Sitemap):
 class BlogSiteMap(Sitemap):
     changefreq = "monthly"
     priority = .9
-
+    protocol = 'https'
     def items(self):
         return Post.objects.all()
 
@@ -27,6 +28,7 @@ class BlogSiteMap(Sitemap):
 class StaticViewSitemap(Sitemap):
     priority = 0.5
     changefreq = 'daily'
+    protocol = 'https'
     def items(self):
         return ['mainapp:mainapp-home', 'mainapp:mainapp-about', 'mainapp:mainapp-contact',
                 'tour-home','blog-home']
@@ -37,11 +39,13 @@ class StaticViewSitemap(Sitemap):
 class CategorySitemap(Sitemap):
     changefreq = "daily"
     priority = .6
+    protocol = 'https'
     def items(self):
         return Category.objects.all()
 
 class TagSitemap(Sitemap):
     changefreq = "daily"
     priority = .6
+    protocol = 'https'
     def items(self):
         return Tag.objects.all()

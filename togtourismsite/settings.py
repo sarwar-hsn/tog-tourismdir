@@ -24,8 +24,8 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)=="True"
-# DEBUG = True
+# DEBUG = os.environ.get('DEBUG', False)=="True"
+DEBUG = True
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'sorl.thumbnail',
     'storages',
-    # 'robots',
+    'robots',
     #myapps
     'authentication',
     'blog',
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID=1
+ROBOTS_USE_SCHEME_IN_HOST = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 

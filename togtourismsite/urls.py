@@ -25,7 +25,12 @@ from newsletterapp import urls as newsletterurls
 from django.contrib.sitemaps import GenericSitemap # new
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import sitemaps
-from robots import urls as roboturls
+from django.views.generic.base import TemplateView
+
+
+admin.site.site_header = "Ottoman Tours & Travels"
+admin.site.site_title = "TOG Tourism Admin Portal"
+admin.site.index_title = "Welcome to TOG"
 
 sitemaps={
     'blog':sitemaps.BlogSiteMap,
@@ -45,7 +50,7 @@ urlpatterns = [
     path('',include(mailappappurls)),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
-    path('robots.txt',include(roboturls)),
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 

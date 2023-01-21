@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+
+Host: https://ottmantravels.com
+Sitemap: https://ottmantravels.com/sitemap.xml

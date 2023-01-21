@@ -25,11 +25,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DEBUG', False)=="True"
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-CSRF_TRUSTED_ORIGINS = ["https://"+os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1")]
+# CSRF_TRUSTED_ORIGINS = ["https://"+os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1")]
 
 
 # Application definition

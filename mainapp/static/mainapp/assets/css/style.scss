@@ -3047,31 +3047,33 @@ header>.header-area .nav-right {
       position: relative;
       display: inline-block;
       border: 10px solid rgba(48, 79, 71, .1);
+    }
 
-      .video-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 100px;
-        width: 100px;
-        background: rgba(48, 79, 71, .1);
-        border: 10px solid rgba(48, 79, 71, .5);
-        border-radius: 50%;
-        text-align: center;
-        line-height: 110px;
-        cursor: pointer;
+    .video-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100px;
+      width: 100px;
+      background: rgba(48, 79, 71, .1);
+      border: 10px solid rgba(190, 148, 173, 0.5);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 110px;
+      cursor: pointer;
 
-        i {
-          color: $secondary-color;
+      i {
+        color: rgb(228, 29, 29);
 
-          &::before {
-            font-size: 40px;
-          }
+        &::before {
+          font-size: 40px;
         }
       }
     }
   }
+
+
 
   .about-wrapper-right {
     p {

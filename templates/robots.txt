@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /admin/
 
-Host: https://www.ottmantravels.com
-Sitemap: https://www.ottmantravels.com/sitemap.xml
+Host: https://ottmantravels.com
+Sitemap: https://ottmantravels.com/sitemap.xml

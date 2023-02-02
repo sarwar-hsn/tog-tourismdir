@@ -8,20 +8,6 @@
 {% endblock seo %}
 
 
-{% comment %} {% block cssfiles %}
-<link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/boxicons.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/font/flaticon.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
-{% compress css %}
-    <link type="text/x-scss" href="{% static 'mainapp/assets/css/style.scss' %}"     rel="stylesheet" media="screen">
-    <link type="text/x-scss" href="{% static 'mainapp/assets/css/responsive.scss' %}"  rel="stylesheet" media="screen">
-{% endcompress %}
-{% endblock cssfiles %} {% endcomment %}
-
 
 {% block content %}
     {% if messages %}

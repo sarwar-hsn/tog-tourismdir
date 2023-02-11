@@ -24,6 +24,20 @@ class Booking(models.Model):
     
     def __str__(self):
         return f"{self.email}-{self.name}"
+
+class BookingExtended(Booking):
+
+    trans_choice = [
+        ('taxi','Taxi'),
+        ('private_car','Private Car'),
+        ('vip_tour','VIP Tour')
+    ]
+        
+
+    arrival = models.CharField(max_length=100)
+    depart = models.CharField(max_length=100)
+    group_size = models.IntegerField(default=1)
+    
     
     
 #destination class start

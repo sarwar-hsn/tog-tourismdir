@@ -4,7 +4,7 @@ from django.contrib import messages
 from datetime import datetime
 from .models import Tour
 from .filter import TourFilter
-from .forms import BookingForm
+from .forms import BookingForm,BookingFormExtended
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
@@ -84,4 +84,10 @@ def booking(request):
         else:
             messages.error(request, "invalid form input")
     return redirect("tour-home")
+
+def bookingExt(request):
+    context ={
+        'form': BookingFormExtended
+    }
+    return render(request, 'tour/views/booking.html',context=context)
 

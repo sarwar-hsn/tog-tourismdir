@@ -24,16 +24,16 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)=="True"
-# DEBUG = True
+# DEBUG = os.environ.get('DEBUG', False)=="True"
+DEBUG = True
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = [
-        "https://ottomantravels.com"
-    ]
+# if not DEBUG:
+#     CSRF_TRUSTED_ORIGINS = [
+#         "https://ottomantravels.com"
+#     ]
 
 
 # Application definition
@@ -213,12 +213,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 
+
+
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 
 EMAIL_READY=(EMAIL_HOST_USER is not None and EMAIL_HOST_PASSWORD is not None)
+
 if EMAIL_READY:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
+else:
+    EMAIL_HOST = 'localhost'
+    EMAIL_PORT = 1025
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_USE_TLS = False
+    DEFAULT_FROM_EMAIL = 'testing@example.com'
 

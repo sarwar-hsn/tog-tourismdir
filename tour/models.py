@@ -5,41 +5,8 @@ from django.dispatch import receiver
 from django.template.defaultfilters import slugify
 from datetime import datetime
 from django.urls import reverse
-
-
-# Create your models here.
-
-class Booking(models.Model):
-    contact_choice = [
-        ('whatsapp','whatsapp'),
-        ('email','email'),
-        ('phone','phone')
-    ]
-    name = models.CharField(max_length=50)
-    email = models.EmailField( max_length=254)
-    phone_number = models.CharField(max_length=15)
-    contact_pref = models.CharField(max_length=20,choices=contact_choice)
-    message = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True,editable=False)
     
-    def __str__(self):
-        return f"{self.email}-{self.name}"
 
-class BookingExtended(Booking):
-
-    trans_choice = [
-        ('taxi','Taxi'),
-        ('private_car','Private Car'),
-        ('vip_tour','VIP Tour')
-    ]
-        
-
-    arrival = models.CharField(max_length=100)
-    depart = models.CharField(max_length=100)
-    group_size = models.IntegerField(default=1)
-    
-    
-    
 #destination class start
 def destination_thumb_path(instance,filename,*args, **kwargs):
     base,ext = os.path.splitext(filename)
@@ -142,10 +109,7 @@ def _tour_slug(sender,instance,created, **kwargs):
 
 post_save.connect(_tour_slug, sender=Tour)
     
-
-
-
-    
+   
 def tourimagedirectorypath(instance,filename,*args, **kwargs):
     base,ext = os.path.splitext(filename)
     ext = ext.lower()
@@ -161,3 +125,46 @@ class TourImage(models.Model):
         return f"{self.pk}"
 
 
+class Booking(models.Model):
+    contact_choice = [
+        ('whatsapp','whatsapp'),
+        ('email','email'),
+        ('phone','phone')
+    ]
+    packageId = models.BigIntegerField(null=True,blank=True)
+    name = models.CharField(max_length=50)
+    email = models.EmailField( max_length=254)
+    phone_number = models.CharField(max_length=15)
+    contact_pref = models.CharField(max_length=20,choices=contact_choice)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True,editable=False)
+    
+    def __str__(self):
+        return f"{self.email}-{self.name}"
+
+# class BookingExtended(models.Model):
+#     contact_choice = [
+#         ('whatsapp','whatsapp'),
+#         ('email','email'),
+#         ('phone','phone')
+#     ]
+#     trans_choice = [
+#         ('taxi','Taxi'),
+#         ('private_car','Private Car'),
+#         ('vip_tour','VIP Tour')
+#     ]
+
+#     name = models.CharField(max_length=50)
+#     email = models.EmailField( max_length=254)
+#     phone_number = models.CharField(max_length=15)
+#     contact_pref = models.CharField(max_length=20,choices=contact_choice) 
+#     arrival = models.CharField(max_length=100)
+#     depart = models.CharField(max_length=100)
+#     group_size = models.IntegerField(default=1)
+#     transportation = models.CharField(choices=trans_choice,max_length=50)
+#     destinations = models.ManyToManyField(Destination)
+#     message = models.TextField(blank=True,default="no message")
+#     created_at = models.DateTimeField(auto_now_add=True,editable=False)   
+    
+#     def __str__(self):
+#         return f"{self.email}-{self.name}"

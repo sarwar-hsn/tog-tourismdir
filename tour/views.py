@@ -4,7 +4,8 @@ from django.contrib import messages
 from datetime import datetime
 from .models import Tour
 from .filter import TourFilter
-from .forms import BookingForm,BookingFormExtended
+from .forms import BookingForm
+# from .forms import BookingFormExtended
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
@@ -62,6 +63,7 @@ def detail(request,tour_slug):
 
 def booking(request):
     if request.POST:
+        tourid = request.POST.get('packageid')
         form = BookingForm(request.POST)
         if form.is_valid():
             obj = form.save(commit=False)
@@ -69,8 +71,14 @@ def booking(request):
             obj.email =str(obj.email)
             obj.phone_number = str(obj.phone_number)
             obj.message = str(obj.message)
-            obj.save()
-            mail_body =f"time:{str(obj.created_at)}\nemail:{obj.email}\nnumber:{obj.phone_number}\nname:{obj.name}\ncontact preference:{obj.contact_pref}\nmessage:{obj.message}\n"
+            if tourid is not None:
+                obj.packageId = tourid
+            try:
+                obj.save()
+            except:
+                pass
+            
+            mail_body =f"requested tour id: {tourid}\ntime:{str(obj.created_at)}\nemail:{obj.email}\nnumber:{obj.phone_number}\nname:{obj.name}\ncontact preference:{obj.contact_pref}\nmessage:{obj.message}\n"
             try:
                 send_mail(
                     'booking query',
@@ -85,9 +93,26 @@ def booking(request):
             messages.error(request, "invalid form input")
     return redirect("tour-home")
 
-def bookingExt(request):
-    context ={
-        'form': BookingFormExtended
-    }
-    return render(request, 'tour/views/booking.html',context=context)
+# def bookingExt(request):
+
+#     if request.POST:
+#         form = BookingFormExtended(request.POST)
+#         if form.is_valid():
+#             obj = form.save(commit=False)
+#             print(obj.name)
+#             print(obj.email)
+#             print(obj.phone_number)
+#             print(obj.arrival)
+#             print(obj.depart)
+#             print(obj.transportation)
+#             print(obj.group_size)
+#             if obj.message:
+#                 print(obj.message)
+#             for dest in obj.destinations:
+#                 print(dest)
+
+#     context ={
+#         'form': BookingFormExtended
+#     }
+#     return render(request, 'tour/views/booking.html',context=context)
 

@@ -12,7 +12,7 @@ class BookingFormExtended(ModelForm):
 
     class Meta:
         model = BookingExtended
-        fields =['name','email','phone_number','arrival','depart','no_of_persons','transportation','destinations','contact_pref','message',]
+        fields =['name','email','phone_number','arrival','depart','adult','child','transportation','accommodation','destinations','contact_pref','message',]
         widgets = {
             'arrival': forms.DateInput(attrs={
                 'class': 'input-field check-in',
@@ -22,12 +22,22 @@ class BookingFormExtended(ModelForm):
                 'class': 'input-field check-in',
                 'placeholder':'dd-mm-yy',
             }),
-            'group_size':forms.TextInput(
+            'adult':forms.TextInput(
                 attrs={
-                    'placeholder':'no. of persons'
+                    'placeholder':'number of adults'
+                }
+            ),
+            'child':forms.TextInput(
+                attrs={
+                    'placeholder':'number of children'
                 }
             ),
             'message': forms.Textarea(attrs={'rows':3}),
+            'destinations':forms.CheckboxInput(
+                attrs={
+                    'class':'d-flex'
+                }
+            )
         }
 
     destinations = forms.ModelMultipleChoiceField(

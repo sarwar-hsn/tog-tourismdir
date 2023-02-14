@@ -148,6 +148,14 @@ class BookingExtended(models.Model):
         ('email','email'),
         ('phone','phone')
     ]
+
+    acc_choice = [
+        ('5-star','5-Star'),
+        ('4-star','4-Star'),
+        ('3-star','3-Star'),
+        ('airbnb','Airbnb')
+    ]
+
     trans_choice = [
         ('taxi','Taxi'),
         ('private_car','Private Car'),
@@ -160,8 +168,10 @@ class BookingExtended(models.Model):
     contact_pref = models.CharField(max_length=20,choices=contact_choice) 
     arrival = models.CharField(max_length=100)
     depart = models.CharField(max_length=100)
-    no_of_persons = models.IntegerField(default=1)
+    adult = models.IntegerField(default=1)
+    child = models.IntegerField(blank=True,null=True)
     transportation = models.CharField(choices=trans_choice,max_length=50)
+    accommodation = models.CharField(choices=acc_choice,max_length=20)
     destinations = models.ManyToManyField(Destination)
     message = models.TextField(blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True,editable=False)   
@@ -175,8 +185,10 @@ class BookingExtended(models.Model):
         values+="contact_pref\t: "+str(self.contact_pref)+"\n"
         values+="arrival\t: "+str(self.arrival)+"\n"
         values+="depart\t: "+str(self.depart)+"\n"
-        values+="no of persons\t: "+str(self.no_of_persons)+"\n"
+        values+="adult\t: "+str(self.adult)+"\n"
+        values+="child\t: "+str(self.child)+"\n"
         values+="transportation\t: "+str(self.transportation)+"\n"
+        values+="accommodation\t: "+str(self.accommodation)+"\n"
         values+="message\t: "+str(self.message)+"\n"
         values+="places want to visit:\n"
         for dest in self.destinations.all():

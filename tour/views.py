@@ -5,7 +5,7 @@ from datetime import datetime
 from .models import Tour
 from .filter import TourFilter
 from .forms import BookingForm
-# from .forms import BookingFormExtended
+from .forms import BookingFormExtended
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
@@ -93,26 +93,24 @@ def booking(request):
             messages.error(request, "invalid form input")
     return redirect("tour-home")
 
-# def bookingExt(request):
-
-#     if request.POST:
-#         form = BookingFormExtended(request.POST)
-#         if form.is_valid():
-#             obj = form.save(commit=False)
-#             print(obj.name)
-#             print(obj.email)
-#             print(obj.phone_number)
-#             print(obj.arrival)
-#             print(obj.depart)
-#             print(obj.transportation)
-#             print(obj.group_size)
-#             if obj.message:
-#                 print(obj.message)
-#             for dest in obj.destinations:
-#                 print(dest)
-
-#     context ={
-#         'form': BookingFormExtended
-#     }
-#     return render(request, 'tour/views/booking.html',context=context)
+def bookingExt(request):
+    if request.POST:
+        form = BookingFormExtended(request.POST)
+        if form.is_valid():
+            obj = form.save()
+            mail_body = obj.get_property_values()
+            try:
+                send_mail(
+                    'custom booking query',
+                    mail_body,
+                    'it@ottomangrp.com',
+                    ['info@ottomantravels.com'],
+                )
+                messages.success(request, "we received your request. we will contact soon")
+            except:
+                messages.error(request, "form submission failed")
+            return redirect("tour-home")
+    else:
+        form = BookingFormExtended()
+    return render(request, 'tour/views/booking.html',context={'form':form})
 

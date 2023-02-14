@@ -142,29 +142,46 @@ class Booking(models.Model):
     def __str__(self):
         return f"{self.email}-{self.name}"
 
-# class BookingExtended(models.Model):
-#     contact_choice = [
-#         ('whatsapp','whatsapp'),
-#         ('email','email'),
-#         ('phone','phone')
-#     ]
-#     trans_choice = [
-#         ('taxi','Taxi'),
-#         ('private_car','Private Car'),
-#         ('vip_tour','VIP Tour')
-#     ]
+class BookingExtended(models.Model):
+    contact_choice = [
+        ('whatsapp','whatsapp'),
+        ('email','email'),
+        ('phone','phone')
+    ]
+    trans_choice = [
+        ('taxi','Taxi'),
+        ('private_car','Private Car'),
+        ('vip_tour','VIP Tour')
+    ]
 
-#     name = models.CharField(max_length=50)
-#     email = models.EmailField( max_length=254)
-#     phone_number = models.CharField(max_length=15)
-#     contact_pref = models.CharField(max_length=20,choices=contact_choice) 
-#     arrival = models.CharField(max_length=100)
-#     depart = models.CharField(max_length=100)
-#     group_size = models.IntegerField(default=1)
-#     transportation = models.CharField(choices=trans_choice,max_length=50)
-#     destinations = models.ManyToManyField(Destination)
-#     message = models.TextField(blank=True,default="no message")
-#     created_at = models.DateTimeField(auto_now_add=True,editable=False)   
+    name = models.CharField(max_length=50)
+    email = models.EmailField( max_length=254)
+    phone_number = models.CharField(max_length=15)
+    contact_pref = models.CharField(max_length=20,choices=contact_choice) 
+    arrival = models.CharField(max_length=100)
+    depart = models.CharField(max_length=100)
+    no_of_persons = models.IntegerField(default=1)
+    transportation = models.CharField(choices=trans_choice,max_length=50)
+    destinations = models.ManyToManyField(Destination)
+    message = models.TextField(blank=True,null=True)
+    created_at = models.DateTimeField(auto_now_add=True,editable=False)   
     
-#     def __str__(self):
-#         return f"{self.email}-{self.name}"
+    def get_property_values(self):
+        values = ""
+        values+="created_at\t: "+str(self.created_at)+"\n"
+        values+="name\t: "+str(self.name)+"\n"
+        values+="email\t: "+str(self.email)+"\n"
+        values+="phone_number\t: "+str(self.phone_number)+"\n"
+        values+="contact_pref\t: "+str(self.contact_pref)+"\n"
+        values+="arrival\t: "+str(self.arrival)+"\n"
+        values+="depart\t: "+str(self.depart)+"\n"
+        values+="no of persons\t: "+str(self.no_of_persons)+"\n"
+        values+="transportation\t: "+str(self.transportation)+"\n"
+        values+="message\t: "+str(self.message)+"\n"
+        values+="places want to visit:\n"
+        for dest in self.destinations.all():
+            values+=dest.city+" "
+        return values
+    
+    def __str__(self):
+        return f"{self.email}-{self.name}"

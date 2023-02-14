@@ -4,6 +4,9 @@
 
 
 {% block content %}
+    {% if messages %}
+        {% include 'components/messages.html' with messages=messages%}
+    {% endif %}
     <div class=' d-flex justify-content-center align-items-center '>
         <form action="{% url 'tour-booking-ext' %}" method="post" class="my-class">
             {% csrf_token %}

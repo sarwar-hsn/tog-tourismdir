@@ -24,16 +24,16 @@ AUTH_USER_MODEL = 'authentication.User'
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG', False)=="True"
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)=="True"
+# DEBUG = True
 
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-# if not DEBUG:
-#     CSRF_TRUSTED_ORIGINS = [
-#         "https://ottomantravels.com"
-#     ]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+        "https://ottomantravels.com"
+    ]
 
 
 # Application definition
@@ -231,4 +231,6 @@ else:
     EMAIL_HOST_PASSWORD = ''
     EMAIL_USE_TLS = False
     DEFAULT_FROM_EMAIL = 'testing@example.com'
+    #on terminal
+    #python -m smtpd -n -c DebuggingServer localhost:1025
 

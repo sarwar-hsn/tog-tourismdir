@@ -33,9 +33,9 @@ admin.site.site_title = "TOG Tourism Admin Portal"
 admin.site.index_title = "Welcome to TOG"
 
 sitemaps={
+    'static':sitemaps.StaticViewSitemap,
     'blog':sitemaps.BlogSiteMap,
     'tour':sitemaps.TourSiteMap,
-    'static':sitemaps.StaticViewSitemap,
     'blogcategories':sitemaps.CategorySitemap,
     'blogtags':sitemaps.TagSitemap,
 }

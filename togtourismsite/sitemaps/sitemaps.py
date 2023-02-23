@@ -4,29 +4,9 @@ from tour.models import Tour,TourImage
 from blog.models import Post,Category,Tag
 
 
-class TourSiteMap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.6
-    protocol = 'https'
-    def items(self):
-        return Tour.objects.filter()
-    def lastmod(self, obj):
-        return obj.last_modified
-
-
-class BlogSiteMap(Sitemap):
-    changefreq = "monthly"
-    priority = .9
-    protocol = 'https'
-    def items(self):
-        return Post.objects.all()
-
-    def lastmod(self,obj):
-        return obj.last_modified
-        
 
 class StaticViewSitemap(Sitemap):
-    priority = 0.5
+    priority = 1
     changefreq = 'daily'
     protocol = 'https'
     def items(self):
@@ -36,16 +16,40 @@ class StaticViewSitemap(Sitemap):
         return reverse(item)
 
 
+class TourSiteMap(Sitemap):
+    changefreq = "weekly"
+    priority = 0.7
+    protocol = 'https'
+    def items(self):
+        return Tour.objects.filter()
+    def lastmod(self, obj):
+        return obj.last_modified
+
+
+class BlogSiteMap(Sitemap):
+    changefreq = "daily"
+    priority = 0.9
+    protocol = 'https'
+    def items(self):
+        return Post.objects.all()
+
+    def lastmod(self,obj):
+        return obj.last_modified
+        
+
+
+
+
 class CategorySitemap(Sitemap):
     changefreq = "daily"
-    priority = .6
+    priority = .7
     protocol = 'https'
     def items(self):
         return Category.objects.all()
 
 class TagSitemap(Sitemap):
     changefreq = "daily"
-    priority = .6
+    priority = .7
     protocol = 'https'
     def items(self):
         return Tag.objects.all()

@@ -100,19 +100,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
 
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-if DEVELOPMENT_MODE is True:
+DB = os.getenv("DATABASE_URL", None)
+
+if DB is not None:
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    }
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+            'LOCATION': 'cache_table',
+        }
+    }
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
 
 # DB = (os.getenv('DBHOST',None) and os.getenv('DBNAME',None) and os.getenv('DBUSER',None) and os.getenv('DBPASS',None))
@@ -175,6 +180,7 @@ USE_TZ = True
 #DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
 
 USE_SPACES = os.getenv('USE_SPACES') == 'TRUE'
+
 if USE_SPACES:
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') #DO00CMN7KUXDPNNMFHNP 
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') #dGv/hGAMwqMOoS+5RCZdbluL0wUhPZsLjjn4K55SWZQ

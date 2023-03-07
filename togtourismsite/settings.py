@@ -47,12 +47,12 @@ INSTALLED_APPS = [
     'django.contrib.sites', # new
     'django.contrib.sitemaps', # new 
     #installed app
+    'sorl.thumbnail',
     'compressor',
     'django_filters',
     "crispy_forms",
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
-    'sorl.thumbnail',
     'storages',
     #myapps
     'authentication',

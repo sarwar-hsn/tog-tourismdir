@@ -33,7 +33,7 @@
                         </div>
                         <div class="blog-img-xl">
                             {%thumbnail blog.getthumbnail '400x450' quality=75 as im%}
-                            <img src="{{im.url|resolution:"2x"}}" alt="{{blog.alttag}}" width={{im.width}}>
+                                <img src="{{im.url|resolution:"2x"}}" alt="{{blog.alttag}}" width={{im.width}}>
                             {%endthumbnail%}
                             <div class="blog-date"><i class="flaticon-calendar"></i>{{blog.last_modified | date}}</div>
                         </div>

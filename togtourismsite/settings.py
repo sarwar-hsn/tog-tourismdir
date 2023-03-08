@@ -191,40 +191,40 @@ if USE_SPACES:
     # static settings
     AWS_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
+    STATIC_ROOT = STATIC_URL
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    
+    COMPRESS_URL = STATIC_URL
+    COMPRESS_STORAGE=STATICFILES_STORAGE
+
     # public media settings
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_ENDPOINT_URL}/{PUBLIC_MEDIA_LOCATION}/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
-    
-    # STATICFILES_FINDERS = (
-    #     'django.contrib.staticfiles.finders.FileSystemFinder',
-    #     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #     # other finders..
-    #     'compressor.finders.CompressorFinder',
-    # )
-    # COMPRESS_PRECOMPILERS = (
-    #     ('text/x-scss', 'django_libsass.SassCompiler'),
-    # )
+    STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+    )
+    COMPRESS_PRECOMPILERS = (
+        ('text/x-scss', 'django_libsass.SassCompiler'),
+    )
 else:
     STATIC_URL = 'static/'
     STATIC_ROOT = "static/"
     MEDIA_URL='media/'
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-    # STATICFILES_FINDERS = (
-    #     'django.contrib.staticfiles.finders.FileSystemFinder',
-    #     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #     # other finders..
-    #     'compressor.finders.CompressorFinder',
-    # )
-    # COMPRESS_PRECOMPILERS = (
-    #     ('text/x-scss', 'django_libsass.SassCompiler'),
-    # )
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        # other finders..
+        'compressor.finders.CompressorFinder',
+    )
+    COMPRESS_PRECOMPILERS = (
+        ('text/x-scss', 'django_libsass.SassCompiler'),
+    )
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
 
 
 # if DEBUG is False:

@@ -198,31 +198,33 @@ if USE_SPACES:
     MEDIA_URL = f'https://{AWS_S3_ENDPOINT_URL}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
     
-    STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        # other finders..
-        'compressor.finders.CompressorFinder',
-    )
-    COMPRESS_PRECOMPILERS = (
-        ('text/x-scss', 'django_libsass.SassCompiler'),
-    )
+    # STATICFILES_FINDERS = (
+    #     'django.contrib.staticfiles.finders.FileSystemFinder',
+    #     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #     # other finders..
+    #     'compressor.finders.CompressorFinder',
+    # )
+    # COMPRESS_PRECOMPILERS = (
+    #     ('text/x-scss', 'django_libsass.SassCompiler'),
+    # )
 else:
     STATIC_URL = 'static/'
     STATIC_ROOT = "static/"
     MEDIA_URL='media/'
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-    STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        # other finders..
-        'compressor.finders.CompressorFinder',
-    )
-    COMPRESS_PRECOMPILERS = (
-        ('text/x-scss', 'django_libsass.SassCompiler'),
-    )
+    # STATICFILES_FINDERS = (
+    #     'django.contrib.staticfiles.finders.FileSystemFinder',
+    #     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #     # other finders..
+    #     'compressor.finders.CompressorFinder',
+    # )
+    # COMPRESS_PRECOMPILERS = (
+    #     ('text/x-scss', 'django_libsass.SassCompiler'),
+    # )
 
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 
 # if DEBUG is False:

@@ -192,7 +192,7 @@ if USE_SPACES:
     AWS_LOCATION = 'tog-tourism-dir'
     STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
     STATIC_ROOT = STATIC_URL
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.StaticStorage'
     COMPRESS_URL = STATIC_URL
     COMPRESS_STORAGE=STATICFILES_STORAGE
 
@@ -224,6 +224,7 @@ else:
     COMPRESS_PRECOMPILERS = (
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]

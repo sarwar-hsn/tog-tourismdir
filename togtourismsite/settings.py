@@ -186,7 +186,7 @@ if USE_SPACES:
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') #dGv/hGAMwqMOoS+5RCZdbluL0wUhPZsLjjn4K55SWZQ
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME') #ott
     AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_ENDPOINT_URL = 'ott.ams3.cdn.digitaloceanspaces.com'
+    AWS_S3_ENDPOINT_URL = 'https://ott.ams3.digitaloceanspaces.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
     AWS_LOCATION = 'static'

@@ -183,6 +183,7 @@ if DEBUG is False:
     'compressor.finders.CompressorFinder',
     )
     COMPRESS_PRECOMPILERS = (
+        ('text/x-sass', 'django_libsass.SassCompiler'),
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
     # any static paths you want to publish
@@ -191,16 +192,19 @@ if DEBUG is False:
     # ]
 else:
     STATIC_URL = 'static/'
-    STATIC_ROOT = "static/"
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "static"),
+    )
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
     MEDIA_URL='media/'
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-        # other finders..
         'compressor.finders.CompressorFinder',
     )
     COMPRESS_PRECOMPILERS = (
+        ('text/x-sass', 'django_libsass.SassCompiler'),
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
 

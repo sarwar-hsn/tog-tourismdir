@@ -186,10 +186,10 @@ if USE_SPACES:
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') #dGv/hGAMwqMOoS+5RCZdbluL0wUhPZsLjjn4K55SWZQ
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME') #ott
     AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_ENDPOINT_URL = 'https://ott.ams3.cdn.digitaloceanspaces.com'
+    AWS_S3_ENDPOINT_URL = 'ott.ams3.cdn.digitaloceanspaces.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
-    AWS_LOCATION = 'tog-tourism-dir'
+    AWS_LOCATION = 'static'
     STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
     STATIC_ROOT = STATIC_URL
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

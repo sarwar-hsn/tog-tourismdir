@@ -190,7 +190,7 @@ if USE_SPACES:
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
     AWS_LOCATION = 'tog-tourism-dir'
-    STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
+    STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
     STATIC_ROOT = STATIC_URL
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     COMPRESS_URL = STATIC_URL
@@ -198,7 +198,7 @@ if USE_SPACES:
 
     # public media settings
     PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_ENDPOINT_URL}/{PUBLIC_MEDIA_LOCATION}/'
+    MEDIA_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, PUBLIC_MEDIA_LOCATION)
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
     STATICFILES_FINDERS = (

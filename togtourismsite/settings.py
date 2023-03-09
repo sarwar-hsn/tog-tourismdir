@@ -170,7 +170,7 @@ if USE_SPACES:
     STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
 
     STATIC_ROOT = 'static/'
-    COMPRESS_URL = 'https://tourism-bucket.ams3.digitaloceanspaces.com'
+    COMPRESS_URL = 'https://tourism-bucket.ams3.digitaloceanspaces.com/'
     COMPRESS_STORAGE = STATICFILES_STORAGE
     COMPRESS_OFFLINE_MANIFEST_STORAGE = STATICFILES_STORAGE
 

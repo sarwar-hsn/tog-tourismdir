@@ -194,7 +194,7 @@ if USE_SPACES:
     # static settings
     # AWS_LOCATION = 'root-dir'
     # STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-    STATIC_URL = 'https://%s/' % (AWS_S3_CUSTOM_DOMAIN)
+    STATIC_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
     STATIC_ROOT = STATIC_URL
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
     COMPRESS_URL = STATIC_URL

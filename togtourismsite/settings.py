@@ -189,7 +189,6 @@ if USE_SPACES:
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME') #tourism-bucket
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_ENDPOINT_URL = 'https://ams3.digitaloceanspaces.com'
-    AWS_S3_CUSTOM_DOMAIN = "https://tourism-bucket.ams3.cdn.digitaloceanspaces.com"
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
     # AWS_LOCATION = 'root-dir'

@@ -193,11 +193,9 @@ if USE_SPACES:
     # static settings
     # AWS_LOCATION = 'root-dir'
     # STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-    STATIC_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
+    STATIC_URL = COMPRESS_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
     STATIC_ROOT = STATIC_URL
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
-    C0MURL =  'https://tourism-bucket.ams3.digitaloceanspaces.com'
-    COMPRESS_URL = 'https://%s/' % (COMPRESS_URL)
     COMPRESS_STORAGE=STATICFILES_STORAGE
 
     # public media settings

@@ -165,14 +165,17 @@ if USE_SPACES:
 
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
     DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
-    
-    STATIC_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
+
+    AWS_LOCATION = 'static'
+    STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+
     STATIC_ROOT = 'static/'
     COMPRESS_URL = STATIC_URL
     COMPRESS_STORAGE = STATICFILES_STORAGE
     COMPRESS_OFFLINE_MANIFEST_STORAGE = STATICFILES_STORAGE
 
-    MEDIA_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
+    PUBLIC_MEDIA_LOCATION = 'media'
+    MEDIA_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, PUBLIC_MEDIA_LOCATION)
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     
     STATICFILES_FINDERS = (

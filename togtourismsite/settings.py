@@ -174,7 +174,7 @@ if USE_SPACES:
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
 
     PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, PUBLIC_MEDIA_LOCATION)
+    MEDIA_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     
     #compressor

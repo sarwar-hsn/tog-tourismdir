@@ -162,24 +162,19 @@ if USE_SPACES:
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_ENDPOINT_URL = 'https://ams3.digitaloceanspaces.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    # static settings
-    # AWS_LOCATION = 'root-dir'
-    # STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
-    STATIC_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
-    STATIC_ROOT = STATIC_URL
-    COMPRESS_ROOT = STATIC_ROOT
-    
-    COMPRESS_URL = STATIC_URL
+
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
+    
+    STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}'
+    STATIC_ROOT = 'static/'
+    COMPRESS_URL = STATIC_URL
     COMPRESS_STORAGE = STATICFILES_STORAGE
     COMPRESS_OFFLINE_MANIFEST_STORAGE = STATICFILES_STORAGE
 
-    # public media settings
-    # PUBLIC_MEDIA_LOCATION = 'media'
-    # MEDIA_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, PUBLIC_MEDIA_LOCATION)
     MEDIA_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-    DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
+    
     STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

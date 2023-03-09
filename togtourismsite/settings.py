@@ -166,7 +166,7 @@ if USE_SPACES:
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
     DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
     
-    STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}'
+    STATIC_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
     STATIC_ROOT = 'static/'
     COMPRESS_URL = STATIC_URL
     COMPRESS_STORAGE = STATICFILES_STORAGE

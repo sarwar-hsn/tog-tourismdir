@@ -191,10 +191,10 @@ if USE_SPACES:
     AWS_S3_ENDPOINT_URL = 'https://ott.ams3.digitaloceanspaces.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
-    AWS_LOCATION = 'static'
+    AWS_LOCATION = 'root-dir'
     STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
     STATIC_ROOT = STATIC_URL
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
     COMPRESS_URL = STATIC_URL
     COMPRESS_STORAGE=STATICFILES_STORAGE
 
@@ -227,68 +227,12 @@ else:
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
     
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-
-# if DEBUG is False:
-#     AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
-#     AZURE_ACCOUNT_NAME = "ottomangrpstorage"  # your account name
-#     AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')
-#     AZURE_STATIC_CONTAINER = os.environ.get('AZURE_STATIC_CONTAINER', 'static')
-
-#     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.AzureStaticStorage'
-#     DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
-
-#     # AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.azureedge.net'  # CDN URL
-#     AZURE_CUSTOM_DOMAIN = os.environ.get('AZURE_CUSTOM_DOMAIN')  # Files URL
-
-#     STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_STATIC_CONTAINER}/'
-#     STATIC_ROOT = 'static/'
-#     COMPRESS_URL = STATIC_URL
-#     COMPRESS_STORAGE=STATICFILES_STORAGE
-    
-#     MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_MEDIA_CONTAINER}/'
-#     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-#     STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#     # other finders..
-#     'compressor.finders.CompressorFinder',
-#     )
-#     COMPRESS_PRECOMPILERS = (
-#         ('text/x-scss', 'django_libsass.SassCompiler'),
-#     )
-#     # any static paths you want to publish
-#     # STATICFILES_DIRS = [
-#     #     os.path.join(BASE_DIR, 'demo', 'static')
-#     # ]
-# else:
-#     STATIC_URL = 'static/'
-#     STATIC_ROOT = "static/"
-#     MEDIA_URL='media/'
-#     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-#     STATICFILES_FINDERS = (
-#         'django.contrib.staticfiles.finders.FileSystemFinder',
-#         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#         # other finders..
-#         'compressor.finders.CompressorFinder',
-#     )
-#     COMPRESS_PRECOMPILERS = (
-#         ('text/x-scss', 'django_libsass.SassCompiler'),
-# )
-
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
+
 
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') 

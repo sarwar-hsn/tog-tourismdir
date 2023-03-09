@@ -214,9 +214,9 @@ if USE_SPACES:
     )
 else:
     STATIC_URL = 'static/'
-    STATIC_ROOT = "static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
     MEDIA_URL='media/'
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media_cdn')
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -227,6 +227,10 @@ else:
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
     
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

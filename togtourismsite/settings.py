@@ -101,9 +101,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
-
 DB = os.getenv("DATABASE_URL", None)
-
 if DB is not None:
     DATABASES = {
         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
@@ -122,32 +120,6 @@ else:
         }
     }
 
-# DB = (os.getenv('DBHOST',None) and os.getenv('DBNAME',None) and os.getenv('DBUSER',None) and os.getenv('DBPASS',None))
-
-# if DB is not None:
-#     hostname = os.environ['DBHOST']
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.postgresql',
-#             'NAME': os.environ['DBNAME'],
-#             'HOST': hostname + ".postgres.database.azure.com",
-#             'USER': os.environ['DBUSER'],
-#             'PASSWORD': os.environ['DBPASS'] 
-#         }
-#     }
-#     CACHES = {
-#         'default': {
-#             'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#             'LOCATION': 'cache_table',
-#         }
-#     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -194,11 +166,13 @@ if USE_SPACES:
     # AWS_LOCATION = 'root-dir'
     # STATIC_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
     STATIC_URL = 'https://%s/' % (AWS_S3_ENDPOINT_URL)
-    COMURL = 'tourism-bucket.ams3.digitaloceanspaces.com'
-    COMPRESS_URL = COMURL
     STATIC_ROOT = STATIC_URL
+    COMPRESS_ROOT = STATIC_ROOT
+    
+    COMPRESS_URL = STATIC_URL
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
-    COMPRESS_STORAGE=STATICFILES_STORAGE
+    COMPRESS_STORAGE = STATICFILES_STORAGE
+    COMPRESS_OFFLINE_MANIFEST_STORAGE = STATICFILES_STORAGE
 
     # public media settings
     # PUBLIC_MEDIA_LOCATION = 'media'

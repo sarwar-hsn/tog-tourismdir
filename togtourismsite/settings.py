@@ -21,19 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #user model
 AUTH_USER_MODEL = 'authentication.User'
 
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',get_random_secret_key())
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get('DEBUG', False)=="True"
+# DEBUG = True
 
 
-# DEBUG = os.getenv("DEBUG", "False") == "True"
-DEBUG = True
-
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
-
-# if not DEBUG:
-#     CSRF_TRUSTED_ORIGINS = [
-#         "https://ottomantravels.com"
-#     ]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+        "https://ottomantravels.com"
+    ]
 
 
 # Application definition
@@ -101,10 +101,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'togtourismsite.wsgi.application'
 
-DB = os.getenv("DATABASE_URL", None)
+DB = (os.getenv('DBHOST',None) and os.getenv('DBNAME',None) and os.getenv('DBUSER',None) and os.getenv('DBPASS',None))
+
 if DB is not None:
+    hostname = os.environ['DBHOST']
     DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['DBNAME'],
+            'HOST': hostname + ".postgres.database.azure.com",
+            'USER': os.environ['DBUSER'],
+            'PASSWORD': os.environ['DBPASS'] 
+        }
     }
     CACHES = {
         'default': {
@@ -114,12 +122,11 @@ if DB is not None:
     }
 else:
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -150,33 +157,25 @@ USE_L10N = True
 USE_TZ = True
 
 
-USE_SPACES = os.getenv('USE_SPACES') == 'TRUE'
+if DEBUG is False:
+    AZURE_STORAGE_KEY = os.environ.get('AZURE_STORAGE_KEY', False)
+    AZURE_ACCOUNT_NAME = "ottomangrpstorage"  # your account name
+    AZURE_MEDIA_CONTAINER = os.environ.get('AZURE_MEDIA_CONTAINER', 'media')
+    AZURE_STATIC_CONTAINER = os.environ.get('AZURE_STATIC_CONTAINER', 'static')
 
-if USE_SPACES:
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') #DO00CMN7KUXDPNNMFHNP 
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') #dGv/hGAMwqMOoS+5RCZdbluL0wUhPZsLjjn4K55SWZQ
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME') #tourism-bucket
-    AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    AWS_S3_ENDPOINT_URL = "https://ams3.digitaloceanspaces.com"
-    AWS_S3_CUSTOM_DOMAIN = 'tourism-bucket.ams3.cdn.digitaloceanspaces.com'
+    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.AzureStaticStorage'
+    DEFAULT_FILE_STORAGE = "togtourismsite.cdn.backends.AzureMediaStorage"
 
-    STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
+    # AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.azureedge.net'  # CDN URL
+    AZURE_CUSTOM_DOMAIN = os.environ.get('AZURE_CUSTOM_DOMAIN')  # Files URL
 
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-    STATICFILES_LOCATION = 'static'
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-    PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
-
-    
-    #compressor
-    COMPRESS_STORAGE = STATICFILES_STORAGE
-    COMPRESS_ROOT = STATIC_ROOT
+    STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_STATIC_CONTAINER}/'
+    STATIC_ROOT = 'static/'
     COMPRESS_URL = STATIC_URL
+    COMPRESS_STORAGE=STATICFILES_STORAGE
+    
+    MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{AZURE_MEDIA_CONTAINER}/'
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -186,11 +185,15 @@ if USE_SPACES:
     COMPRESS_PRECOMPILERS = (
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
+    # any static paths you want to publish
+    # STATICFILES_DIRS = [
+    #     os.path.join(BASE_DIR, 'demo', 'static')
+    # ]
 else:
     STATIC_URL = 'static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+    STATIC_ROOT = "static/"
     MEDIA_URL='media/'
-    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media_cdn')
+    MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -200,12 +203,17 @@ else:
     COMPRESS_PRECOMPILERS = (
         ('text/x-scss', 'django_libsass.SassCompiler'),
     )
-    
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
 THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
+
 
 
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')

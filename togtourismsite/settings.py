@@ -151,13 +151,14 @@ USE_TZ = True
 
 
 USE_SPACES = os.getenv('USE_SPACES') == 'TRUE'
+
 if USE_SPACES:
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID') #DO00CMN7KUXDPNNMFHNP 
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY') #dGv/hGAMwqMOoS+5RCZdbluL0wUhPZsLjjn4K55SWZQ
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME') #tourism-bucket
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    AWS_S3_ENDPOINT_URL = "ams3.cdn.digitaloceanspaces.com"
+    AWS_S3_ENDPOINT_URL = "https://ams3.digitaloceanspaces.com"
     AWS_S3_CUSTOM_DOMAIN = 'tourism-bucket.ams3.cdn.digitaloceanspaces.com'
 
     STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
@@ -165,11 +166,11 @@ if USE_SPACES:
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
     STATICFILES_LOCATION = 'static'
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, STATICFILES_LOCATION)
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
     MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
     PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = "https://%s/%s/" % (AWS_S3_ENDPOINT_URL, PUBLIC_MEDIA_LOCATION)
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
 
     
     #compressor

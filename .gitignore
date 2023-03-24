@@ -40,6 +40,8 @@ __pycache__/
 .Python
 static/
 media/
+collected_static/
+collected_media/
 staticfiles/
 mediafiles/
 env/

@@ -1,0 +1,4394 @@
+@charset "UTF-8";
+/* ==============
+Template name : TourX - Tour and Travel Agency HTML Template
+Author : Egens Lab
+Version : 1.0.1
+Created : 
+Last update : 
+================= */
+/* CSS Index 
+-----------------------------------
+1. Global CSS
+2. Topbar area
+3. Navbar area
+4. Banner area
+5. Find Form Area
+6. Package area
+7. Destinations area
+8. Achievement area
+9. Review area
+10. Feature area
+11. Blog area
+12. newsletter-area
+13. Footer area
+14.  About wrapper
+15. Guide wrapper
+16. Package Page
+17. Blog Page
+18. Error page
+19. Faq page
+20. Gallary Page
+21. Contact Page
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*====================
+    1. Global CSS
+======================*/
+/*--- Color ---*/
+/*--- Font Family ---*/
+/* line 57, mainapp/static/mainapp/assets/css/style.scss */
+* {
+  box-sizing: border-box;
+  outline: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
+
+/* line 64, mainapp/static/mainapp/assets/css/style.scss */
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  background-color: #cce6f03b; }
+
+/* line 72, mainapp/static/mainapp/assets/css/style.scss */
+.mt-120 {
+  margin-top: 120px; }
+
+/* line 76, mainapp/static/mainapp/assets/css/style.scss */
+.mt-100 {
+  margin-top: 100px; }
+
+/* line 80, mainapp/static/mainapp/assets/css/style.scss */
+.mt-105 {
+  margin-top: 105px; }
+
+/* line 84, mainapp/static/mainapp/assets/css/style.scss */
+.mt-90 {
+  margin-top: 90px; }
+
+/* line 88, mainapp/static/mainapp/assets/css/style.scss */
+.mt-30 {
+  margin-top: 30px; }
+
+/* line 92, mainapp/static/mainapp/assets/css/style.scss */
+.mt-24 {
+  margin-top: 24px; }
+
+/* line 96, mainapp/static/mainapp/assets/css/style.scss */
+.mt-20 {
+  margin-top: 20px; }
+
+/* line 100, mainapp/static/mainapp/assets/css/style.scss */
+.mt-50 {
+  margin-top: 50px; }
+
+/* line 104, mainapp/static/mainapp/assets/css/style.scss */
+.mt-40 {
+  margin-top: 40px; }
+
+/* line 108, mainapp/static/mainapp/assets/css/style.scss */
+.mb-40 {
+  margin-bottom: 40px; }
+
+/* line 112, mainapp/static/mainapp/assets/css/style.scss */
+.mb-30 {
+  margin-bottom: 30px; }
+
+/* line 116, mainapp/static/mainapp/assets/css/style.scss */
+.mb-20 {
+  margin-bottom: 20px; }
+
+/* line 120, mainapp/static/mainapp/assets/css/style.scss */
+.p-60 {
+  padding: 60px 0; }
+
+/* line 124, mainapp/static/mainapp/assets/css/style.scss */
+.p-70 {
+  padding: 70px 0; }
+
+/* line 128, mainapp/static/mainapp/assets/css/style.scss */
+.p-80 {
+  padding: 80px 0; }
+
+/* line 132, mainapp/static/mainapp/assets/css/style.scss */
+.pt-120 {
+  padding-top: 120px; }
+
+/* line 136, mainapp/static/mainapp/assets/css/style.scss */
+.pt-105 {
+  padding-top: 105px; }
+
+/* line 140, mainapp/static/mainapp/assets/css/style.scss */
+.pt-100 {
+  padding-top: 100px; }
+
+/* line 144, mainapp/static/mainapp/assets/css/style.scss */
+.pt-40 {
+  padding-top: 40px; }
+
+/* line 148, mainapp/static/mainapp/assets/css/style.scss */
+.pt-90 {
+  padding-top: 90px; }
+
+/* line 152, mainapp/static/mainapp/assets/css/style.scss */
+.pt-80 {
+  padding-top: 80px; }
+
+/* line 156, mainapp/static/mainapp/assets/css/style.scss */
+.pb-60 {
+  padding-bottom: 60px; }
+
+/* line 160, mainapp/static/mainapp/assets/css/style.scss */
+.pb-30 {
+  padding-bottom: 30px; }
+
+/* line 164, mainapp/static/mainapp/assets/css/style.scss */
+.pb-50 {
+  padding-bottom: 50px; }
+
+/* line 168, mainapp/static/mainapp/assets/css/style.scss */
+.pb-45 {
+  padding-bottom: 45px; }
+
+/* line 172, mainapp/static/mainapp/assets/css/style.scss */
+.pb-40 {
+  padding-bottom: 40px; }
+
+/* line 176, mainapp/static/mainapp/assets/css/style.scss */
+.pb-100 {
+  padding-bottom: 100px; }
+
+/* line 181, mainapp/static/mainapp/assets/css/style.scss */
+p {
+  font-size: 16px;
+  line-height: 27px;
+  color: #3d3d3d;
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 0; }
+
+/* line 189, mainapp/static/mainapp/assets/css/style.scss */
+h2 {
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+  text-transform: capitalize;
+  color: #262339; }
+
+/* line 200, mainapp/static/mainapp/assets/css/style.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0; }
+
+/* line 210, mainapp/static/mainapp/assets/css/style.scss */
+input[type=text],
+input[type=email],
+input[type=date],
+input[type=number],
+input[type=tel] {
+  padding: 8px 15px;
+  display: block;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  height: 50px; }
+
+/* line 224, mainapp/static/mainapp/assets/css/style.scss */
+input:focus {
+  outline: none !important;
+  box-shadow: none; }
+
+/* line 229, mainapp/static/mainapp/assets/css/style.scss */
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px; }
+
+/* line 235, mainapp/static/mainapp/assets/css/style.scss */
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #031C39; }
+
+/* line 245, mainapp/static/mainapp/assets/css/style.scss */
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #031C39;
+  border-radius: 5px;
+  background: #fff; }
+
+/* line 258, mainapp/static/mainapp/assets/css/style.scss */
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #031C39;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
+/* line 272, mainapp/static/mainapp/assets/css/style.scss */
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0); }
+
+/* line 278, mainapp/static/mainapp/assets/css/style.scss */
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1); }
+
+/* line 285, mainapp/static/mainapp/assets/css/style.scss */
+input[type=submit] {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.75px;
+  color: #FFFFFF;
+  background: #0387D0;
+  padding: 14px 22px;
+  text-transform: capitalize;
+  transition: all .3s;
+  margin-bottom: 0; }
+  /* line 297, mainapp/static/mainapp/assets/css/style.scss */
+  input[type=submit]:hover {
+    background: #031C39; }
+
+/* line 302, mainapp/static/mainapp/assets/css/style.scss */
+input[type=submit]:focus {
+  outline: none; }
+
+/* line 306, mainapp/static/mainapp/assets/css/style.scss */
+textarea {
+  padding: 8px 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid #eee;
+  transition: all 0.4s ease; }
+
+/* line 316, mainapp/static/mainapp/assets/css/style.scss */
+select {
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  transition: all 0.4s ease;
+  margin-bottom: 10px;
+  height: 50px; }
+  /* line 327, mainapp/static/mainapp/assets/css/style.scss */
+  select:focus {
+    outline: none;
+    border: none;
+    box-shadow: none; }
+
+/* line 334, mainapp/static/mainapp/assets/css/style.scss */
+.form-select.package-options {
+  border: 2px solid #304F47;
+  border-radius: 5px;
+  width: 222px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  color: #160d52;
+  float: right; }
+  /* line 345, mainapp/static/mainapp/assets/css/style.scss */
+  .form-select.package-options option {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    color: #160d52;
+    text-transform: capitalize; }
+  /* line 353, mainapp/static/mainapp/assets/css/style.scss */
+  .form-select.package-options:focus {
+    box-shadow: none;
+    border: 2px solid #304F47; }
+
+/* line 360, mainapp/static/mainapp/assets/css/style.scss */
+.input-group.search-box input {
+  height: 47px;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 10px 0 0 10px; }
+  /* line 366, mainapp/static/mainapp/assets/css/style.scss */
+  .input-group.search-box input:focus {
+    box-shadow: none; }
+
+/* line 371, mainapp/static/mainapp/assets/css/style.scss */
+.input-group.search-box button {
+  height: 47px;
+  border: none;
+  background: #031C39;
+  width: 55px;
+  border-radius: 0 10px 10px 0; }
+  /* line 378, mainapp/static/mainapp/assets/css/style.scss */
+  .input-group.search-box button i {
+    color: #fff;
+    font-size: 25px; }
+  /* line 383, mainapp/static/mainapp/assets/css/style.scss */
+  .input-group.search-box button:focus {
+    box-shadow: none; }
+
+/* line 389, mainapp/static/mainapp/assets/css/style.scss */
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+/* line 399, mainapp/static/mainapp/assets/css/style.scss */
+table tbody tr td,
+table tbody tr th,
+table thead tr td,
+table thead tr th,
+table tfoot tr td,
+table tfoot tr th {
+  border: 1px solid #eee;
+  padding: 10px; }
+
+/* line 409, mainapp/static/mainapp/assets/css/style.scss */
+a.btn-common-sm {
+  display: inline-block;
+  padding: 11px 20px 11px 30px;
+  background: #031C39;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  z-index: 9; }
+  /* line 421, mainapp/static/mainapp/assets/css/style.scss */
+  a.btn-common-sm:hover::before {
+    clip-path: circle(150% at 0% 0%); }
+  /* line 426, mainapp/static/mainapp/assets/css/style.scss */
+  a.btn-common-sm::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: "";
+    background: #0387D0;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    clip-path: circle(27% at -3% 50%);
+    transition: all .4s;
+    z-index: -1; }
+
+/* line 441, mainapp/static/mainapp/assets/css/style.scss */
+a.btn-common {
+  display: inline-block;
+  padding: 16.5px 32.5px;
+  background: #031C39;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFEE00;
+  position: relative;
+  z-index: 9; }
+  /* line 452, mainapp/static/mainapp/assets/css/style.scss */
+  a.btn-common:hover {
+    color: #031C39; }
+    /* line 455, mainapp/static/mainapp/assets/css/style.scss */
+    a.btn-common:hover::before {
+      clip-path: circle(150% at 0% 0%); }
+  /* line 460, mainapp/static/mainapp/assets/css/style.scss */
+  a.btn-common::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    content: "";
+    background: #FFEE00;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    clip-path: circle(27% at -3% 50%);
+    transition: all .4s;
+    z-index: -1; }
+
+/* line 475, mainapp/static/mainapp/assets/css/style.scss */
+a.btn-second {
+  display: inline-block;
+  padding: 16.5px 32.5px;
+  background: #0387D0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+  z-index: 20; }
+  /* line 486, mainapp/static/mainapp/assets/css/style.scss */
+  a.btn-second:focus {
+    box-shadow: none; }
+
+/* line 491, mainapp/static/mainapp/assets/css/style.scss */
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 9;
+  animation: 500ms ease-in-out 0s 1 running;
+  animation: 500ms ease-in-out;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; }
+
+/* line 503, mainapp/static/mainapp/assets/css/style.scss */
+a {
+  text-decoration: none !important; }
+
+/* line 507, mainapp/static/mainapp/assets/css/style.scss */
+.section-head.head-left {
+  text-align: left;
+  margin: 0; }
+
+/* line 512, mainapp/static/mainapp/assets/css/style.scss */
+.section-head {
+  text-align: center;
+  max-width: 516px;
+  margin: 0 auto; }
+  /* line 517, mainapp/static/mainapp/assets/css/style.scss */
+  .section-head h5 {
+    margin-bottom: 15px;
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0387D0; }
+  /* line 526, mainapp/static/mainapp/assets/css/style.scss */
+  .section-head h2 {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 46px;
+    text-transform: capitalize; }
+
+/* line 538, mainapp/static/mainapp/assets/css/style.scss */
+.owl-carousel .owl-nav {
+  text-align: center; }
+  /* line 542, mainapp/static/mainapp/assets/css/style.scss */
+  .owl-carousel .owl-nav button i {
+    height: 30px;
+    width: 30px;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 25px;
+    margin: 0 12.5px;
+    margin-top: 30px; }
+
+/* line 559, mainapp/static/mainapp/assets/css/style.scss */
+.owl-carousel.dark-nav .owl-nav {
+  text-align: center; }
+  /* line 563, mainapp/static/mainapp/assets/css/style.scss */
+  .owl-carousel.dark-nav .owl-nav button i {
+    height: 30px;
+    width: 30px;
+    color: #031C39;
+    border: 2px solid #031C39;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    font-size: 25px;
+    margin: 0 12.5px;
+    margin-top: 30px; }
+
+/* line 580, mainapp/static/mainapp/assets/css/style.scss */
+.owl-dots {
+  text-align: center; }
+  /* line 583, mainapp/static/mainapp/assets/css/style.scss */
+  .owl-dots button.owl-dot {
+    height: 10px;
+    width: 25px;
+    background: #031C39;
+    transition: all .3s;
+    margin: 0 12.5px;
+    border-radius: 5px; }
+  /* line 592, mainapp/static/mainapp/assets/css/style.scss */
+  .owl-dots button.active.owl-dot {
+    height: 15px;
+    background: #0387D0; }
+
+/* line 598, mainapp/static/mainapp/assets/css/style.scss */
+.owl-carousel.owl-loaded.owl-drag.destinations-1,
+.owl-carousel.owl-loaded.owl-drag.destinations-2 {
+  margin-left: 0; }
+  /* line 602, mainapp/static/mainapp/assets/css/style.scss */
+  .owl-carousel.owl-loaded.owl-drag.destinations-1 .owl-stage-outer,
+  .owl-carousel.owl-loaded.owl-drag.destinations-2 .owl-stage-outer {
+    padding: 0; }
+  /* line 606, mainapp/static/mainapp/assets/css/style.scss */
+  .owl-carousel.owl-loaded.owl-drag.destinations-1 .package-card,
+  .owl-carousel.owl-loaded.owl-drag.destinations-2 .package-card {
+    margin: 20px 0 0 0;
+    box-shadow: none;
+    border: 1px solid #eee; }
+
+/* line 613, mainapp/static/mainapp/assets/css/style.scss */
+.form-select.languge-selector {
+  padding: 0;
+  border: none;
+  margin: 0;
+  height: 100%;
+  background: transparent;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 8px;
+  color: #FFFFFF;
+  float: right;
+  width: auto; }
+  /* line 629, mainapp/static/mainapp/assets/css/style.scss */
+  .form-select.languge-selector option {
+    color: #160d52;
+    font-family: "Work Sans", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    width: 20px;
+    display: block;
+    padding: 10px 20px; }
+  /* line 640, mainapp/static/mainapp/assets/css/style.scss */
+  .form-select.languge-selector:focus {
+    box-shadow: none; }
+
+/* line 647, mainapp/static/mainapp/assets/css/style.scss */
+.breadcrumb-area {
+  background: linear-gradient(rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%), url(/static/mainapp/assets/images/breadcrumb-bg.png);
+  background-size: cover;
+  min-height: 320px;
+  display: flex;
+  align-items: center; }
+  /* line 655, mainapp/static/mainapp/assets/css/style.scss */
+  .breadcrumb-area .breadcrumb-wrap {
+    text-align: center; }
+    /* line 658, mainapp/static/mainapp/assets/css/style.scss */
+    .breadcrumb-area .breadcrumb-wrap h2 {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+      margin-bottom: 25px;
+      color: #FFFFFF; }
+    /* line 666, mainapp/static/mainapp/assets/css/style.scss */
+    .breadcrumb-area .breadcrumb-wrap ul.breadcrumb-links {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      /* line 671, mainapp/static/mainapp/assets/css/style.scss */
+      .breadcrumb-area .breadcrumb-wrap ul.breadcrumb-links li {
+        font-family: "Work Sans", sans-serif;
+        font-size: 16px;
+        color: #0387D0;
+        font-weight: 500; }
+        /* line 677, mainapp/static/mainapp/assets/css/style.scss */
+        .breadcrumb-area .breadcrumb-wrap ul.breadcrumb-links li a {
+          color: #fff; }
+        /* line 681, mainapp/static/mainapp/assets/css/style.scss */
+        .breadcrumb-area .breadcrumb-wrap ul.breadcrumb-links li i {
+          vertical-align: middle;
+          font-size: 22px; }
+
+/* line 693, mainapp/static/mainapp/assets/css/style.scss */
+.pagination {
+  display: flex;
+  justify-content: center; }
+  /* line 697, mainapp/static/mainapp/assets/css/style.scss */
+  .pagination a {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #160d52;
+    margin: 0 6px;
+    text-align: center;
+    line-height: 36px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #160d52;
+    transition: all .2s; }
+    /* line 711, mainapp/static/mainapp/assets/css/style.scss */
+    .pagination a.active {
+      color: #fff;
+      background: #0387D0;
+      border: 1px solid #0387D0; }
+    /* line 718, mainapp/static/mainapp/assets/css/style.scss */
+    .pagination a:hover {
+      color: #fff;
+      background: #0387D0;
+      border: 1px solid #0387D0; }
+    /* line 724, mainapp/static/mainapp/assets/css/style.scss */
+    .pagination a i {
+      font-size: 28px;
+      line-height: 38px; }
+
+/* line 731, mainapp/static/mainapp/assets/css/style.scss */
+.custom-select.package-option {
+  position: relative;
+  width: 255px;
+  float: right;
+  border: 2px solid #304F47;
+  border-radius: 5px; }
+  /* line 738, mainapp/static/mainapp/assets/css/style.scss */
+  .custom-select.package-option .select-selected {
+    font-size: 15px; }
+  /* line 742, mainapp/static/mainapp/assets/css/style.scss */
+  .custom-select.package-option .select-items {
+    top: 104%; }
+
+/* line 747, mainapp/static/mainapp/assets/css/style.scss */
+.custom-select.languege-select {
+  width: auto;
+  float: right;
+  margin-right: 12px; }
+  /* line 752, mainapp/static/mainapp/assets/css/style.scss */
+  .custom-select.languege-select .select-selected {
+    width: 32px;
+    margin-top: 3px;
+    margin-right: 15px;
+    padding: 0;
+    background: transparent;
+    color: #fff; }
+    /* line 760, mainapp/static/mainapp/assets/css/style.scss */
+    .custom-select.languege-select .select-selected::before {
+      right: -14px; }
+  /* line 765, mainapp/static/mainapp/assets/css/style.scss */
+  .custom-select.languege-select .select-items {
+    left: -20px;
+    margin-top: 14px;
+    width: 70px; }
+    /* line 770, mainapp/static/mainapp/assets/css/style.scss */
+    .custom-select.languege-select .select-items div {
+      padding: 8px 18px; }
+
+/* line 776, mainapp/static/mainapp/assets/css/style.scss */
+.custom-select {
+  position: relative;
+  width: 100%; }
+
+/* line 781, mainapp/static/mainapp/assets/css/style.scss */
+.custom-select select {
+  display: none; }
+
+/* line 785, mainapp/static/mainapp/assets/css/style.scss */
+.select-selected {
+  background-color: #fff;
+  color: #262339;
+  padding: 17px 16px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  position: relative; }
+  /* line 797, mainapp/static/mainapp/assets/css/style.scss */
+  .select-selected::before {
+    position: absolute;
+    content: "\203A";
+    right: 12px;
+    transform: rotate(90deg) translateX(-111%);
+    font-size: 24px;
+    top: 50%; }
+
+/* line 807, mainapp/static/mainapp/assets/css/style.scss */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px; }
+
+/* line 812, mainapp/static/mainapp/assets/css/style.scss */
+.select-items div {
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FF7F47; }
+  /* line 823, mainapp/static/mainapp/assets/css/style.scss */
+  .select-items div:last-child {
+    border: none; }
+
+/* line 828, mainapp/static/mainapp/assets/css/style.scss */
+.select-items {
+  position: absolute;
+  background-color: #fff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 7px 10px 40px 0px #0D344F1A; }
+
+/* line 839, mainapp/static/mainapp/assets/css/style.scss */
+.select-hide {
+  display: none; }
+
+/* line 843, mainapp/static/mainapp/assets/css/style.scss */
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1); }
+
+/* line 849, mainapp/static/mainapp/assets/css/style.scss */
+.calendar-input {
+  position: relative; }
+  /* line 852, mainapp/static/mainapp/assets/css/style.scss */
+  .calendar-input i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    vertical-align: middle; }
+    /* line 859, mainapp/static/mainapp/assets/css/style.scss */
+    .calendar-input i::before {
+      vertical-align: middle; }
+
+/*==== 2. preloader =====*/
+/* line 866, mainapp/static/mainapp/assets/css/style.scss */
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #ffffff;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  vertical-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 881, mainapp/static/mainapp/assets/css/style.scss */
+.loader {
+  margin-left: 0;
+  padding: 30px 0;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(125, 125, 125, 0.15);
+  border-radius: 100%; }
+
+/* line 890, mainapp/static/mainapp/assets/css/style.scss */
+.hide {
+  display: none; }
+
+/* line 894, mainapp/static/mainapp/assets/css/style.scss */
+.loader1 {
+  position: relative;
+  width: 120px;
+  height: 120px; }
+
+/* line 900, mainapp/static/mainapp/assets/css/style.scss */
+.loader1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i))); }
+
+/* line 909, mainapp/static/mainapp/assets/css/style.scss */
+.loader1 span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #FF7F47;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i)); }
+
+/* line 923, mainapp/static/mainapp/assets/css/style.scss */
+.loader1 .rocket {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotating 2s linear infinite;
+  animation-delay: -1s; }
+
+/* line 933, mainapp/static/mainapp/assets/css/style.scss */
+.loader1 .rocket:before {
+  content: "\edc7";
+  font-family: 'boxicons' !important;
+  position: absolute;
+  top: 80px;
+  left: 85px;
+  color: #FF7F47;
+  font-size: 60px;
+  transform: rotate(180deg); }
+
+@keyframes animate {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1.2); }
+  80%,
+  100% {
+    transform: scale(0); } }
+
+@keyframes rotating {
+  0% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(370deg); } }
+
+/*===== Preloader CSS END =======*/
+/* =============================
+       Global CSS end
+==============================*/
+/* =============================
+       2. Topbar area start
+==============================*/
+/* line 979, mainapp/static/mainapp/assets/css/style.scss */
+.topbar-area {
+  padding: 8px 0;
+  background: #031C39; }
+  /* line 983, mainapp/static/mainapp/assets/css/style.scss */
+  .topbar-area .topbar-contact {
+    height: 100%; }
+    /* line 986, mainapp/static/mainapp/assets/css/style.scss */
+    .topbar-area .topbar-contact ul {
+      display: flex;
+      height: 100%;
+      align-items: center; }
+      /* line 991, mainapp/static/mainapp/assets/css/style.scss */
+      .topbar-area .topbar-contact ul li {
+        font-family: "Work Sans", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        color: #FFFFFF;
+        margin-right: 40px;
+        display: flex;
+        align-items: center; }
+        /* line 1000, mainapp/static/mainapp/assets/css/style.scss */
+        .topbar-area .topbar-contact ul li a {
+          color: #fff; }
+        /* line 1004, mainapp/static/mainapp/assets/css/style.scss */
+        .topbar-area .topbar-contact ul li i {
+          font-size: 16px;
+          margin-right: 10px; }
+  /* line 1013, mainapp/static/mainapp/assets/css/style.scss */
+  .topbar-area .topbar-social {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    /* line 1020, mainapp/static/mainapp/assets/css/style.scss */
+    .topbar-area .topbar-social ul {
+      display: flex;
+      justify-content: center; }
+      /* line 1025, mainapp/static/mainapp/assets/css/style.scss */
+      .topbar-area .topbar-social ul li a {
+        color: #FFEE00;
+        margin: 0 12px;
+        font-size: 14px; }
+
+/* line 1035, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav .sidebar-contact {
+  margin-top: 40px;
+  display: none; }
+  /* line 1040, mainapp/static/mainapp/assets/css/style.scss */
+  .main-nav .sidebar-contact ul li.sidebar-single-contact {
+    color: #fff;
+    margin: 18px 0;
+    display: flex; }
+    /* line 1045, mainapp/static/mainapp/assets/css/style.scss */
+    .main-nav .sidebar-contact ul li.sidebar-single-contact a {
+      color: #fff !important; }
+    /* line 1049, mainapp/static/mainapp/assets/css/style.scss */
+    .main-nav .sidebar-contact ul li.sidebar-single-contact i {
+      margin-right: 8px; }
+      /* line 1052, mainapp/static/mainapp/assets/css/style.scss */
+      .main-nav .sidebar-contact ul li.sidebar-single-contact i::before {
+        vertical-align: middle; }
+
+/* =============================
+       Topbar area end
+==============================*/
+/* =============================
+    3. Navbar area start 
+==============================*/
+/* line 1072, mainapp/static/mainapp/assets/css/style.scss */
+.header-area .account-dropdown.activeCard {
+  transform: scale(1); }
+
+/* line 1076, mainapp/static/mainapp/assets/css/style.scss */
+.header-area .main-searchbar.activeSearch {
+  transform: scale(1); }
+
+/* line 1080, mainapp/static/mainapp/assets/css/style.scss */
+.header-area .account-dropdown {
+  min-width: 220px;
+  position: absolute;
+  background: #fff;
+  padding: 20px 15px;
+  z-index: 20;
+  right: 0;
+  top: 61px;
+  transform: scale(0);
+  transition: all .3s;
+  box-shadow: 7px 10px 40px 0px #0D344F1A; }
+  /* line 1092, mainapp/static/mainapp/assets/css/style.scss */
+  .header-area .account-dropdown ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+    /* line 1097, mainapp/static/mainapp/assets/css/style.scss */
+    .header-area .account-dropdown ul li.account-el {
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #ddd; }
+      /* line 1103, mainapp/static/mainapp/assets/css/style.scss */
+      .header-area .account-dropdown ul li.account-el:last-child {
+        border-bottom: none; }
+      /* line 1107, mainapp/static/mainapp/assets/css/style.scss */
+      .header-area .account-dropdown ul li.account-el i {
+        font-size: 20px;
+        color: #0387D0;
+        margin-right: 8px; }
+      /* line 1113, mainapp/static/mainapp/assets/css/style.scss */
+      .header-area .account-dropdown ul li.account-el a {
+        color: #160d52 !important;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0; }
+
+/* line 1123, mainapp/static/mainapp/assets/css/style.scss */
+.main-searchbar {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 0;
+  z-index: 19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  transition: all .3s; }
+  /* line 1138, mainapp/static/mainapp/assets/css/style.scss */
+  .main-searchbar input {
+    max-width: 700px;
+    padding: 5px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: none;
+    height: 55px;
+    border-radius: 30px 0 0 30px; }
+  /* line 1148, mainapp/static/mainapp/assets/css/style.scss */
+  .main-searchbar .searchbar-close {
+    position: absolute;
+    top: 30px;
+    right: 30px; }
+    /* line 1153, mainapp/static/mainapp/assets/css/style.scss */
+    .main-searchbar .searchbar-close i {
+      font-size: 30px;
+      color: #fff;
+      padding: 5px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      cursor: pointer; }
+  /* line 1164, mainapp/static/mainapp/assets/css/style.scss */
+  .main-searchbar .searchbar-icon {
+    height: 55px;
+    background: #0387D0;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -20px;
+    border-radius: 0 30px 30px 0; }
+    /* line 1174, mainapp/static/mainapp/assets/css/style.scss */
+    .main-searchbar .searchbar-icon i {
+      font-size: 32px;
+      cursor: pointer;
+      color: #fff; }
+
+/* line 1182, mainapp/static/mainapp/assets/css/style.scss */
+.header-area-2.header-area {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 99; }
+  /* line 1192, mainapp/static/mainapp/assets/css/style.scss */
+  .header-area-2.header-area .mobile-menu .hamburger span {
+    color: #fff; }
+
+/* line 1199, mainapp/static/mainapp/assets/css/style.scss */
+.navber-logo-sm {
+  display: none;
+  margin: 40px 0 0 20px; }
+
+/* line 1204, mainapp/static/mainapp/assets/css/style.scss */
+.navbar-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center; }
+  /* line 1210, mainapp/static/mainapp/assets/css/style.scss */
+  .navbar-wrap .navbar-icons {
+    display: none; }
+
+/* line 1216, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  /* line 1221, mainapp/static/mainapp/assets/css/style.scss */
+  header .header-area .main-nav .navbar-icons {
+    display: none; }
+  /* line 1225, mainapp/static/mainapp/assets/css/style.scss */
+  header .header-area .main-nav .navbar-icons,
+  header .header-area .main-nav .navbar-icons-2 {
+    margin-left: 55px;
+    display: flex;
+    align-items: center; }
+    /* line 1231, mainapp/static/mainapp/assets/css/style.scss */
+    header .header-area .main-nav .navbar-icons .searchbar-open,
+    header .header-area .main-nav .navbar-icons-2 .searchbar-open {
+      margin-right: 30px; }
+    /* line 1235, mainapp/static/mainapp/assets/css/style.scss */
+    header .header-area .main-nav .navbar-icons .searchbar-open,
+    header .header-area .main-nav .navbar-icons .user-dropdown-icon,
+    header .header-area .main-nav .navbar-icons-2 .searchbar-open,
+    header .header-area .main-nav .navbar-icons-2 .user-dropdown-icon {
+      position: relative; }
+      /* line 1239, mainapp/static/mainapp/assets/css/style.scss */
+      header .header-area .main-nav .navbar-icons .searchbar-open i,
+      header .header-area .main-nav .navbar-icons .user-dropdown-icon i,
+      header .header-area .main-nav .navbar-icons-2 .searchbar-open i,
+      header .header-area .main-nav .navbar-icons-2 .user-dropdown-icon i {
+        color: #0387D0;
+        font-size: 20px;
+        cursor: pointer; }
+        /* line 1244, mainapp/static/mainapp/assets/css/style.scss */
+        header .header-area .main-nav .navbar-icons .searchbar-open i::before,
+        header .header-area .main-nav .navbar-icons .user-dropdown-icon i::before,
+        header .header-area .main-nav .navbar-icons-2 .searchbar-open i::before,
+        header .header-area .main-nav .navbar-icons-2 .user-dropdown-icon i::before {
+          vertical-align: middle; }
+
+/* line 1252, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul {
+  margin: 0;
+  list-style: none; }
+
+/* line 1257, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li {
+  display: inline-block;
+  position: relative;
+  padding: 0 15px; }
+
+/* line 1263, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area-2.header-area.sticky .main-nav ul li.has-child-menu:after {
+  color: #160d52; }
+
+/* line 1267, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area-2.header-area .main-nav ul li.has-child-menu:after {
+  color: #fff; }
+
+/* line 1271, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area-2.header-area .main-nav ul li a {
+  color: #fff; }
+
+/* line 1275, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area-2.header-area.sticky .main-nav ul li a {
+  color: #160d52; }
+
+/* line 1279, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li a {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 35px 0;
+  position: relative;
+  color: #0387D0; }
+  /* line 1293, mainapp/static/mainapp/assets/css/style.scss */
+  header .header-area .main-nav ul li a:hover {
+    color: #0387D0; }
+
+/* line 1299, mainapp/static/mainapp/assets/css/style.scss */
+.sntcp {
+  color: #0387D0 !important; }
+
+/* line 1303, mainapp/static/mainapp/assets/css/style.scss */
+.sticky-nav-text-color {
+  color: white !important; }
+
+/* line 1309, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li ul.sub-menu > li a.sub-item {
+  display: block;
+  color: #304F47;
+  line-height: 1.2;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 15px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+/* line 1322, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li ul.sub-menu > li a:hover {
+  background: transparent;
+  color: #D21756 !important;
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  transform: translateX(7px);
+  color: #FF7F47; }
+
+/* line 1332, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li ul.sub-menu > li a:hover::before {
+  opacity: 0; }
+
+/* line 1336, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li.has-child-menu:after {
+  position: absolute;
+  right: -5px;
+  color: #160d52;
+  top: 33px;
+  font-family: "boxicons";
+  content: "";
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+/* line 1349, mainapp/static/mainapp/assets/css/style.scss */
+header .header-area .main-nav ul li:hover.has-child-menu:after {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg); }
+
+/* line 1354, mainapp/static/mainapp/assets/css/style.scss */
+header > .header-area .nav-right {
+  padding: 3.5rem 0; }
+
+/* line 1361, mainapp/static/mainapp/assets/css/style.scss */
+.searchbox-submit {
+  margin-top: 10px;
+  padding: 0 30px;
+  height: 60%;
+  overflow: hidden;
+  background: #0387D0;
+  border: none; }
+
+/* line 1370, mainapp/static/mainapp/assets/css/style.scss */
+.searchbox-submit i:before {
+  font-size: 20px;
+  color: #FFFFFF; }
+
+/* line 1375, mainapp/static/mainapp/assets/css/style.scss */
+.searchbox {
+  opacity: 0;
+  position: absolute;
+  width: 0%;
+  right: 5px;
+  left: auto;
+  overflow: hidden;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s; }
+
+/* line 1386, mainapp/static/mainapp/assets/css/style.scss */
+.input-group-prepend {
+  margin-right: 0 !important;
+  background: #0387D0; }
+
+/*===== Main Menu CSS =====*/
+/* line 1393, mainapp/static/mainapp/assets/css/style.scss */
+.bottombar {
+  background-color: #08509e; }
+
+/* line 1397, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav ul li .sub-menu {
+  position: absolute;
+  left: 0;
+  top: auto;
+  right: 0;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #F3F2F7;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-top: 3px solid #0387D0; }
+
+/* line 1417, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav ul li .sub-menu li .sub-menu {
+  right: -200px;
+  left: inherit;
+  top: 0; }
+
+/* line 1423, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav ul li .sub-menu > li {
+  display: block;
+  margin: 0;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-bottom: 1px solid #ddd; }
+
+/* line 1434, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav ul li .sub-menu > li:last-child {
+  border: none; }
+
+/* line 1438, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav ul > li a:hover {
+  background: transparent; }
+
+/* line 1442, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav .fl {
+  width: 30px;
+  font-size: 20px;
+  line-height: 35px;
+  text-align: center;
+  color: #fff;
+  font-style: normal;
+  position: absolute;
+  right: -5px;
+  top: 0;
+  z-index: 999;
+  display: none;
+  cursor: pointer; }
+
+/* line 1457, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav .fl:before {
+  font-size: 14px;
+  text-align: center;
+  line-height: 35px; }
+
+/* line 1463, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav > ul > li + li > .sub-menu {
+  left: 15px; }
+
+/* line 1467, mainapp/static/mainapp/assets/css/style.scss */
+.main-nav > ul > li:hover > .sub-menu,
+.main-nav ul li .sub-menu li:hover > .sub-menu,
+.main-nav ul li .sub-menu li .sub-menu li:hover > .sub-menu {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1; }
+
+/* line 1476, mainapp/static/mainapp/assets/css/style.scss */
+.slideInUp {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 30px, 0);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out; }
+
+/* line 1486, mainapp/static/mainapp/assets/css/style.scss */
+.slideInUp2 {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s; }
+
+/*===== header sticky area =====*/
+/* line 1492, mainapp/static/mainapp/assets/css/style.scss */
+.header-area.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0;
+  animation: 500ms ease-in-out 0s normal none 1 running;
+  box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.1);
+  background-color: #031C39;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/* =============================
+      Navbar area end 
+==============================*/
+/* =============================
+    4. Main banner area start
+==============================*/
+/* line 1520, mainapp/static/mainapp/assets/css/style.scss */
+.banner-slider.owl-carousel.owl-loaded.owl-drag .owl-nav button.owl-next {
+  right: 20px;
+  top: 50%; }
+
+/* line 1525, mainapp/static/mainapp/assets/css/style.scss */
+.banner-slider.owl-carousel.owl-loaded.owl-drag .owl-nav button.owl-prev {
+  left: 20px;
+  top: 50%; }
+
+/* line 1530, mainapp/static/mainapp/assets/css/style.scss */
+.banner-slider.owl-carousel.owl-loaded.owl-drag .owl-nav button {
+  position: absolute;
+  transform: translateY(-50%); }
+  /* line 1534, mainapp/static/mainapp/assets/css/style.scss */
+  .banner-slider.owl-carousel.owl-loaded.owl-drag .owl-nav button i {
+    height: 36px;
+    width: 36px;
+    line-height: 34px;
+    text-align: center;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 50%; }
+
+/* line 1548, mainapp/static/mainapp/assets/css/style.scss */
+.main-banner {
+  overflow: hidden; }
+  /* line 1551, mainapp/static/mainapp/assets/css/style.scss */
+  .main-banner .slider-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    min-height: 670px; }
+    /* line 1557, mainapp/static/mainapp/assets/css/style.scss */
+    .main-banner .slider-item .slider-content {
+      margin-left: 82px;
+      margin-top: -80px; }
+      /* line 1561, mainapp/static/mainapp/assets/css/style.scss */
+      .main-banner .slider-item .slider-content h2 {
+        max-width: 617px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 90px;
+        color: #fff; }
+      /* line 1571, mainapp/static/mainapp/assets/css/style.scss */
+      .main-banner .slider-item .slider-content h5 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 37px;
+        color: #FFEE00;
+        margin: 30px 0 50px 0; }
+  /* line 1581, mainapp/static/mainapp/assets/css/style.scss */
+  .main-banner .slider-item-1 {
+    background: linear-gradient(rgba(48, 79, 71, 0.65) 100%, rgba(48, 79, 71, 0.65) 100%), url(/static/mainapp/assets/images/banners/banner-1.png);
+    background-size: cover;
+    background-position: center; }
+  /* line 1587, mainapp/static/mainapp/assets/css/style.scss */
+  .main-banner .slider-item-2 {
+    background: linear-gradient(rgba(48, 79, 71, 0.65) 100%, rgba(48, 79, 71, 0.65) 100%), url(/static/mainapp/assets/images/banners/banner-3.png);
+    background-size: cover;
+    background-position: center; }
+  /* line 1593, mainapp/static/mainapp/assets/css/style.scss */
+  .main-banner .slider-item-3 {
+    background: linear-gradient(rgba(48, 79, 71, 0.65) 100%, rgba(48, 79, 71, 0.65) 100%), url(/static/mainapp/assets/images/banners/banner-4.png);
+    background-size: cover;
+    background-position: center; }
+
+/* line 1600, mainapp/static/mainapp/assets/css/style.scss */
+.main-banner-2 {
+  background: url(/static/mainapp/assets/images/banners/banner-2.png) center no-repeat;
+  min-height: 794px;
+  background-size: 100% 100%; }
+  /* line 1605, mainapp/static/mainapp/assets/css/style.scss */
+  .main-banner-2 .main-banner-content-2 {
+    padding-top: 170px;
+    text-align: center; }
+    /* line 1609, mainapp/static/mainapp/assets/css/style.scss */
+    .main-banner-2 .main-banner-content-2 h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 90px;
+      line-height: 110px;
+      color: #fff;
+      margin-bottom: 40px; }
+    /* line 1618, mainapp/static/mainapp/assets/css/style.scss */
+    .main-banner-2 .main-banner-content-2 h3 {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+      color: #0387D0; }
+
+/* =============================
+     Main banner area end
+==============================*/
+/* =============================
+     5. Find Form Area Start
+==============================*/
+/* line 1635, mainapp/static/mainapp/assets/css/style.scss */
+.find-form {
+  position: relative;
+  z-index: 10;
+  margin-top: -70px; }
+  /* line 1640, mainapp/static/mainapp/assets/css/style.scss */
+  .find-form .findfrom-wrapper {
+    background: rgba(48, 79, 71, 0.9);
+    padding: 45px 45px;
+    max-width: 980px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+    border-radius: 20px; }
+    /* line 1649, mainapp/static/mainapp/assets/css/style.scss */
+    .find-form .findfrom-wrapper .find-btn a {
+      text-align: center;
+      display: block;
+      padding: 13px 0; }
+      /* line 1654, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form .findfrom-wrapper .find-btn a i {
+        font-size: 20px; }
+        /* line 1657, mainapp/static/mainapp/assets/css/style.scss */
+        .find-form .findfrom-wrapper .find-btn a i::before {
+          vertical-align: middle;
+          margin-right: 10px; }
+    /* line 1666, mainapp/static/mainapp/assets/css/style.scss */
+    .find-form .findfrom-wrapper input,
+    .find-form .findfrom-wrapper select {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+      color: #262339;
+      height: 50px;
+      width: 100%; }
+      /* line 1675, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form .findfrom-wrapper input:focus,
+      .find-form .findfrom-wrapper select:focus {
+        box-shadow: none; }
+      /* line 1679, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form .findfrom-wrapper input option,
+      .find-form .findfrom-wrapper select option {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        color: #262339; }
+    /* line 1688, mainapp/static/mainapp/assets/css/style.scss */
+    .find-form .findfrom-wrapper input,
+    .find-form .findfrom-wrapper input[type="date"] {
+      border: none; }
+      /* line 1692, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form .findfrom-wrapper input::placeholder,
+      .find-form .findfrom-wrapper input[type="date"]::placeholder {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        color: #262339; }
+      /* line 1699, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form .findfrom-wrapper input:focus,
+      .find-form .findfrom-wrapper input[type="date"]:focus {
+        border: none;
+        box-shadow: none; }
+
+/* line 1708, mainapp/static/mainapp/assets/css/style.scss */
+.find-form-2 {
+  position: relative;
+  z-index: 10;
+  margin-top: 80px; }
+  /* line 1714, mainapp/static/mainapp/assets/css/style.scss */
+  .find-form-2 .findfrom-wrapper {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
+    border-radius: 20px;
+    padding: 45px 45px;
+    max-width: 980px;
+    margin: 0 auto; }
+    /* line 1724, mainapp/static/mainapp/assets/css/style.scss */
+    .find-form-2 .findfrom-wrapper .find-btn a {
+      text-align: center;
+      display: block;
+      padding: 13px 0; }
+      /* line 1730, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form-2 .findfrom-wrapper .find-btn a i {
+        font-size: 20px; }
+        /* line 1733, mainapp/static/mainapp/assets/css/style.scss */
+        .find-form-2 .findfrom-wrapper .find-btn a i::before {
+          vertical-align: middle;
+          margin-right: 10px; }
+    /* line 1741, mainapp/static/mainapp/assets/css/style.scss */
+    .find-form-2 .findfrom-wrapper input,
+    .find-form-2 .findfrom-wrapper select {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+      color: #262339; }
+      /* line 1748, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form-2 .findfrom-wrapper input:focus,
+      .find-form-2 .findfrom-wrapper select:focus {
+        box-shadow: none; }
+      /* line 1752, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form-2 .findfrom-wrapper input option,
+      .find-form-2 .findfrom-wrapper select option {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        color: #262339; }
+    /* line 1761, mainapp/static/mainapp/assets/css/style.scss */
+    .find-form-2 .findfrom-wrapper input,
+    .find-form-2 .findfrom-wrapper input[type="date"] {
+      border: none; }
+      /* line 1765, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form-2 .findfrom-wrapper input::placeholder,
+      .find-form-2 .findfrom-wrapper input[type="date"]::placeholder {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        color: #262339; }
+      /* line 1772, mainapp/static/mainapp/assets/css/style.scss */
+      .find-form-2 .findfrom-wrapper input:focus,
+      .find-form-2 .findfrom-wrapper input[type="date"]:focus {
+        border: none;
+        box-shadow: none; }
+
+/* line 1781, mainapp/static/mainapp/assets/css/style.scss */
+.find-form .findfrom-wrapper input,
+.find-form .findfrom-wrapper input {
+  width: 100%; }
+
+/* =============================
+      Find Form Area end
+=============================-=*/
+/* =============================
+     6. Package area start
+==============================*/
+/* line 1792, mainapp/static/mainapp/assets/css/style.scss */
+.package-card-xl {
+  margin: 15px 0;
+  box-shadow: 0px 0px 30px rgba(17, 17, 17, 0.08);
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex; }
+  /* line 1800, mainapp/static/mainapp/assets/css/style.scss */
+  .package-card-xl .package-thumb-xl img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; }
+  /* line 1808, mainapp/static/mainapp/assets/css/style.scss */
+  .package-card-xl .package-details-xl {
+    width: 60%;
+    padding: 25px 30px; }
+    /* line 1812, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card-xl .package-details-xl .package-info {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between; }
+      /* line 1818, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card-xl .package-details-xl .package-info h5 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 23px;
+        color: #031C39; }
+        /* line 1826, mainapp/static/mainapp/assets/css/style.scss */
+        .package-card-xl .package-details-xl .package-info h5 span {
+          font-size: 20px; }
+        /* line 1830, mainapp/static/mainapp/assets/css/style.scss */
+        .package-card-xl .package-details-xl .package-info h5 i {
+          margin-right: 5px; }
+    /* line 1836, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card-xl .package-details-xl h3 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 27px;
+      color: #0387D0;
+      text-transform: capitalize;
+      padding: 15px 0; }
+      /* line 1845, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card-xl .package-details-xl h3 i {
+        color: #031C39;
+        font-size: 18px; }
+      /* line 1850, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card-xl .package-details-xl h3 a {
+        color: #0387D0; }
+    /* line 1855, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card-xl .package-details-xl .package-rating {
+      margin-top: 10px; }
+      /* line 1858, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card-xl .package-details-xl .package-rating strong {
+        font-weight: 700;
+        font-size: 13px;
+        color: #031C39; }
+        /* line 1863, mainapp/static/mainapp/assets/css/style.scss */
+        .package-card-xl .package-details-xl .package-rating strong i {
+          font-size: 20px;
+          color: #0387D0;
+          margin-right: 5px; }
+          /* line 1868, mainapp/static/mainapp/assets/css/style.scss */
+          .package-card-xl .package-details-xl .package-rating strong i::before {
+            vertical-align: middle; }
+
+/* line 1877, mainapp/static/mainapp/assets/css/style.scss */
+.package-card {
+  margin: 15px 0;
+  box-shadow: 0px 0px 30px rgba(17, 17, 17, 0.08);
+  overflow: hidden; }
+  /* line 1884, mainapp/static/mainapp/assets/css/style.scss */
+  .package-card:hover .package-thumb img {
+    transform: scale(1.05); }
+  /* line 1890, mainapp/static/mainapp/assets/css/style.scss */
+  .package-card .package-thumb {
+    overflow: hidden; }
+    /* line 1893, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card .package-thumb img {
+      width: 100%;
+      transition: all .4s; }
+  /* line 1899, mainapp/static/mainapp/assets/css/style.scss */
+  .package-card .package-details {
+    padding: 20px 15px;
+    background-color: #FFF; }
+    /* line 1903, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card .package-details .package-info {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between; }
+      /* line 1909, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card .package-details .package-info h5 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 23px;
+        color: #031C39; }
+        /* line 1917, mainapp/static/mainapp/assets/css/style.scss */
+        .package-card .package-details .package-info h5 span {
+          font-size: 20px; }
+        /* line 1921, mainapp/static/mainapp/assets/css/style.scss */
+        .package-card .package-details .package-info h5 i {
+          margin-right: 5px; }
+    /* line 1927, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card .package-details h3 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 28px;
+      color: #0387D0;
+      text-transform: capitalize;
+      padding: 15px 0; }
+      /* line 1936, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card .package-details h3 i {
+        color: #0387D0;
+        font-size: 18px; }
+      /* line 1941, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card .package-details h3 a {
+        color: #0387D0; }
+    /* line 1946, mainapp/static/mainapp/assets/css/style.scss */
+    .package-card .package-details .package-rating {
+      display: flex; }
+      /* line 1949, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card .package-details .package-rating i {
+        font-size: 18px;
+        color: #0387D0;
+        margin-right: 5px; }
+      /* line 1955, mainapp/static/mainapp/assets/css/style.scss */
+      .package-card .package-details .package-rating strong {
+        font-weight: 700;
+        font-size: 13px;
+        color: #031C39;
+        display: flex;
+        align-items: center; }
+
+/* line 1969, mainapp/static/mainapp/assets/css/style.scss */
+.offer-area .offer-slider.owl-carousel .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+/* line 1975, mainapp/static/mainapp/assets/css/style.scss */
+.offer-area .offer-slider.owl-carousel .owl-nav button.owl-prev {
+  left: -7%; }
+
+/* line 1979, mainapp/static/mainapp/assets/css/style.scss */
+.offer-area .offer-slider.owl-carousel .owl-nav button.owl-next {
+  right: -7%; }
+
+/* line 1986, mainapp/static/mainapp/assets/css/style.scss */
+.offer-card {
+  margin: 30px 0; }
+  /* line 1991, mainapp/static/mainapp/assets/css/style.scss */
+  .offer-card:hover .offer-thumb img {
+    transform: scale(1.05); }
+  /* line 1997, mainapp/static/mainapp/assets/css/style.scss */
+  .offer-card .offer-thumb {
+    overflow: hidden; }
+    /* line 2000, mainapp/static/mainapp/assets/css/style.scss */
+    .offer-card .offer-thumb img {
+      width: 100%;
+      transition: all .4s; }
+  /* line 2006, mainapp/static/mainapp/assets/css/style.scss */
+  .offer-card .offer-details {
+    border: 1px solid #f1f1f1;
+    padding: 20px 15px; }
+    /* line 2010, mainapp/static/mainapp/assets/css/style.scss */
+    .offer-card .offer-details .offer-info {
+      display: flex;
+      justify-content: space-between; }
+      /* line 2014, mainapp/static/mainapp/assets/css/style.scss */
+      .offer-card .offer-details .offer-info h5 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 23px;
+        color: #031C39; }
+        /* line 2022, mainapp/static/mainapp/assets/css/style.scss */
+        .offer-card .offer-details .offer-info h5 span {
+          font-size: 20px; }
+        /* line 2026, mainapp/static/mainapp/assets/css/style.scss */
+        .offer-card .offer-details .offer-info h5 i {
+          margin-right: 5px; }
+      /* line 2031, mainapp/static/mainapp/assets/css/style.scss */
+      .offer-card .offer-details .offer-info ul.offer-rating {
+        display: flex; }
+        /* line 2034, mainapp/static/mainapp/assets/css/style.scss */
+        .offer-card .offer-details .offer-info ul.offer-rating li {
+          margin-left: 5px;
+          color: #0387D0; }
+    /* line 2041, mainapp/static/mainapp/assets/css/style.scss */
+    .offer-card .offer-details h3 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 27px;
+      color: #0387D0;
+      text-transform: capitalize;
+      padding: 20px 0 18px 0; }
+      /* line 2050, mainapp/static/mainapp/assets/css/style.scss */
+      .offer-card .offer-details h3 i {
+        color: #031C39;
+        font-size: 18px; }
+      /* line 2055, mainapp/static/mainapp/assets/css/style.scss */
+      .offer-card .offer-details h3 a {
+        color: #0387D0; }
+    /* line 2060, mainapp/static/mainapp/assets/css/style.scss */
+    .offer-card .offer-details strong {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 29px;
+      color: #031C39; }
+      /* line 2066, mainapp/static/mainapp/assets/css/style.scss */
+      .offer-card .offer-details strong span {
+        color: #a5a5a5;
+        margin-left: 10px;
+        font-size: 18px;
+        text-decoration: line-through; }
+
+/* =============================
+      Package area end
+==============================*/
+/* =============================
+    7. Destinations area start
+==============================*/
+/* line 2088, mainapp/static/mainapp/assets/css/style.scss */
+.destinations-area .row.owl-carousel.destinations-2.owl-loaded.owl-drag .owl-nav button {
+  position: absolute; }
+  /* line 2091, mainapp/static/mainapp/assets/css/style.scss */
+  .destinations-area .row.owl-carousel.destinations-2.owl-loaded.owl-drag .owl-nav button i {
+    text-align: center;
+    color: #fff;
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 28px;
+    margin: 0; }
+
+/* line 2104, mainapp/static/mainapp/assets/css/style.scss */
+.destinations-area .row.owl-carousel.destinations-2.owl-loaded.owl-drag .owl-nav button.owl-prev {
+  top: 18%;
+  right: -15.9%; }
+
+/* line 2110, mainapp/static/mainapp/assets/css/style.scss */
+.destinations-area .row.owl-carousel.destinations-2.owl-loaded.owl-drag .owl-nav button.owl-next {
+  top: 18%;
+  right: -25%; }
+
+/* line 2123, mainapp/static/mainapp/assets/css/style.scss */
+.destinations-area .row.owl-carousel.destinations-1.owl-loaded.owl-drag .owl-nav button {
+  position: absolute; }
+  /* line 2126, mainapp/static/mainapp/assets/css/style.scss */
+  .destinations-area .row.owl-carousel.destinations-1.owl-loaded.owl-drag .owl-nav button i {
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    height: 33px;
+    width: 33px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    margin: 0; }
+
+/* line 2139, mainapp/static/mainapp/assets/css/style.scss */
+.destinations-area .row.owl-carousel.destinations-1.owl-loaded.owl-drag .owl-nav button.owl-prev {
+  top: 18%;
+  left: -25%; }
+
+/* line 2145, mainapp/static/mainapp/assets/css/style.scss */
+.destinations-area .row.owl-carousel.destinations-1.owl-loaded.owl-drag .owl-nav button.owl-next {
+  top: 18%;
+  left: -15.9%; }
+
+/* line 2154, mainapp/static/mainapp/assets/css/style.scss */
+.package-slider-wrap {
+  position: relative;
+  height: 90.6%;
+  margin-top: 20px;
+  display: flex; }
+  /* line 2160, mainapp/static/mainapp/assets/css/style.scss */
+  .package-slider-wrap img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+  /* line 2166, mainapp/static/mainapp/assets/css/style.scss */
+  .package-slider-wrap .pakage-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(48, 79, 71, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    /* line 2179, mainapp/static/mainapp/assets/css/style.scss */
+    .package-slider-wrap .pakage-overlay strong {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 46px;
+      color: #FFFFFF; }
+
+/* =============================
+    Destinations area start
+==============================*/
+/* =============================
+    8. Achievement area start
+==============================*/
+/* line 2195, mainapp/static/mainapp/assets/css/style.scss */
+.achievement-area {
+  background: linear-gradient(rgba(245, 245, 245, 0.2) 100%, rgba(245, 245, 245, 0.2) 100%), url(/static/mainapp/assets/images/achiv-shape.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+/* line 2203, mainapp/static/mainapp/assets/css/style.scss */
+.achievement-area-2 {
+  background: linear-gradient(rgba(245, 245, 245, 0.2) 100%, rgba(245, 245, 245, 0.2) 100%), url(/static/mainapp/assets/images/achiv-shape.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+/* line 2211, mainapp/static/mainapp/assets/css/style.scss */
+.achievement-card {
+  padding: 20px;
+  text-align: center;
+  background: #031C39;
+  color: #fff;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 5px;
+  min-height: 95%; }
+  /* line 2220, mainapp/static/mainapp/assets/css/style.scss */
+  .achievement-card .achievement-icon {
+    margin-bottom: 20px; }
+    /* line 2223, mainapp/static/mainapp/assets/css/style.scss */
+    .achievement-card .achievement-icon i {
+      color: #fff; }
+      /* line 2226, mainapp/static/mainapp/assets/css/style.scss */
+      .achievement-card .achievement-icon i::before {
+        font-size: 82px; }
+  /* line 2232, mainapp/static/mainapp/assets/css/style.scss */
+  .achievement-card h5 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    color: #FFFFFF; }
+
+/* line 2240, mainapp/static/mainapp/assets/css/style.scss */
+.achievement-card-2 {
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1); }
+  /* line 2248, mainapp/static/mainapp/assets/css/style.scss */
+  .achievement-card-2 .achieve-img {
+    height: 50%;
+    width: 100%; }
+    /* line 2252, mainapp/static/mainapp/assets/css/style.scss */
+    .achievement-card-2 .achieve-img img {
+      height: 100%;
+      width: 100%; }
+  /* line 2258, mainapp/static/mainapp/assets/css/style.scss */
+  .achievement-card-2 .achieve-info {
+    background: #031C39;
+    padding: 80px 12px 30px 12px;
+    position: relative; }
+    /* line 2263, mainapp/static/mainapp/assets/css/style.scss */
+    .achievement-card-2 .achieve-info h5 {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 27px;
+      text-transform: capitalize;
+      color: #FFFFFF; }
+  /* line 2272, mainapp/static/mainapp/assets/css/style.scss */
+  .achievement-card-2 .achieve-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    top: -65px;
+    display: block;
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    line-height: 130px;
+    padding: 20px;
+    box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.15); }
+    /* line 2288, mainapp/static/mainapp/assets/css/style.scss */
+    .achievement-card-2 .achieve-icon i {
+      color: #031C39; }
+      /* line 2291, mainapp/static/mainapp/assets/css/style.scss */
+      .achievement-card-2 .achieve-icon i::before {
+        font-size: 65px; }
+
+/* =============================
+    achievement area end
+==============================*/
+/* =============================
+    9. Review area start
+==============================*/
+/* line 2305, mainapp/static/mainapp/assets/css/style.scss */
+.review-card {
+  padding: 30px 25px;
+  margin: 20px 10px;
+  text-align: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border-radius: 50px 50px 0px 0px;
+  background-color: #FFF; }
+  /* line 2314, mainapp/static/mainapp/assets/css/style.scss */
+  .review-card .reviewer-img img {
+    height: 114px;
+    width: 114px;
+    border-radius: 50%;
+    border: 8px solid rgba(48, 79, 71, 0.1);
+    margin: 0 auto; }
+  /* line 2324, mainapp/static/mainapp/assets/css/style.scss */
+  .review-card h3 {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #160d52; }
+  /* line 2333, mainapp/static/mainapp/assets/css/style.scss */
+  .review-card h5 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: capitalize;
+    color: #a5a5a5;
+    margin: 10px 0 22px 0; }
+  /* line 2343, mainapp/static/mainapp/assets/css/style.scss */
+  .review-card p {
+    position: relative; }
+    /* line 2347, mainapp/static/mainapp/assets/css/style.scss */
+    .review-card p::before {
+      position: absolute;
+      content: "";
+      background: url(/static/mainapp/assets/images/reviewer/quote-rwview.svg);
+      left: 0;
+      bottom: 100%;
+      height: 37px;
+      width: 37px; }
+
+/* =============================
+    Review area end
+==============================*/
+/* =============================
+   10. Feature area start
+==============================*/
+/* line 2366, mainapp/static/mainapp/assets/css/style.scss */
+.feature-area {
+  background: linear-gradient(rgba(48, 79, 71, 0.3) 100%, rgba(48, 79, 71, 0.4) 100%), url(/static/mainapp/assets/images/feature/feature-bg-1.png) center no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  /* line 2373, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-area .section-head h2 {
+    color: #fff; }
+
+/* line 2379, mainapp/static/mainapp/assets/css/style.scss */
+.feature-area-2 {
+  background: linear-gradient(rgba(48, 79, 71, 0.3) 100%, rgba(48, 79, 71, 0.3) 100%), url(/static/mainapp/assets/images/feature/feature-bg.png) center no-repeat;
+  background-size: cover; }
+  /* line 2383, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-area-2 .feature-head-2 {
+    text-align: left;
+    margin: inherit; }
+    /* line 2387, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-area-2 .feature-head-2 h2 {
+      color: #fff; }
+
+/* line 2393, mainapp/static/mainapp/assets/css/style.scss */
+.feature-card {
+  max-width: 570px;
+  min-height: 200px;
+  display: flex;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  overflow: hidden; }
+  /* line 2401, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card .feature-img {
+    max-width: 235px; }
+    /* line 2404, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card .feature-img img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
+  /* line 2411, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card .feature-content {
+    padding: 25px 30px;
+    background: #fff; }
+    /* line 2415, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card .feature-content a.title {
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 32px;
+      color: #262339; }
+    /* line 2424, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card .feature-content h5 {
+      margin: 12px 0 22px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      color: #031C39; }
+      /* line 2426, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card .feature-content h5 i {
+        color: #0387D0;
+        font-size: 18px; }
+    /* line 2438, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card .feature-content strong {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 29px;
+      color: #0387D0; }
+      /* line 2445, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card .feature-content strong span {
+        color: #a5a5a5;
+        margin-left: 10px;
+        font-size: 18px;
+        text-decoration: line-through; }
+
+/* line 2455, mainapp/static/mainapp/assets/css/style.scss */
+.feature-card-2 {
+  margin: 20px 0;
+  border-radius: 5px;
+  overflow: hidden; }
+  /* line 2462, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card-2:hover .feature-thumb img {
+    transform: scale(1.05); }
+  /* line 2470, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card-2:hover .feature-card-review .feature-btn {
+    opacity: 1; }
+  /* line 2476, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card-2 .feature-thumb {
+    position: relative;
+    overflow: hidden; }
+    /* line 2480, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card-2 .feature-thumb .feature-price {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0387D0;
+      padding: 10px;
+      border-radius: 5px 5px 0px 0px; }
+      /* line 2489, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card-2 .feature-thumb .feature-price h5 {
+        font-weight: 700;
+        font-size: 25px;
+        color: #FFFFFF; }
+        /* line 2494, mainapp/static/mainapp/assets/css/style.scss */
+        .feature-card-2 .feature-thumb .feature-price h5 span {
+          font-size: 15px;
+          color: #160d52; }
+    /* line 2501, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card-2 .feature-thumb img {
+      width: 100%;
+      transition: .3s ease-in; }
+  /* line 2507, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card-2 .feature-details {
+    padding: 20px;
+    background: #fff; }
+    /* line 2511, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card-2 .feature-details h5.tour-duration {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 23px;
+      color: #304F47; }
+      /* line 2518, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card-2 .feature-details h5.tour-duration i {
+        margin-right: 5px; }
+    /* line 2523, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card-2 .feature-details h3 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 27px;
+      color: #FF7F47;
+      text-transform: capitalize;
+      padding-top: 20px; }
+      /* line 2533, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card-2 .feature-details h3 i {
+        color: #031C39;
+        font-size: 18px; }
+      /* line 2538, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card-2 .feature-details h3 a {
+        color: #FF7F47; }
+  /* line 2544, mainapp/static/mainapp/assets/css/style.scss */
+  .feature-card-2 .feature-card-review {
+    border-top: 1px solid #D8D8D8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 17px 20px;
+    position: relative; }
+    /* line 2554, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card-2 .feature-card-review ul.feature-rating {
+      display: flex; }
+      /* line 2557, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card-2 .feature-card-review ul.feature-rating p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 15px;
+        text-transform: capitalize;
+        color: #160d52; }
+      /* line 2564, mainapp/static/mainapp/assets/css/style.scss */
+      .feature-card-2 .feature-card-review ul.feature-rating li {
+        color: #0387D0;
+        margin-left: 7px; }
+    /* line 2570, mainapp/static/mainapp/assets/css/style.scss */
+    .feature-card-2 .feature-card-review .feature-btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #031C39;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 25px;
+      text-transform: capitalize;
+      color: #FFFFFF;
+      justify-content: center;
+      opacity: 0;
+      transition: all .3s; }
+
+/* line 2592, mainapp/static/mainapp/assets/css/style.scss */
+.feature-slider-2.owl-carousel .owl-nav {
+  position: absolute;
+  right: 0;
+  top: -35%; }
+
+/* =============================
+   Feature area end
+==============================*/
+/* =============================
+   11. Blog area start
+==============================*/
+/* line 2606, mainapp/static/mainapp/assets/css/style.scss */
+.blog-card {
+  margin-top: 30px;
+  box-shadow: 0px 0px 30px rgba(17, 17, 17, 0.08);
+  border-radius: 0px 0px 3px 3px; }
+  /* line 2613, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card:hover .blog-img img {
+    transform: scale(1.05) translateX(-10px); }
+  /* line 2619, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card .blog-img {
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden; }
+    /* line 2624, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card .blog-img img {
+      width: 100%;
+      transition: all .4s; }
+    /* line 2629, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card .blog-img .blog-date {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 0px 0px 5px 5px;
+      padding: 10px 20px;
+      background: #031C39;
+      position: absolute;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 17px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF; }
+      /* line 2645, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-card .blog-img .blog-date i {
+        color: #0387D0;
+        margin-right: 6px; }
+  /* line 2652, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card .blog-details {
+    background-color: #FFF;
+    padding: 25px 20px; }
+    /* line 2656, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card .blog-details .blog-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      /* line 2663, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-card .blog-details .blog-info a.blog-comment i::before {
+        vertical-align: middle; }
+      /* line 2669, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-card .blog-details .blog-info a.blog-writer,
+      .blog-card .blog-details .blog-info a.blog-comment {
+        display: flex;
+        align-items: center;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 17px;
+        color: #160d52; }
+        /* line 2672, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-card .blog-details .blog-info a.blog-writer i,
+        .blog-card .blog-details .blog-info a.blog-comment i {
+          color: #0387D0;
+          margin-right: 5px;
+          font-size: 16px; }
+    /* line 2689, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card .blog-details a.blog-title {
+      margin: 20px 0;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 30px;
+      text-transform: capitalize;
+      color: #160d52;
+      display: inline-block; }
+
+/* line 2701, mainapp/static/mainapp/assets/css/style.scss */
+.blog-card-xl {
+  margin-top: 30px;
+  box-shadow: 0px 0px 30px rgba(17, 17, 17, 0.08);
+  border-radius: 0px 0px 3px 3px; }
+  /* line 2708, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card-xl:hover .blog-img img {
+    transform: scale(1.05) translateX(-10px); }
+  /* line 2714, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card-xl .blog-img {
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden; }
+    /* line 2719, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card-xl .blog-img img {
+      width: 100%;
+      transition: all .4s; }
+    /* line 2724, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card-xl .blog-img .blog-date {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 0px 0px 5px 5px;
+      padding: 10px 20px;
+      background: #031C39;
+      position: absolute;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 17px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF; }
+      /* line 2740, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-card-xl .blog-img .blog-date i {
+        color: #0387D0;
+        margin-right: 6px; }
+  /* line 2747, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card-xl .blog-details {
+    padding: 25px 20px; }
+    /* line 2750, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card-xl .blog-details .blog-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      /* line 2757, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-card-xl .blog-details .blog-info a.blog-comment i::before {
+        vertical-align: middle; }
+      /* line 2763, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-card-xl .blog-details .blog-info a.blog-writer,
+      .blog-card-xl .blog-details .blog-info a.blog-comment {
+        display: flex;
+        align-items: center;
+        font-family: "Work Sans", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #160d52; }
+        /* line 2766, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-card-xl .blog-details .blog-info a.blog-writer i,
+        .blog-card-xl .blog-details .blog-info a.blog-comment i {
+          color: #0387D0;
+          margin-right: 5px;
+          font-size: 14px;
+          top: 1px;
+          position: relative; }
+    /* line 2785, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-card-xl .blog-details a.blog-title {
+      margin: 14px 0;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 33px;
+      text-transform: capitalize;
+      color: #160d52;
+      display: inline-block; }
+  /* line 2796, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-card-xl .blog-btn {
+    margin-top: 20px; }
+
+/* =============================
+   Blog area end
+==============================*/
+/* =============================
+  12. Newsletter area start
+==============================*/
+/* line 2809, mainapp/static/mainapp/assets/css/style.scss */
+.newsletter-area {
+  margin-bottom: -90px; }
+  /* line 2812, mainapp/static/mainapp/assets/css/style.scss */
+  .newsletter-area .newsletter-wrapper {
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 48px;
+    background: #0387D0;
+    box-shadow: 0px 32px 64px rgba(17, 17, 17, 0.08);
+    border-radius: 20px 20px 0px 0px; }
+    /* line 2820, mainapp/static/mainapp/assets/css/style.scss */
+    .newsletter-area .newsletter-wrapper h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 54px;
+      text-transform: capitalize;
+      color: #FFFFFF;
+      max-width: 612px;
+      margin: 0 auto;
+      margin-bottom: 45px; }
+    /* line 2832, mainapp/static/mainapp/assets/css/style.scss */
+    .newsletter-area .newsletter-wrapper .newsletter-input {
+      max-width: 570px;
+      margin: 0 auto;
+      height: 60px; }
+      /* line 2837, mainapp/static/mainapp/assets/css/style.scss */
+      .newsletter-area .newsletter-wrapper .newsletter-input input {
+        border-radius: 10px 0px 0 10px;
+        height: 100%; }
+        /* line 2842, mainapp/static/mainapp/assets/css/style.scss */
+        .newsletter-area .newsletter-wrapper .newsletter-input input::placeholder {
+          font-family: "Work Sans", sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          text-transform: capitalize;
+          color: #A5A5A5; }
+        /* line 2853, mainapp/static/mainapp/assets/css/style.scss */
+        .newsletter-area .newsletter-wrapper .newsletter-input input:focus {
+          box-shadow: none;
+          outline: none;
+          border: none; }
+      /* line 2860, mainapp/static/mainapp/assets/css/style.scss */
+      .newsletter-area .newsletter-wrapper .newsletter-input button {
+        width: 172px;
+        border-radius: 10px;
+        background: #FFEE00;
+        border: 1px solid #FFEE00;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 10px rgba(26, 34, 56, 0.18);
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 0.05em; }
+
+/* =============================
+   Newsletter area end
+==============================*/
+/* =============================
+    13.  Footer area start
+==============================*/
+/* line 2892, mainapp/static/mainapp/assets/css/style.scss */
+.footer-area {
+  color: #ff7f47;
+  padding-top: 170px;
+  background: #031C39; }
+  /* line 2899, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-links h5 {
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 43px;
+    color: #FFF;
+    margin-bottom: 25px; }
+  /* line 2909, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-links .contact-box {
+    display: flex;
+    margin-top: 25px; }
+    /* line 2913, mainapp/static/mainapp/assets/css/style.scss */
+    .footer-area .footer-links .contact-box:first-child {
+      margin-top: 0; }
+    /* line 2917, mainapp/static/mainapp/assets/css/style.scss */
+    .footer-area .footer-links .contact-box span {
+      float: left;
+      width: 34px;
+      font-size: 18px;
+      color: #0387D0;
+      display: flex;
+      align-items: center; }
+      /* line 2925, mainapp/static/mainapp/assets/css/style.scss */
+      .footer-area .footer-links .contact-box span i {
+        color: #FFEE00;
+        font-size: 20px; }
+    /* line 2931, mainapp/static/mainapp/assets/css/style.scss */
+    .footer-area .footer-links .contact-box a {
+      font-size: 15px;
+      color: #fff;
+      line-height: 22px;
+      display: block;
+      font-weight: 500; }
+  /* line 2943, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-links .category-list ul li a {
+    display: inline-block;
+    font-family: "Work Sans", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    text-transform: capitalize; }
+  /* line 2958, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-links .payment-cards {
+    display: flex;
+    flex-wrap: wrap; }
+    /* line 2962, mainapp/static/mainapp/assets/css/style.scss */
+    .footer-area .footer-links .payment-cards img {
+      width: 65px;
+      height: auto;
+      margin-right: 13px;
+      margin-bottom: 15px; }
+  /* line 2972, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-info p {
+    color: #fff;
+    margin: 35px 0 20px 0; }
+  /* line 2979, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-social-icons h5 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 700; }
+  /* line 2987, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .footer-social-icons ul {
+    display: flex;
+    color: #0387D0;
+    font-size: 25px; }
+    /* line 2992, mainapp/static/mainapp/assets/css/style.scss */
+    .footer-area .footer-social-icons ul li {
+      margin-right: 20px; }
+      /* line 2995, mainapp/static/mainapp/assets/css/style.scss */
+      .footer-area .footer-social-icons ul li:last-child {
+        margin-right: 0; }
+      /* line 2999, mainapp/static/mainapp/assets/css/style.scss */
+      .footer-area .footer-social-icons ul li a {
+        color: #FFEE00; }
+  /* line 3006, mainapp/static/mainapp/assets/css/style.scss */
+  .footer-area .copyrigth-area {
+    border-top: 2px solid #423F54;
+    margin-top: 50px;
+    padding: 30px 0;
+    text-align: center; }
+    /* line 3012, mainapp/static/mainapp/assets/css/style.scss */
+    .footer-area .copyrigth-area p {
+      font-family: "Work Sans", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #FFFFFF; }
+      /* line 3019, mainapp/static/mainapp/assets/css/style.scss */
+      .footer-area .copyrigth-area p a {
+        color: #FFEE00;
+        font-weight: 600; }
+
+/* =============================
+      Footer area end
+==============================*/
+/* =============================
+    14. About wrapper start
+==============================*/
+/* line 3037, mainapp/static/mainapp/assets/css/style.scss */
+.about-wrapper .about-wrapper-left .about-img {
+  display: inline-block;
+  margin-bottom: 10px;
+  float: right;
+  border: 10px solid rgba(48, 79, 71, 0.1);
+  margin-bottom: 10px; }
+
+/* line 3046, mainapp/static/mainapp/assets/css/style.scss */
+.about-wrapper .about-wrapper-left .about-video {
+  position: relative;
+  display: inline-block;
+  border: 10px solid rgba(48, 79, 71, 0.1); }
+
+/* line 3052, mainapp/static/mainapp/assets/css/style.scss */
+.about-wrapper .about-wrapper-left .video-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 100px;
+  background: rgba(48, 79, 71, 0.1);
+  border: 10px solid rgba(190, 148, 173, 0.5);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 110px;
+  cursor: pointer; }
+  /* line 3066, mainapp/static/mainapp/assets/css/style.scss */
+  .about-wrapper .about-wrapper-left .video-icon i {
+    color: #e41d1d; }
+    /* line 3069, mainapp/static/mainapp/assets/css/style.scss */
+    .about-wrapper .about-wrapper-left .video-icon i::before {
+      font-size: 40px; }
+
+/* line 3079, mainapp/static/mainapp/assets/css/style.scss */
+.about-wrapper .about-wrapper-right p {
+  margin: 25px 0; }
+
+/* line 3083, mainapp/static/mainapp/assets/css/style.scss */
+.about-wrapper .about-wrapper-right ul.about-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px; }
+  /* line 3089, mainapp/static/mainapp/assets/css/style.scss */
+  .about-wrapper .about-wrapper-right ul.about-list li {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #160d52;
+    margin-bottom: 20px; }
+    /* line 3097, mainapp/static/mainapp/assets/css/style.scss */
+    .about-wrapper .about-wrapper-right ul.about-list li i {
+      vertical-align: middle;
+      margin-right: 5px; }
+      /* line 3101, mainapp/static/mainapp/assets/css/style.scss */
+      .about-wrapper .about-wrapper-right ul.about-list li i::before {
+        font-size: 20px; }
+
+/* line 3112, mainapp/static/mainapp/assets/css/style.scss */
+.guide-slider.owl-carousel .owl-nav {
+  position: absolute;
+  right: 0;
+  top: -20%; }
+  /* line 3117, mainapp/static/mainapp/assets/css/style.scss */
+  .guide-slider.owl-carousel .owl-nav button i {
+    color: #0387D0;
+    border: 2px solid #0387D0;
+    margin-top: 0; }
+
+/* =============================
+     About wrapper end
+==============================*/
+/* =============================
+    15. Guide wrapper start
+==============================*/
+/* line 3132, mainapp/static/mainapp/assets/css/style.scss */
+.guide-card {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid #f1f1f1; }
+  /* line 3143, mainapp/static/mainapp/assets/css/style.scss */
+  .guide-card:hover .guide-info {
+    transform: translateY(0); }
+  /* line 3148, mainapp/static/mainapp/assets/css/style.scss */
+  .guide-card .guide-thumb {
+    border-radius: 10px; }
+    /* line 3151, mainapp/static/mainapp/assets/css/style.scss */
+    .guide-card .guide-thumb img {
+      width: 100%; }
+  /* line 3156, mainapp/static/mainapp/assets/css/style.scss */
+  .guide-card .guide-info {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    transition: all 0.4s ease;
+    transform: translateY(40%); }
+    /* line 3167, mainapp/static/mainapp/assets/css/style.scss */
+    .guide-card .guide-info strong {
+      font-weight: 700;
+      font-size: 25px;
+      text-transform: capitalize;
+      color: #160d52; }
+    /* line 3174, mainapp/static/mainapp/assets/css/style.scss */
+    .guide-card .guide-info p {
+      font-size: 20px;
+      font-weight: 500; }
+    /* line 3179, mainapp/static/mainapp/assets/css/style.scss */
+    .guide-card .guide-info ul.guide-links {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; }
+      /* line 3187, mainapp/static/mainapp/assets/css/style.scss */
+      .guide-card .guide-info ul.guide-links li:last-child a {
+        margin-right: 0; }
+      /* line 3192, mainapp/static/mainapp/assets/css/style.scss */
+      .guide-card .guide-info ul.guide-links li a {
+        margin-right: 20px;
+        font-size: 20px;
+        padding: 8px 10px;
+        background: rgba(175, 175, 175, 0.3);
+        border-radius: 10px;
+        color: #afafaf;
+        transition: all .3s;
+        display: inline; }
+        /* line 3202, mainapp/static/mainapp/assets/css/style.scss */
+        .guide-card .guide-info ul.guide-links li a:hover {
+          background: #0387D0;
+          color: #fff; }
+
+/* =============================
+     Guide wrapper end
+==============================*/
+/* =============================
+     16. Package Page CSS Start
+==============================*/
+/* line 3221, mainapp/static/mainapp/assets/css/style.scss */
+.package-filter h5 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  color: #160d52;
+  margin: 5px 0; }
+
+/* line 3232, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar h5.categorie-head {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 25px;
+  color: #160d52;
+  margin-bottom: 30px; }
+
+/* line 3240, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar .single-option {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center; }
+  /* line 3245, mainapp/static/mainapp/assets/css/style.scss */
+  .package-sidebar .single-option:last-child {
+    margin-bottom: 0; }
+  /* line 3249, mainapp/static/mainapp/assets/css/style.scss */
+  .package-sidebar .single-option label {
+    font-family: "Work Sans", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #A5A5A5; }
+
+/* line 3258, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar .sidebar-searchbox {
+  padding: 30px 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+
+/* line 3265, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar .sidebar-range {
+  padding: 30px 25px;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+
+/* line 3271, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar .sidebar-duration {
+  padding: 30px 25px;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+
+/* line 3277, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar .sidebar-categorie {
+  padding: 30px 25px;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+
+/* line 3283, mainapp/static/mainapp/assets/css/style.scss */
+.package-sidebar .sidebar-banner {
+  position: relative;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  overflow: hidden; }
+  /* line 3285, mainapp/static/mainapp/assets/css/style.scss */
+  .package-sidebar .sidebar-banner img {
+    width: 100%; }
+  /* line 3294, mainapp/static/mainapp/assets/css/style.scss */
+  .package-sidebar .sidebar-banner .sidebar-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(48, 79, 71, 0.85);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 25px; }
+    /* line 3306, mainapp/static/mainapp/assets/css/style.scss */
+    .package-sidebar .sidebar-banner .sidebar-banner-overlay h3 {
+      font-size: 40px;
+      line-height: 55px;
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 50px; }
+    /* line 3315, mainapp/static/mainapp/assets/css/style.scss */
+    .package-sidebar .sidebar-banner .sidebar-banner-overlay .sidebar-banner-btn a {
+      padding: 14px 35px;
+      background: #FF7F47;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.75px;
+      color: #fff;
+      display: inline-block;
+      transition: all .4s; }
+      /* line 3326, mainapp/static/mainapp/assets/css/style.scss */
+      .package-sidebar .sidebar-banner .sidebar-banner-overlay .sidebar-banner-btn a:hover {
+        background: #031C39; }
+
+/* line 3336, mainapp/static/mainapp/assets/css/style.scss */
+.dual-range {
+  margin-bottom: 20px;
+  --range-size: 12px;
+  --range-width: 100%;
+  --handle-size: 1.3;
+  height: var(--range-size);
+  width: var(--range-width);
+  background: #031C39;
+  border-radius: 50px;
+  position: relative;
+  user-select: none; }
+  /* line 3348, mainapp/static/mainapp/assets/css/style.scss */
+  .dual-range .highlight {
+    position: absolute;
+    height: var(--range-size);
+    left: var(--x-1);
+    background: var(--clr-prim);
+    z-index: 1;
+    border-radius: 50px; }
+  /* line 3358, mainapp/static/mainapp/assets/css/style.scss */
+  .dual-range .handle {
+    height: 20px;
+    width: 20px;
+    background: #0387D0;
+    position: absolute;
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: grab; }
+    /* line 3370, mainapp/static/mainapp/assets/css/style.scss */
+    .dual-range .handle:active {
+      cursor: grabbing; }
+    /* line 3374, mainapp/static/mainapp/assets/css/style.scss */
+    .dual-range .handle.left {
+      left: var(--x-1); }
+    /* line 3378, mainapp/static/mainapp/assets/css/style.scss */
+    .dual-range .handle.right {
+      left: var(--x-2); }
+    /* line 3382, mainapp/static/mainapp/assets/css/style.scss */
+    .dual-range .handle::after {
+      content: "$" attr(data-value);
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 700;
+      color: #031C39; }
+
+/* line 3396, mainapp/static/mainapp/assets/css/style.scss */
+.package-d-sidebar h5.package-d-head {
+  font-weight: 700;
+  font-size: 25px;
+  color: #262339;
+  margin-bottom: 30px; }
+
+/* line 3403, mainapp/static/mainapp/assets/css/style.scss */
+.package-d-sidebar .p-sidebar-form {
+  padding: 30px 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+  /* line 3409, mainapp/static/mainapp/assets/css/style.scss */
+  .package-d-sidebar .p-sidebar-form input,
+  .package-d-sidebar .p-sidebar-form textarea,
+  .package-d-sidebar .p-sidebar-form select {
+    margin-bottom: 20px;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #A5A5A5; }
+    /* line 3418, mainapp/static/mainapp/assets/css/style.scss */
+    .package-d-sidebar .p-sidebar-form input::placeholder,
+    .package-d-sidebar .p-sidebar-form textarea::placeholder,
+    .package-d-sidebar .p-sidebar-form select::placeholder {
+      color: #A5A5A5;
+      text-transform: capitalize; }
+    /* line 3424, mainapp/static/mainapp/assets/css/style.scss */
+    .package-d-sidebar .p-sidebar-form input:focus,
+    .package-d-sidebar .p-sidebar-form textarea:focus,
+    .package-d-sidebar .p-sidebar-form select:focus {
+      box-shadow: none; }
+  /* line 3429, mainapp/static/mainapp/assets/css/style.scss */
+  .package-d-sidebar .p-sidebar-form input[type=submit] {
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.75px;
+    color: #FFFFFF;
+    background: #031C39;
+    padding: 14px 22px;
+    text-transform: capitalize;
+    transition: all .3s;
+    margin-bottom: 0; }
+    /* line 3444, mainapp/static/mainapp/assets/css/style.scss */
+    .package-d-sidebar .p-sidebar-form input[type=submit]:hover {
+      background: #0387D0; }
+
+/* line 3452, mainapp/static/mainapp/assets/css/style.scss */
+.package-d-sidebar .p-sidebar-cards {
+  border-radius: 10px;
+  padding: 30px 25px;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  background-color: #fff; }
+
+/* line 3460, mainapp/static/mainapp/assets/css/style.scss */
+.package-d-sidebar .p-sidebar-organizer {
+  border-radius: 10px;
+  padding: 30px 25px;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1); }
+  /* line 3465, mainapp/static/mainapp/assets/css/style.scss */
+  .package-d-sidebar .p-sidebar-organizer .p-ask-btn {
+    margin-top: 40px;
+    text-align: center; }
+    /* line 3469, mainapp/static/mainapp/assets/css/style.scss */
+    .package-d-sidebar .p-sidebar-organizer .p-ask-btn a {
+      font-weight: 700;
+      font-size: 18px;
+      color: #FFFFFF;
+      padding: 14px 35px;
+      background: #031C39;
+      display: inline-block;
+      border-radius: 10px;
+      transition: all .4s; }
+      /* line 3479, mainapp/static/mainapp/assets/css/style.scss */
+      .package-d-sidebar .p-sidebar-organizer .p-ask-btn a:hover {
+        background: #0387D0; }
+
+/* line 3486, mainapp/static/mainapp/assets/css/style.scss */
+.package-d-sidebar .p-sidebar-banner {
+  position: relative;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  overflow: hidden; }
+  /* line 3487, mainapp/static/mainapp/assets/css/style.scss */
+  .package-d-sidebar .p-sidebar-banner img {
+    width: 100%; }
+  /* line 3496, mainapp/static/mainapp/assets/css/style.scss */
+  .package-d-sidebar .p-sidebar-banner .sidebar-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(48, 79, 71, 0.85);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 25px; }
+    /* line 3508, mainapp/static/mainapp/assets/css/style.scss */
+    .package-d-sidebar .p-sidebar-banner .sidebar-banner-overlay h3 {
+      font-size: 40px;
+      line-height: 55px;
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 50px; }
+    /* line 3517, mainapp/static/mainapp/assets/css/style.scss */
+    .package-d-sidebar .p-sidebar-banner .sidebar-banner-overlay .sidebar-banner-btn a {
+      padding: 14px 35px;
+      background: #FF7F47;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.75px;
+      color: #fff;
+      display: inline-block;
+      transition: all .4s; }
+      /* line 3528, mainapp/static/mainapp/assets/css/style.scss */
+      .package-d-sidebar .p-sidebar-banner .sidebar-banner-overlay .sidebar-banner-btn a:hover {
+        background: #031C39; }
+
+/* line 3537, mainapp/static/mainapp/assets/css/style.scss */
+li.package-card-sm {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; }
+  /* line 3544, mainapp/static/mainapp/assets/css/style.scss */
+  li.package-card-sm:hover .p-sm-img img {
+    max-width: 100%;
+    transform: scale(1.05); }
+  /* line 3551, mainapp/static/mainapp/assets/css/style.scss */
+  li.package-card-sm:last-child {
+    margin-bottom: 0; }
+  /* line 3555, mainapp/static/mainapp/assets/css/style.scss */
+  li.package-card-sm .p-sm-img {
+    margin-right: 20px;
+    overflow: hidden;
+    max-width: 110px;
+    border-radius: 10px; }
+    /* line 3561, mainapp/static/mainapp/assets/css/style.scss */
+    li.package-card-sm .p-sm-img img {
+      transition: all .3s;
+      max-width: 100%; }
+  /* line 3570, mainapp/static/mainapp/assets/css/style.scss */
+  li.package-card-sm .package-info .package-date-sm strong {
+    font-weight: 700;
+    color: #262339;
+    font-size: 10px; }
+    /* line 3575, mainapp/static/mainapp/assets/css/style.scss */
+    li.package-card-sm .package-info .package-date-sm strong i {
+      margin-right: 4px; }
+  /* line 3581, mainapp/static/mainapp/assets/css/style.scss */
+  li.package-card-sm .package-info h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FF7F47;
+    margin: 8px 0; }
+    /* line 3588, mainapp/static/mainapp/assets/css/style.scss */
+    li.package-card-sm .package-info h3 i {
+      color: #031C39; }
+    /* line 3592, mainapp/static/mainapp/assets/css/style.scss */
+    li.package-card-sm .package-info h3 a {
+      color: #0387D0; }
+  /* line 3598, mainapp/static/mainapp/assets/css/style.scss */
+  li.package-card-sm .package-info h5 {
+    font-weight: 700;
+    font-size: 11px;
+    color: #262339; }
+    /* line 3603, mainapp/static/mainapp/assets/css/style.scss */
+    li.package-card-sm .package-info h5 span {
+      font-size: 18px;
+      color: #304F47; }
+
+/* line 3611, mainapp/static/mainapp/assets/css/style.scss */
+.organizer-card {
+  display: flex; }
+  /* line 3614, mainapp/static/mainapp/assets/css/style.scss */
+  .organizer-card .organizer-img {
+    max-width: 135px;
+    margin-right: 25px; }
+    /* line 3618, mainapp/static/mainapp/assets/css/style.scss */
+    .organizer-card .organizer-img img {
+      border-radius: 5px; }
+  /* line 3624, mainapp/static/mainapp/assets/css/style.scss */
+  .organizer-card .organizer-info h5 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #160d52; }
+  /* line 3630, mainapp/static/mainapp/assets/css/style.scss */
+  .organizer-card .organizer-info p {
+    margin: 10px 0;
+    font-size: 15px; }
+  /* line 3635, mainapp/static/mainapp/assets/css/style.scss */
+  .organizer-card .organizer-info ul.organizer-rating {
+    margin-bottom: 20px;
+    display: flex; }
+    /* line 3639, mainapp/static/mainapp/assets/css/style.scss */
+    .organizer-card .organizer-info ul.organizer-rating li {
+      font-size: 20px;
+      color: #0387D0;
+      margin-right: 5px; }
+      /* line 3644, mainapp/static/mainapp/assets/css/style.scss */
+      .organizer-card .organizer-info ul.organizer-rating li:last-child {
+        margin-right: 0; }
+
+/* line 3654, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .package-thumb img {
+  border-radius: 5px;
+  width: 100%; }
+
+/* line 3660, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .package-header {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between; }
+  /* line 3666, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-header .package-title h3 {
+    font-weight: 700;
+    font-size: 30px;
+    color: #160d52;
+    margin-bottom: 15px; }
+  /* line 3673, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-header .package-title strong {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    color: #A5A5A5; }
+    /* line 3678, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-header .package-title strong i {
+      color: #031C39;
+      font-size: 17px; }
+  /* line 3685, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-header .pd-review {
+    text-align: right; }
+    /* line 3688, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-header .pd-review p {
+      font-family: "Work Sans", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #262339; }
+    /* line 3695, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-header .pd-review ul {
+      display: flex;
+      float: right; }
+      /* line 3699, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-header .pd-review ul li {
+        color: #0387D0;
+        font-size: 13px; }
+
+/* line 3709, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .package-tab ul.nav.nav-pills li {
+  margin-top: 20px; }
+
+/* line 3715, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .p-short-info {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  justify-content: space-between; }
+  /* line 3725, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .p-short-info .single-info {
+    display: flex;
+    align-items: center; }
+    /* line 3729, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .p-short-info .single-info i {
+      font-size: 28px;
+      color: #0387D0;
+      margin-right: 15px; }
+    /* line 3736, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .p-short-info .single-info .info-texts strong {
+      font-size: 16px;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 600;
+      color: #160d52; }
+    /* line 3743, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .p-short-info .single-info .info-texts p {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 20px; }
+
+/* line 3754, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .package-tab .nav-pills button.nav-link {
+  margin-right: 20px;
+  border: 2px solid #0387D0;
+  padding: 10px 36px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #160d52; }
+  /* line 3762, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .nav-pills button.nav-link i {
+    margin-right: 8px;
+    font-size: 22px; }
+    /* line 3766, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .nav-pills button.nav-link i::before {
+      vertical-align: middle; }
+
+/* line 3772, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .package-tab .nav-pills button.nav-link.active {
+  background: #0387D0;
+  color: #FFFFFF; }
+
+/* line 3778, mainapp/static/mainapp/assets/css/style.scss */
+.package-details .package-tab .p-tab-content {
+  margin-top: 40px; }
+  /* line 3783, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-overview h5 {
+    color: #160d52;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 20px; }
+  /* line 3791, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-highlight {
+    margin: 30px 0; }
+    /* line 3794, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-highlight h5 {
+      color: #160d52;
+      font-weight: 700;
+      font-size: 25px;
+      margin-bottom: 20px; }
+    /* line 3802, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-highlight ul li {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: center; }
+      /* line 3807, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-highlight ul li:last-child {
+        margin-bottom: 0; }
+      /* line 3811, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-highlight ul li i {
+        color: #0387D0;
+        font-size: 20px;
+        margin-right: 10px; }
+  /* line 3823, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table .table > :not(caption) > * > * {
+    padding: 20px 20px 20px 40px; }
+  /* line 3828, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td.table-bottom {
+    font-weight: 700;
+    font-size: 18px !important;
+    color: #262339 !important;
+    text-align: center; }
+    /* line 3834, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td.table-bottom i {
+      font-size: 24px;
+      color: #0387D0;
+      margin-right: 10px; }
+      /* line 3839, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td.table-bottom i::before {
+        vertical-align: middle; }
+  /* line 3846, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:first-child {
+    font-weight: 700;
+    font-size: 18px;
+    color: #262339; }
+  /* line 3853, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child {
+    font-weight: 600;
+    font-size: 16px;
+    color: #A5A5A5; }
+    /* line 3859, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child ul.table-list-allow li {
+      margin-bottom: 10px; }
+      /* line 3862, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child ul.table-list-allow li i {
+        color: #0387D0;
+        font-size: 20px;
+        font-weight: 600; }
+        /* line 3867, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child ul.table-list-allow li i::before {
+          vertical-align: middle; }
+    /* line 3875, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child ul.table-list-disallow li {
+      margin-bottom: 10px; }
+      /* line 3878, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child ul.table-list-disallow li i {
+        color: #ff0000;
+        font-size: 20px;
+        font-weight: 600; }
+        /* line 3883, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-details-table tr td:last-child ul.table-list-disallow li i::before {
+          vertical-align: middle; }
+  /* line 3895, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg {
+    padding: 30px 0 100px 0; }
+    /* line 3898, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg h5 {
+      color: #160d52;
+      font-weight: 700;
+      font-size: 25px;
+      margin-bottom: 20px; }
+    /* line 3905, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      display: flex; }
+      /* line 3910, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-avarag {
+        width: 40%;
+        background: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        /* line 3918, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-avarag h2 {
+          font-weight: 700;
+          font-size: 60px;
+          color: #0387D0; }
+        /* line 3924, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-avarag h5 {
+          font-size: 22px;
+          margin-top: 10px;
+          margin-bottom: 0; }
+      /* line 3931, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-info {
+        width: 60%;
+        padding: 42px 38px; }
+        /* line 3936, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-info ul li {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between; }
+          /* line 3941, mainapp/static/mainapp/assets/css/style.scss */
+          .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-info ul li:last-child {
+            margin-bottom: 0; }
+          /* line 3945, mainapp/static/mainapp/assets/css/style.scss */
+          .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-info ul li strong {
+            font-weight: 700;
+            font-size: 18px; }
+          /* line 3950, mainapp/static/mainapp/assets/css/style.scss */
+          .package-details .package-tab .p-tab-content .tab-content-1 .p-rationg .rating-card .r-card-info ul li ul li {
+            color: #0387D0;
+            font-size: 20px; }
+  /* line 3962, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card {
+    margin-bottom: 50px; }
+    /* line 3965, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-info {
+      display: flex; }
+      /* line 3968, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-info .p-reviewr-img {
+        width: 75px;
+        margin-right: 25px; }
+        /* line 3972, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-info .p-reviewr-img img {
+          border-radius: 50%;
+          width: 100%;
+          border: 2px solid rgba(48, 79, 71, 0.2); }
+      /* line 3980, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-info .p-reviewer-info strong {
+        color: #160d52;
+        font-size: 20px;
+        font-weight: 700; }
+      /* line 3986, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-info .p-reviewer-info ul.review-star {
+        display: flex; }
+        /* line 3989, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-info .p-reviewer-info ul.review-star li {
+          margin-right: 5px;
+          color: #0387D0; }
+    /* line 3997, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card .p-review-texts {
+      margin-top: 25px;
+      margin-bottom: 15px; }
+    /* line 4002, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card a.r-reply-btn {
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: capitalize;
+      color: #0387D0; }
+      /* line 4008, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review ul li.p-review-card a.r-reply-btn i {
+        font-size: 18px; }
+  /* line 4017, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input {
+    padding: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+    border-radius: 10px; }
+    /* line 4023, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input h5 {
+      color: #160d52;
+      font-weight: 700;
+      font-size: 25px;
+      margin-bottom: 40px; }
+    /* line 4030, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input ul.input-rating {
+      display: flex;
+      margin-bottom: 40px; }
+      /* line 4034, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input ul.input-rating li i {
+        font-size: 25px;
+        color: #0387D0;
+        margin-right: 5px; }
+    /* line 4041, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input input,
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input textarea {
+      margin-bottom: 40px;
+      border: 1px solid #E1E1E1;
+      box-sizing: border-box;
+      border-radius: 10px;
+      color: #A5A5A5; }
+      /* line 4049, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input input::placeholder,
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input textarea::placeholder {
+        color: #A5A5A5;
+        text-transform: capitalize; }
+    /* line 4056, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input input[type=submit] {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.75px;
+      color: #FFFFFF;
+      background: #0387D0;
+      padding: 14px 22px;
+      text-transform: capitalize;
+      transition: all .3s;
+      margin-bottom: 0; }
+      /* line 4068, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-1 .p-review-input input[type=submit]:hover {
+        background: #031C39; }
+  /* line 4076, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-2 h5 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #160d52; }
+  /* line 4083, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-2 .p-timeline-overview h5 {
+    margin-bottom: 20px; }
+  /* line 4088, mainapp/static/mainapp/assets/css/style.scss */
+  .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline {
+    margin-top: 50px; }
+    /* line 4091, mainapp/static/mainapp/assets/css/style.scss */
+    .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li {
+      display: flex; }
+      /* line 4095, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li:last-child .timeline-content {
+        padding-bottom: 0; }
+      /* line 4100, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li:last-child .timeline-index::before {
+        display: none; }
+      /* line 4106, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-index {
+        height: auto;
+        margin-right: 30px;
+        position: relative;
+        z-index: 12; }
+        /* line 4112, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-index::before {
+          position: absolute;
+          content: "";
+          height: 100%;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 6px;
+          z-index: -1;
+          background: url(/static/mainapp/assets/images/package/p-shape.png) no-repeat;
+          background-size: cover; }
+        /* line 4125, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-index .index-circle {
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #0387D0;
+          border: 5px solid #CBD3D1; }
+        /* line 4137, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-index h5 {
+          color: #fff; }
+      /* line 4142, mainapp/static/mainapp/assets/css/style.scss */
+      .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-content {
+        padding-bottom: 40px; }
+        /* line 4145, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-content strong {
+          color: #0387D0;
+          font-size: 18px;
+          font-weight: 500; }
+        /* line 4151, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-content p {
+          padding: 20px 0; }
+        /* line 4156, mainapp/static/mainapp/assets/css/style.scss */
+        .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-content ul li {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 180%;
+          color: #A5A5A5; }
+          /* line 4162, mainapp/static/mainapp/assets/css/style.scss */
+          .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-content ul li i {
+            font-size: 18px;
+            color: #160d52;
+            margin-right: 10px; }
+            /* line 4167, mainapp/static/mainapp/assets/css/style.scss */
+            .package-details .package-tab .p-tab-content .tab-content-2 ul.p-timeline li .timeline-content ul li i::before {
+              vertical-align: middle; }
+
+/* line 4182, mainapp/static/mainapp/assets/css/style.scss */
+.single-grid-2 img {
+  width: 100%; }
+
+/* line 4187, mainapp/static/mainapp/assets/css/style.scss */
+.single-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 24px;
+  grid-template-areas: "g-img-sm-1 g-img-sm-2" "g-img-md g-img-md"; }
+  /* line 4199, mainapp/static/mainapp/assets/css/style.scss */
+  .single-grid .g-img-sm-1 img,
+  .single-grid .g-img-sm-2 img,
+  .single-grid .g-img-md img {
+    width: 100%; }
+
+/* line 4205, mainapp/static/mainapp/assets/css/style.scss */
+.g-img-sm-1 {
+  grid-area: g-img-sm-1; }
+
+/* line 4209, mainapp/static/mainapp/assets/css/style.scss */
+.g-img-sm-2 {
+  grid-area: g-img-sm-2; }
+
+/* line 4213, mainapp/static/mainapp/assets/css/style.scss */
+.g-img-md {
+  grid-area: g-img-md; }
+
+/* =============================
+     Package Page CSS end
+==============================*/
+/* =============================
+    17. Blog Page CSS Start
+==============================*/
+/* line 4225, mainapp/static/mainapp/assets/css/style.scss */
+.blog-sidebar h5.categorie-head {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 25px;
+  color: #160d52;
+  margin-bottom: 30px; }
+
+/* line 4233, mainapp/static/mainapp/assets/css/style.scss */
+.blog-sidebar .sidebar-searchbox {
+  padding: 30px 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+
+/* line 4240, mainapp/static/mainapp/assets/css/style.scss */
+.blog-sidebar .blog-categorie {
+  padding: 30px 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+  /* line 4247, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-sidebar .blog-categorie ul li {
+    margin-bottom: 27px; }
+    /* line 4250, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-categorie ul li:last-child {
+      margin-bottom: 0; }
+    /* line 4254, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-categorie ul li a {
+      font-family: "Work Sans", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #A5A5A5;
+      display: flex;
+      align-items: center;
+      transition: all .3s; }
+      /* line 4263, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-sidebar .blog-categorie ul li a i {
+        color: #031C39;
+        font-size: 20px;
+        margin-right: 7px; }
+      /* line 4269, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-sidebar .blog-categorie ul li a:hover {
+        transform: translateX(6px);
+        color: #160d52; }
+
+/* line 4278, mainapp/static/mainapp/assets/css/style.scss */
+.blog-sidebar .blog-popular {
+  padding: 30px 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+  /* line 4284, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-sidebar .blog-popular li.blog-card-sm {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; }
+    /* line 4289, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-popular li.blog-card-sm:last-child {
+      margin-bottom: 0; }
+    /* line 4295, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-popular li.blog-card-sm:hover .blog-details-sm a.blog-title-sm {
+      color: #160d52; }
+    /* line 4302, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-popular li.blog-card-sm .blog-img-sm img {
+      max-width: 110px;
+      border-radius: 10px; }
+    /* line 4308, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm {
+      padding: 5px 0;
+      margin-left: 15px;
+      width: 100%; }
+      /* line 4313, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm a.blog-title-sm {
+        font-weight: 700;
+        font-size: 20px;
+        color: #031C39;
+        line-height: 24px;
+        display: inline-block;
+        margin-bottom: 20px;
+        transition: all .3s; }
+      /* line 4323, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info {
+        display: flex;
+        justify-content: space-between; }
+        /* line 4327, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info a.blog-date {
+          margin-left: 8px; }
+        /* line 4331, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info a {
+          font-weight: 700;
+          font-size: 12px;
+          color: #160d52; }
+          /* line 4337, mainapp/static/mainapp/assets/css/style.scss */
+          .blog-sidebar .blog-popular li.blog-card-sm .blog-details-sm .blog-info a i ::before {
+            font-size: 12px; }
+
+/* line 4347, mainapp/static/mainapp/assets/css/style.scss */
+.blog-sidebar .blog-tag {
+  padding: 30px 25px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px; }
+  /* line 4353, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-sidebar .blog-tag ul {
+    display: flex;
+    flex-wrap: wrap; }
+    /* line 4358, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .blog-tag ul li a {
+      border: 2px solid #E1E1E1;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 8px 16px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #A5A5A5;
+      transition: all .3s;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+      /* line 4370, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-sidebar .blog-tag ul li a:hover {
+        background: #031C39;
+        color: #fff;
+        border: 2px solid transparent; }
+
+/* line 4380, mainapp/static/mainapp/assets/css/style.scss */
+.blog-sidebar .sidebar-banner {
+  position: relative;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  overflow: hidden; }
+  /* line 4382, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-sidebar .sidebar-banner img {
+    width: 100%; }
+  /* line 4391, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-sidebar .sidebar-banner .sidebar-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(48, 79, 71, 0.85);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 25px; }
+    /* line 4403, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .sidebar-banner .sidebar-banner-overlay h3 {
+      font-size: 40px;
+      line-height: 55px;
+      color: #FFFFFF;
+      font-weight: 700;
+      margin-bottom: 50px; }
+    /* line 4412, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-sidebar .sidebar-banner .sidebar-banner-overlay .sidebar-banner-btn a {
+      padding: 16px 32px;
+      background: #FF7F47;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.75px;
+      color: #fff;
+      display: inline-block; }
+
+/* line 4429, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details h3.sub-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+  color: #160d52; }
+
+/* line 4438, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-title-xl h3 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 44px;
+  text-transform: capitalize;
+  color: #160d52; }
+
+/* line 4446, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-title-xl .blog-info-xl {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0; }
+  /* line 4451, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-title-xl .blog-info-xl a {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #160d52; }
+    /* line 4458, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-title-xl .blog-info-xl a i {
+      font-size: 14px;
+      color: #0387D0;
+      margin-right: 6px;
+      position: relative;
+      top: -1px; }
+      /* line 4465, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-title-xl .blog-info-xl a i::before {
+        vertical-align: middle; }
+
+/* line 4473, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-img-xl {
+  position: relative; }
+  /* line 4476, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-img-xl img {
+    width: 100%; }
+  /* line 4480, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-img-xl .blog-date {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px 20px;
+    background: #031C39;
+    position: absolute;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF; }
+    /* line 4496, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-img-xl .blog-date i {
+      color: #0387D0;
+      margin-right: 6px; }
+
+/* line 4503, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-texts {
+  padding-bottom: 40px; }
+  /* line 4506, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-texts .blog-qoute {
+    margin: 45px 0 45px 70px;
+    display: flex;
+    align-items: center;
+    border-left: 7px solid #0387D0;
+    padding: 30px 15px;
+    box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+    border-radius: 0px 10px 10px 0px; }
+    /* line 4515, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-texts .blog-qoute i.qoute-icon {
+      color: #031C39;
+      font-size: 75px;
+      margin-right: 20px; }
+    /* line 4521, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-texts .blog-qoute strong {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 34px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.75px;
+      text-transform: capitalize;
+      color: #737679; }
+  /* line 4534, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-texts .blog-gallary {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0; }
+    /* line 4539, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-texts .blog-gallary img {
+      margin-right: 20px; }
+      /* line 4542, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-texts .blog-gallary img:last-child {
+        margin-right: 0; }
+
+/* line 4549, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-bottom {
+  padding: 30px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+  /* line 4558, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-bottom .blog-tags {
+    display: flex;
+    align-items: center; }
+    /* line 4562, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-bottom .blog-tags ul {
+      display: flex;
+      flex-wrap: wrap; }
+      /* line 4567, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-bottom .blog-tags ul li a {
+        border: 0.5px solid #A4A4A4;
+        border-radius: 3px;
+        padding: 8px 20px;
+        font-weight: 700;
+        font-size: 15px;
+        color: #262339;
+        display: inline-block;
+        transition: all .3s;
+        margin-right: 10px; }
+        /* line 4578, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-details .blog-bottom .blog-tags ul li a:hover {
+          background: #031C39;
+          color: #fff; }
+    /* line 4586, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-bottom .blog-tags h5 {
+      font-weight: 700;
+      font-size: 25px;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+      color: #160d52;
+      margin-right: 20px; }
+  /* line 4599, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-bottom .blog-social ul li a {
+    font-size: 15px;
+    color: #0387D0;
+    margin-left: 18px; }
+
+/* line 4609, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-comments {
+  padding: 60px 0; }
+  /* line 4612, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-comments h5 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    text-transform: capitalize;
+    color: #160d52;
+    border-bottom: 2px solid #262339;
+    display: inline-block; }
+  /* line 4623, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-comments ul li {
+    margin-top: 50px; }
+    /* line 4626, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-comments ul li .commentor {
+      display: flex;
+      align-items: center; }
+      /* line 4630, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-comments ul li .commentor .commentotor-img {
+        max-width: 75px;
+        margin-right: 25px; }
+        /* line 4634, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-details .blog-comments ul li .commentor .commentotor-img img {
+          border-radius: 50%; }
+      /* line 4641, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-comments ul li .commentor .commentor-id span {
+        margin-right: 10px; }
+      /* line 4645, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-comments ul li .commentor .commentor-id strong {
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: capitalize; }
+    /* line 4655, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-comments ul li p.comment {
+      padding: 20px 0 12px 0; }
+    /* line 4659, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-comments ul li span.reply-icon {
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: capitalize;
+      color: #FF7F47; }
+      /* line 4665, mainapp/static/mainapp/assets/css/style.scss */
+      .blog-details .blog-comments ul li span.reply-icon i {
+        font-size: 18px; }
+        /* line 4668, mainapp/static/mainapp/assets/css/style.scss */
+        .blog-details .blog-comments ul li span.reply-icon i::before {
+          vertical-align: middle; }
+
+/* line 4677, mainapp/static/mainapp/assets/css/style.scss */
+.blog-details .blog-reply {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  padding: 50px; }
+  /* line 4683, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-reply h5 {
+    font-weight: 700;
+    font-size: 25px;
+    color: #262339;
+    padding-bottom: 40px; }
+  /* line 4690, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-reply input,
+  .blog-details .blog-reply textarea {
+    margin-bottom: 40px;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #A5A5A5; }
+    /* line 4698, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-reply input::placeholder,
+    .blog-details .blog-reply textarea::placeholder {
+      color: #A5A5A5;
+      text-transform: capitalize; }
+  /* line 4705, mainapp/static/mainapp/assets/css/style.scss */
+  .blog-details .blog-reply input[type=submit] {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.75px;
+    color: #FFFFFF;
+    background: #0387D0;
+    padding: 14px 22px;
+    text-transform: capitalize;
+    transition: all .3s;
+    margin-bottom: 0; }
+    /* line 4717, mainapp/static/mainapp/assets/css/style.scss */
+    .blog-details .blog-reply input[type=submit]:hover {
+      background: #031C39; }
+
+/* =============================
+    Blog Page CSS end
+==============================*/
+/* =============================
+    18. Error page CSS start
+==============================*/
+/* line 4734, mainapp/static/mainapp/assets/css/style.scss */
+.error-wrapper {
+  text-align: center;
+  overflow-x: hidden; }
+  /* line 4738, mainapp/static/mainapp/assets/css/style.scss */
+  .error-wrapper h1 {
+    font-size: 80px;
+    font-weight: 700;
+    color: #160d52;
+    margin-bottom: 60px; }
+  /* line 4745, mainapp/static/mainapp/assets/css/style.scss */
+  .error-wrapper h2 {
+    margin-top: 100px;
+    font-weight: 700;
+    font-size: 44px;
+    color: #160d52; }
+  /* line 4752, mainapp/static/mainapp/assets/css/style.scss */
+  .error-wrapper .error-btn {
+    margin-top: 60px; }
+    /* line 4755, mainapp/static/mainapp/assets/css/style.scss */
+    .error-wrapper .error-btn a {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 22px;
+      color: #FFFFFF;
+      background: #0387D0;
+      padding: 18px 50px;
+      border-radius: 10px;
+      text-transform: capitalize;
+      transition: all .4s; }
+      /* line 4766, mainapp/static/mainapp/assets/css/style.scss */
+      .error-wrapper .error-btn a:hover {
+        background: #031C39; }
+
+/* =============================
+     Error page CSS end
+==============================*/
+/* =============================
+   19. FAQ page CSS start
+==============================*/
+/* line 4783, mainapp/static/mainapp/assets/css/style.scss */
+.faq-wrap .accordion-box h5 {
+  font-weight: 700;
+  font-size: 35px;
+  color: #160d52;
+  margin-bottom: 40px; }
+
+/* line 4790, mainapp/static/mainapp/assets/css/style.scss */
+.faq-wrap .accordion-box .accordion-item {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px; }
+  /* line 4795, mainapp/static/mainapp/assets/css/style.scss */
+  .faq-wrap .accordion-box .accordion-item .accordion-body {
+    font-family: "Work Sans", sans-serif;
+    border: 1px solid #EEEEEE;
+    border-radius: 0 0 10px 10px;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.75px;
+    text-transform: capitalize;
+    color: #737679;
+    padding: 30px; }
+  /* line 4807, mainapp/static/mainapp/assets/css/style.scss */
+  .faq-wrap .accordion-box .accordion-item button {
+    background: #031C39;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    line-height: 24px; }
+    /* line 4819, mainapp/static/mainapp/assets/css/style.scss */
+    .faq-wrap .accordion-box .accordion-item button i {
+      font-size: 24px;
+      transition: transform .2s ease-in-out; }
+    /* line 4824, mainapp/static/mainapp/assets/css/style.scss */
+    .faq-wrap .accordion-box .accordion-item button:not(.collapsed) i {
+      transform: rotate(180deg); }
+    /* line 4828, mainapp/static/mainapp/assets/css/style.scss */
+    .faq-wrap .accordion-box .accordion-item button::after {
+      display: none; }
+    /* line 4832, mainapp/static/mainapp/assets/css/style.scss */
+    .faq-wrap .accordion-box .accordion-item button:focus {
+      box-shadow: none;
+      border: none; }
+
+/* line 4843, mainapp/static/mainapp/assets/css/style.scss */
+.ask-inputs {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  padding: 30px; }
+  /* line 4849, mainapp/static/mainapp/assets/css/style.scss */
+  .ask-inputs h5 {
+    font-weight: 700;
+    font-size: 25px;
+    color: #160d52;
+    margin-bottom: 30px; }
+  /* line 4856, mainapp/static/mainapp/assets/css/style.scss */
+  .ask-inputs input,
+  .ask-inputs textarea {
+    margin-bottom: 30px;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #A5A5A5; }
+    /* line 4864, mainapp/static/mainapp/assets/css/style.scss */
+    .ask-inputs input::placeholder,
+    .ask-inputs textarea::placeholder {
+      color: #A5A5A5;
+      text-transform: capitalize; }
+  /* line 4871, mainapp/static/mainapp/assets/css/style.scss */
+  .ask-inputs input[type=submit] {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 170%;
+    color: #FFFFFF;
+    background: #031C39;
+    transition: all .3s; }
+    /* line 4880, mainapp/static/mainapp/assets/css/style.scss */
+    .ask-inputs input[type=submit]:hover {
+      background: #0387D0; }
+
+/* =============================
+    FAQ page CSS end
+==============================*/
+/* =============================
+   20. Gallary Page CSS start
+==============================*/
+/* line 4895, mainapp/static/mainapp/assets/css/style.scss */
+.gallary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 24px;
+  grid-template-areas: "img-sm-1 img-sm-2" "img-xxl img-xxl"; }
+  /* line 4907, mainapp/static/mainapp/assets/css/style.scss */
+  .gallary-grid .img-sm-1 img,
+  .gallary-grid .img-sm-2 img,
+  .gallary-grid .img-xxl img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px; }
+
+/* line 4915, mainapp/static/mainapp/assets/css/style.scss */
+.img-sm-1 {
+  grid-area: img-sm-1; }
+
+/* line 4919, mainapp/static/mainapp/assets/css/style.scss */
+.img-sm-2 {
+  grid-area: img-sm-2; }
+
+/* line 4923, mainapp/static/mainapp/assets/css/style.scss */
+.img-xxl {
+  grid-area: img-xxl; }
+
+/* line 4928, mainapp/static/mainapp/assets/css/style.scss */
+.gallary-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 24px;
+  grid-template-areas: "img-xl img-sm-3" "img-xl img-sm-4"; }
+  /* line 4940, mainapp/static/mainapp/assets/css/style.scss */
+  .gallary-grid-2 .img-xl img,
+  .gallary-grid-2 .img-sm-3 img,
+  .gallary-grid-2 .img-sm-4 img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px; }
+
+/* line 4949, mainapp/static/mainapp/assets/css/style.scss */
+.img-xl {
+  grid-area: img-xl; }
+
+/* line 4953, mainapp/static/mainapp/assets/css/style.scss */
+.img-sm-3 {
+  grid-area: img-sm-3; }
+
+/* line 4957, mainapp/static/mainapp/assets/css/style.scss */
+.img-sm-4 {
+  grid-area: img-sm-4; }
+
+/* =============================
+    Gallary Page CSS end
+==============================*/
+/* =============================
+    21. Contact page CSS start
+==============================*/
+/* line 4970, mainapp/static/mainapp/assets/css/style.scss */
+.contact-card {
+  margin-top: 30px;
+  padding: 25px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 64px rgba(17, 17, 17, 0.1);
+  border-radius: 10px;
+  min-height: 181px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  min-height: 80%; }
+  /* line 4984, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-card:hover::after {
+    background: #0387D0; }
+  /* line 4989, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-card::after {
+    position: absolute;
+    content: "";
+    top: -65px;
+    left: -11%;
+    display: block;
+    width: 126px;
+    height: 180px;
+    background: #031C39;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 1;
+    transform: rotate(-45deg);
+    transition: all .3s; }
+  /* line 5004, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-card .contact-icon {
+    min-width: 100px;
+    position: relative;
+    z-index: 10; }
+    /* line 5009, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-card .contact-icon i {
+      font-size: 55px;
+      color: #fff; }
+  /* line 5015, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-card .contact-info {
+    padding: 12px 0; }
+    /* line 5018, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-card .contact-info h5 {
+      font-weight: 700;
+      font-size: 28px;
+      color: #160d52;
+      margin-bottom: 10px; }
+    /* line 5025, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-card .contact-info p {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 32px;
+      color: #A5A5A5; }
+    /* line 5032, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-card .contact-info ul.contact-icons {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px; }
+      /* line 5037, mainapp/static/mainapp/assets/css/style.scss */
+      .contact-card .contact-info ul.contact-icons li {
+        margin-right: 20px; }
+        /* line 5038, mainapp/static/mainapp/assets/css/style.scss */
+        .contact-card .contact-info ul.contact-icons li:last-child {
+          margin-right: 0; }
+        /* line 5045, mainapp/static/mainapp/assets/css/style.scss */
+        .contact-card .contact-info ul.contact-icons li a i {
+          font-size: 28px;
+          color: #a5a5a5;
+          transition: all .3s; }
+          /* line 5050, mainapp/static/mainapp/assets/css/style.scss */
+          .contact-card .contact-info ul.contact-icons li a i:hover {
+            color: #0387D0; }
+
+/* line 5062, mainapp/static/mainapp/assets/css/style.scss */
+.contact-inputs .contact-details h5.contact-d-head {
+  font-weight: 700;
+  font-size: 25px;
+  color: #262339;
+  margin-bottom: 30px; }
+
+/* line 5069, mainapp/static/mainapp/assets/css/style.scss */
+.contact-inputs .contact-details ul.office-clock {
+  margin-top: 40px; }
+  /* line 5072, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-inputs .contact-details ul.office-clock li {
+    display: flex;
+    margin-bottom: 30px; }
+    /* line 5076, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-inputs .contact-details ul.office-clock li .clock-icon {
+      font-size: 45px;
+      margin-right: 20px; }
+    /* line 5082, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-inputs .contact-details ul.office-clock li .clock-info h5 {
+      font-weight: 700;
+      font-size: 25px;
+      color: #0387D0;
+      line-height: 38px; }
+    /* line 5089, mainapp/static/mainapp/assets/css/style.scss */
+    .contact-inputs .contact-details ul.office-clock li .clock-info p {
+      font-size: 20px;
+      line-height: 30px; }
+
+/* line 5099, mainapp/static/mainapp/assets/css/style.scss */
+.contact-inputs .contact-form h5.contact-d-head {
+  font-weight: 700;
+  font-size: 25px;
+  color: #262339;
+  margin-bottom: 30px; }
+
+/* line 5106, mainapp/static/mainapp/assets/css/style.scss */
+.contact-inputs .contact-form input,
+.contact-inputs .contact-form textarea {
+  margin-bottom: 40px;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 6px;
+  color: #A5A5A5; }
+  /* line 5114, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-inputs .contact-form input::placeholder,
+  .contact-inputs .contact-form textarea::placeholder {
+    color: #A5A5A5;
+    text-transform: capitalize; }
+
+/* line 5121, mainapp/static/mainapp/assets/css/style.scss */
+.contact-inputs .contact-form input[type=submit] {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.75px;
+  color: #FFFFFF;
+  background: #0387D0;
+  padding: 11px 22px;
+  text-transform: capitalize;
+  transition: all .3s;
+  margin-bottom: 0; }
+  /* line 5133, mainapp/static/mainapp/assets/css/style.scss */
+  .contact-inputs .contact-form input[type=submit]:hover {
+    background: #031C39; }
+
+/* =============================
+    Contact page CSS end
+==============================*/
+/* line 5143, mainapp/static/mainapp/assets/css/style.scss */
+.form-group .input-field {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #353535;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+/* line 5160, mainapp/static/mainapp/assets/css/style.scss */
+.form-group .input-field:focus {
+  outline: none; }
+
+/* line 5164, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker {
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.2);
+  margin-top: 0.25rem;
+  padding: 0.5rem; }
+
+/* line 5172, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 5177, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar thead th {
+  padding: 0.25rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #353535; }
+
+/* line 5185, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar tbody td {
+  width: 2.5rem;
+  text-align: center;
+  padding: 0; }
+
+/* line 5191, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar tbody td a {
+  display: block;
+  line-height: 2rem;
+  transition: 0.3s all;
+  color: #160d52;
+  font-size: 0.875rem;
+  text-decoration: none;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem; }
+
+/* line 5203, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar tbody td a:hover {
+  background: #0387D0;
+  color: #ffffff; }
+
+/* line 5208, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar tbody td a.ui-state-active {
+  background: #0387D0;
+  color: #ffffff; }
+
+/* line 5213, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-calendar tbody td a.ui-state-highlight {
+  color: #0387D0;
+  border: 1px solid #0387D0; }
+
+/* line 5218, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-header a span {
+  display: none; }
+
+/* line 5222, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-header a.ui-corner-all {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem; }
+
+/* line 5232, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-header a.ui-datepicker-prev {
+  left: 0; }
+
+/* line 5236, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-header a.ui-datepicker-prev::after {
+  content: "\2039";
+  font-size: 1.5rem;
+  color: #160d52; }
+
+/* line 5242, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-header a.ui-datepicker-next {
+  right: -20px; }
+
+/* line 5246, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-header a.ui-datepicker-next::after {
+  content: "\203A";
+  font-size: 1.5rem;
+  color: #160d52; }
+
+/* line 5252, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-title {
+  text-align: center;
+  line-height: 2rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  font-family: "Work Sans", sans-serif;
+  color: #160d52; }
+
+/* line 5263, mainapp/static/mainapp/assets/css/style.scss */
+.ui-datepicker-week-col {
+  color: #160d52;
+  font-weight: 400;
+  font-size: 0.75rem; }

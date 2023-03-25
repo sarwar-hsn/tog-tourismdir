@@ -2,7 +2,7 @@
 {% load thumbnail %}
 
 
-<div class="package-card">
+<div class="package-card" style="min-height:406px;">
     <div class="package-thumb">
         {%thumbnail tour.thumbnail "416x225" crop='center' as im %}
             <img src="{{im.url}}"  width="{{im.width}}" height="{{im.height}}" alt="{{tour.getthumbnail.alttag}}" class="img-fluid">

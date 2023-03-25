@@ -27,7 +27,7 @@
         <div class="col-lg-9 col-md-9">
             <div class="row owl-carousel destinations-1">
                 {% for tour in destinations %}
-                    {% include 'tour/components/tour_card.html' %}
+                    {% include 'tour/components/tour_card.html' with tour=tour %}
                 {% endfor %}
             </div>
         </div>

@@ -145,8 +145,8 @@ def tourimagedirectorypath(instance,filename,*args, **kwargs):
 
 class TourImage(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=tourimagedirectorypath,default=None,validators=[validate_image_size])
-    alttag = models.CharField(max_length=200)
+    image = models.ImageField(upload_to=tourimagedirectorypath,validators=[validate_image_size])
+    alttag = models.CharField(max_length=200,null=True,blank=True)
     
     def __str__(self):
         return f"{self.pk}"

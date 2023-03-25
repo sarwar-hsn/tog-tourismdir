@@ -6,6 +6,7 @@ from django.template.defaultfilters import slugify
 from datetime import datetime
 from django.urls import reverse
 from meta.models import ModelMeta
+from django.core.exceptions import ValidationError
     
 def validate_image_size(value):
     filesize = value.size
@@ -65,7 +66,7 @@ class Tour(ModelMeta,models.Model):
     # end seo
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateField(auto_now=True)
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=150)
     slug = models.SlugField(unique=True,blank=True)
     price = models.IntegerField(default=0)
     discount = models.PositiveIntegerField(default=0)

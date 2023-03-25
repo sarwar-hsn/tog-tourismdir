@@ -197,7 +197,7 @@ class Post(ModelMeta,models.Model):
 
 
 def post_image_path(instance,filename,*args, **kwargs):
-    datetime = instance.blog.created_at
+    datetime = instance.post.created_at
     year = datetime.strftime('%Y')
     month = datetime.strftime('%b')
     base, ext = os.path.splitext(filename)

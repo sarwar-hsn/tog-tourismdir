@@ -201,7 +201,7 @@ def post_image_path(instance,filename,*args, **kwargs):
     year = datetime.strftime('%Y')
     month = datetime.strftime('%b')
     base, ext = os.path.splitext(filename)
-    return f"blogs/{year}/{month}/{instance.slug}/images/{base}{ext}"
+    return f"blogs/{year}/{month}/{instance.post.slug}/images/{base}{ext}"
 
 class PostImages(models.Model):
     post = models.ForeignKey(Post,  on_delete=models.CASCADE)

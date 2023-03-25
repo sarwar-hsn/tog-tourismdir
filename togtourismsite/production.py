@@ -165,19 +165,19 @@ STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
 DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
 
 #withoutcdn
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-STATIC_URL = 'https://togtourism.ams3.digitaloceanspaces.com/static/'
-MEDIA_URL = 'https://togtourism.ams3.digitaloceanspaces.com/media/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
+# MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
+# STATIC_URL = 'https://togtourism.ams3.digitaloceanspaces.com/static/'
+# MEDIA_URL = 'https://togtourism.ams3.digitaloceanspaces.com/media/'
 
 #withcdn
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-# STATICFILES_LOCATION = 'static'
-# STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
+STATICFILES_LOCATION = 'static'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
-# MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-# PUBLIC_MEDIA_LOCATION = 'media'
-# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
 
 
 #compressor

@@ -8,22 +8,19 @@
     </div>
     
     <div class="single-info">
-        <i class="flaticon-traveller"></i>
-        <div class="info-texts">
-            <strong>Group Size</strong>
-            <p>{{tour.min_size}}-{{tour.max_size}} People</p>
-        </div>
+        <h6>
+            <i class="flaticon-arrival"></i>
+            {% for dest in tour.destinations.all %}
+                {{dest.city|title}}
+                {% if not forloop.last %}
+                ,
+                {% endif %}
+            {% endfor %}-{{tour.destinations.all.0.country|title}}
+        </h6>
     </div>
-    {% comment %} <div class="single-info">
-        <div class="info-texts">
-            <strong>Cost</strong>
-            <p>{{tour.price}} {{tour.currency}}</p>
-        </div>
-    </div> {% endcomment %}
 </div>
 
 
-{% comment %} <i class="flaticon-translate"></i> {% endcomment %}
 
 
 <div class="package-tab">

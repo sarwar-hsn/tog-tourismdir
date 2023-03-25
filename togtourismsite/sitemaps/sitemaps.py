@@ -17,11 +17,11 @@ class StaticViewSitemap(Sitemap):
 
 
 class TourSiteMap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.7
+    changefreq = "daily"
+    priority = 0.9
     protocol = 'https'
     def items(self):
-        return Tour.objects.filter()
+        return Tour.objects.all().order_by('-created_at').distinct()
     def lastmod(self, obj):
         return obj.last_modified
 
@@ -31,13 +31,11 @@ class BlogSiteMap(Sitemap):
     priority = 0.9
     protocol = 'https'
     def items(self):
-        return Post.objects.all()
+        return Post.objects.filter(status='published').order_by('-created_at').distinct()
 
     def lastmod(self,obj):
         return obj.last_modified
         
-
-
 
 
 class CategorySitemap(Sitemap):
@@ -45,11 +43,11 @@ class CategorySitemap(Sitemap):
     priority = .7
     protocol = 'https'
     def items(self):
-        return Category.objects.all()
+        return Category.objects.all().distinct()
 
 class TagSitemap(Sitemap):
     changefreq = "daily"
     priority = .7
     protocol = 'https'
     def items(self):
-        return Tag.objects.all()
+        return Tag.objects.all().distinct()

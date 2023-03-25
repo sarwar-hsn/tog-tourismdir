@@ -4,27 +4,7 @@
 
 
 
-{% block seo %}
-    {% if tour is not None %}
-        <title>{{tour.title}}</title>
-        <meta property="og:title" content="{{tour.title}}">
-        <meta name="description" content="{{tour.overview}}">
-        <meta property="og:description" content="{{tour.overview}}">
-        <meta name="keywords" content="{{tour.meta}}">
-        <meta name="og:keywords" content="{{tour.meta}}">
-        {% if seo.imagelink %}
-            <meta property="og:image" content="{{tour.imagelink}}">
-        {% endif %}
-    {% else %}
-        <title>tour packages</title>
-    {% endif %}
-{% endblock seo %}
-
-
-
-
 {% block content %}
-    <!-- ===============  breadcrumb area start =============== -->
     <div 
     class="breadcrumb-area"
     style="
@@ -57,16 +37,11 @@
                 <div class="col-lg-8">
                     <div class="package-details">
                         <div class="package-thumb">
-                            <img src="{{tour.getthumbnail.image.url}}" alt="{{tour.alttag}}">
+                            <img src="{{tour.getthumbnail.url}}" alt="{{tour.alttag}}">
                         </div>
                         <div class="package-header">
                             <div class="package-title">
                                 <h3>{{tour.title}}</h3>
-                                <strong><i class="flaticon-arrival"></i>
-                                    {% for dest in tour.destinations.all %}
-                                        {{dest.city}}
-                                    {% endfor %}, {{tour.destinations.all.0.country}}
-                                </strong>
                             </div>
                         </div>
                         {% include 'tour/components/tour_tabs.html' with tour=tour %}

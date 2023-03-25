@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
     'storages',
+    'meta',
     #myapps
     'authentication',
     'blog',
@@ -164,19 +165,19 @@ STATICFILES_STORAGE = 'togtourismsite.cdn.backends.StaticStorage'
 DEFAULT_FILE_STORAGE = 'togtourismsite.cdn.backends.PublicMediaStorage'
 
 #withoutcdn
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-# MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-# STATIC_URL = 'https://togtourism.ams3.digitaloceanspaces.com/static/'
-# MEDIA_URL = 'https://togtourism.ams3.digitaloceanspaces.com/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
+STATIC_URL = 'https://togtourism.ams3.digitaloceanspaces.com/static/'
+MEDIA_URL = 'https://togtourism.ams3.digitaloceanspaces.com/media/'
 
 #withcdn
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
-STATICFILES_LOCATION = 'static'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/') 
+# STATICFILES_LOCATION = 'static'
+# STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
-PUBLIC_MEDIA_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
+# MEDIA_ROOT  = os.path.join(BASE_DIR, 'media/')
+# PUBLIC_MEDIA_LOCATION = 'media'
+# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
 
 
 #compressor
@@ -213,3 +214,17 @@ if EMAIL_READY:
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+#seo related
+META_SITE_PROTOCOL = "https"
+META_SITE_TYPE = 'website'
+META_SITE_NAME = "Ottoman Travels"
+META_INCLUDE_KEYWORDS = ['ottoman travels','ottoman-travels','ottoman-travel', 'ottoman group','tog',]
+META_DEFAULT_KEYWORDS = [
+   'ottoman travels','ottoman-travels','ottoman-travel', 'ottoman group','tog',
+]
+
+META_USE_TITLE_TAG = True
+META_USE_SITES = True
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_SCHEMAORG_PROPERTIES = True

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'django_cleanup.apps.CleanupConfig',
     'storages',
+    'meta',
     #myapps
     'authentication',
     'blog',
@@ -164,3 +165,15 @@ THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [2,3,]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
+#seo related
+META_SITE_PROTOCOL = "https"
+META_SITE_TYPE = 'website'
+META_SITE_NAME = "Ottoman Travels"
+META_INCLUDE_KEYWORDS = ['Ottoman Travels','Ottoman','Travel','Turkey Tourism','The Ottoman Group', 'tog']
+META_DEFAULT_KEYWORDS = ['Ottoman Travels','Ottoman','Travel','Turkey Tourism','The Ottoman Group', 'tog','Turkey','Tourism']
+
+META_USE_TITLE_TAG = True
+META_USE_SITES = True
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_SCHEMAORG_PROPERTIES = True

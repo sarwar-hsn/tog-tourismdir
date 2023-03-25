@@ -1,19 +1,40 @@
 {% load static %}
-{% load compress %}
+{% load compress meta %}
 
 
 <!doctype html>
 <html lang="en">
-<head>
-
-    <link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/logos/favicon.ico' %}"/>
+<head {% meta_namespaces %}>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="rating" content="general">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta http-equiv="reply-to" content="info@ottomangrp.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
     <meta name="google-site-verification" content="TcikQPHu3NlNvMpxVHVDGJUBH1dUs5bv9OPzC3KSwU4"/>
+    <meta http-equiv="content-language" content="en">
+    <link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/logos/favicon.ico' %}"/>
+
+    
 
     {% block seo %}
+        {% if meta %}
+            {% include "meta/meta.html" %}
+        {% else %}
+            <title>Ottoman Travels | Tourism and Travels Guide</title>
+            <meta property="og:title" content="Ottoman Travels | Tourism and Travels Guide">
+            <meta name="keywords" content="Ottoman travels, Tourism in Turkey, Private Tourism in Turkiye, Best Tourism in Turkey, Tours and Travels, Tour Guide in Istanbul, Trip to Istanbul, Visit in Turkey, Tourist Attractions in Istanbul, Medical Tourism, Tourist Places in Turkey, Travel and Tourism, Tourist Spot, Adventure Tourism, Tourist Destination, Private Tour Package in Istanbul, Best Tourist places in the world, Cheap Tour Package in Turkey">
+            <meta property="og:site_name" content="The Ottoman Group (TOG)">
+            <meta property="og:type" content="website">
+            <meta name="description" content="Ottoman Travels is a Private Tourism Company that ensures service to anyone who wants to visit Turkiye from anywhere in the world.">
+            <meta name="og:description" content="The Ottoman Group is a group of companies that focuses on multiple business and services related to Turkey and Bangladesh .">
+        {% endif %}
     {% endblock seo %}
-    <meta name="robots" content="index, follow">
+
+    {% block inlinecss %}{% endblock inlinecss %}
     
     {% block cssfiles %}
         <link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
@@ -31,17 +52,15 @@
     {% endblock cssfiles %}
 
 </head>
-<body>
 
+
+<body>
     {% include 'components/topbar.html' %}
     {% include 'components/navbar.html' %}
-
     {% block content %}
     {% endblock content %}
     {% include 'components/footer.html' %}
    
-
-
     <!--Javascript -->
     {% block scripts %}
         

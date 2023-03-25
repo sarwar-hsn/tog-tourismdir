@@ -40,7 +40,7 @@ Last update :
 ======================*/
 
 /*--- Color ---*/
-$primary-color : #0387D0;
+$primary-color : #0387d0;
 $secondary-color : #031C39;
 $tertiary-color : #FFEE00;
 $text-color-one: #160d52;
@@ -1599,11 +1599,10 @@ header>.header-area .nav-right {
 
 .main-banner-2 {
   background: url(../images/banners/banner-2.png) center no-repeat;
-  min-height: 794px;
+  min-height: 80vh;
   background-size: 100% 100%;
 
   .main-banner-content-2 {
-    padding-top: 170px;
     text-align: center;
 
     h2 {
@@ -1616,7 +1615,6 @@ header>.header-area .nav-right {
     }
 
     h3 {
-
       font-weight: 700;
       font-size: 40px;
       line-height: 50px;

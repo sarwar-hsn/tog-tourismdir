@@ -4,17 +4,13 @@
 
 <div class="package-card">
     <div class="package-thumb">
-        {%thumbnail tour.getthumbnail.image "416x225" as im%}
-            <img src="{{im.url}}" alt = "{{tour.alttag}}" style="height:225px;width=416px" alt="{{tour.getthumbnail.alttag}}" class="img-fluid">
+        {%thumbnail tour.getthumbnail "416x225" crop='center' as im%}
+            <img src="{{im.url}}" alt = "{{tour.alttag}}" width="{{im.width}}" height="{{im.height}}" alt="{{tour.getthumbnail.alttag}}" class="img-fluid">
         {%endthumbnail%}
     </div>
     <div class="package-details">
-        <div class="package-info">
-            {% comment %} <h5><span>{{tour.price}} {{tour.currency}}</span>/Per Person</h5> {% endcomment %}
-            
-        </div>
         <h3><i class="flaticon-arrival"></i>
-            <a href="{{tour.get_absolute_url}}">{{tour.title}}</a>
+            <a href="{{tour.get_absolute_url}}">{{tour.title|truncatewords:8}}</a>
         </h3>
         <div class="package-info">
             <h5><i class="flaticon-calendar"></i>{{tour.durations}}</h5>

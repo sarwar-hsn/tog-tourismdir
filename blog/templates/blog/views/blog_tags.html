@@ -1,14 +1,6 @@
 {% extends 'blog/views/category_details.html' %}
 {% load static %}
-{% block seo %}
-    {% if tag is not None %}
-        <title>tags-{{tag.name|lower}}</title>
-        <meta property="og:title" content="tags-{{tag.name|lower}}">
-    {% else %}
-            <title>tags-ottoman tours and travels</title>
-            <meta property="og:title" content="tags-ottoman tours and travels">
-    {% endif %}
-{% endblock seo %}
+
 
 {% block breadcrumb %}
     <div 

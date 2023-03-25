@@ -11,8 +11,9 @@ from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
 from mainapp.utils import get_seo,retrive_contacts
 from django.conf import settings
-# Create your views here.
+from mainapp import utils as seo_utils
 
+#tour/packages homepage
 def home(request):
     tours = Tour.objects.all().order_by('-created_at')
     f = TourFilter(request.GET, queryset=tours)
@@ -37,7 +38,7 @@ def home(request):
         'page_obj':page_obj,
         'hasFilter':has_filter,
         'form':BookingForm,
-        'seo':get_seo('tour'),
+        'meta':seo_utils.meta_packages_home(),
         'contact':retrive_contacts(),
 
     }
@@ -54,6 +55,7 @@ def detail(request,tour_slug):
         object_view_signal.send(sender=tour.__class__,instance=tour,request=request)
     context = {
         'tour':tour,
+        'meta' : tour.as_meta(),
         'form':BookingForm,
         'popular_tours':popular_tours,
         'contact':retrive_contacts(),

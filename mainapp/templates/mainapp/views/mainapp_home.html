@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static thumbnail %}
 
 
 
-{% block seo %}
-    {% include 'components/seo.html' with title="home-ottoman tours and travels" %}
-{% endblock seo %}
+{% block inlinecss %}
+
+{% endblock inlinecss %}
 
 
 
@@ -13,12 +13,49 @@
     {% if messages %}
         {% include 'components/messages.html' with messages=messages %}
     {% endif %}
+
     <div class="main-banner">
-        <div class="banner-slider owl-carousel">
+        {% thumbnail banners.0.banner  "991x780" crop='center' quality=95 as im %}
+            <style scoped>
+            .on-the-fly-behavior {
+                background-image: url('{{banners.0.banner.url}}'); 
+                min-height:90vh;
+            }
+            @media only screen and (max-width: 991px) {
+                .on-the-fly-behavior {   
+                    background-image: url("{{im.url|resolution:'2x'}}");
+                    min-height:100vh;
+                }
+            }
+            </style>
+        {% endthumbnail %}
+        
+        {% comment %} style one home banner {% endcomment %}
+        <div class="main-banner-2 on-the-fly-behavior container-fluid d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="find-form-2">
+                    <form class="findfrom-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="main-banner-content-2">
+                                    <h1 style="color:#1b658e;"  class="fw-bold text-tertiary">Ottoman Tours & Travels <br>
+                                        <span class="element" >Tourism</span>
+                                        <br>
+                                        in Turkiye
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% comment %} style 2 home banner {% endcomment %}
+        {% comment %} <div class="banner-slider owl-carousel">
             {% for banner  in banners %}
                 {% include 'mainapp/components/mainapp_home/tour_banner.html' with banner=banner %}
             {% endfor %}
-        </div>
+        </div> {% endcomment %}
     </div>
     {% include 'mainapp/components/mainapp_home/best_packages.html' %}
     {% include 'mainapp/components/mainapp_home/popular_city_pacakages.html' %}

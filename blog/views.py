@@ -7,9 +7,9 @@ from analyticsapp.signals import object_view_signal
 from . import utils
 from mainapp.models import Seo
 from mainapp.utils import get_seo,retrive_contacts
+from mainapp import utils as seo_utils
 
-
-# Create your views here.
+#blog homepage
 def index(request):
     ctg = Category.objects.all()
     posts = Post.objects.filter(status=Post.PUBLISHED).order_by('created_at')
@@ -23,12 +23,12 @@ def index(request):
         'page_obj' : page_obj,
         'popular_blogs' : pb,
         'tags':tags,
-        'seo':get_seo('blog'),
+        'meta':seo_utils.meta_blog_home(),
         'contact':retrive_contacts()
     }
     return render(request, 'blog/views/blog_home.html',context=context)
 
-
+#blog category page
 def categorydetails(request,category_slug):
     posts = Post.objects.filter(category__slug=category_slug)
     page_obj = utils.build_pagination(request, posts, 6)
@@ -46,10 +46,11 @@ def categorydetails(request,category_slug):
         'tags':Tag.objects.all(),
         'category':catg,
         'contact':retrive_contacts(),
+        'meta':seo_utils.meta_blog_category(),
     }
     return render(request,'blog/views/category_details.html',context=context)
 
-
+#blog details page
 def blogdetails(request,category_slug,blog_slug):
     context = utils.build_blog_details(request,blog_slug)
     blog = context.get('blog',None)
@@ -72,10 +73,9 @@ def blogdetails(request,category_slug,blog_slug):
                 request.session[utils.RCTPST].pop()
             context['recent_blogs']=recent_blogs
             context['contact']=retrive_contacts()
+            context['meta']=blog.as_meta()
     return render(request, 'blog/views/blog_detail.html',context=context)
     
-
-
 def blog_search(request):
     form = BlogSearchForm()
     results = []
@@ -101,7 +101,7 @@ def blog_search(request):
     }
     return render(request, 'blog/views/search_result.html',context=context)
 
-
+#blog hashtag page
 def blog_tags(request,hashtag):
     try:
         tag = Tag.objects.get(name=hashtag)
@@ -123,7 +123,7 @@ def blog_tags(request,hashtag):
         'categories':Category.objects.all(),
         'popular_blogs':utils.popular_blogs(),
         'contact':retrive_contacts(),
-        
+        'meta':seo_utils.meta_blog_hashtag(),
     }
     return render(request, 'blog/views/blog_tags.html',context=context)
 

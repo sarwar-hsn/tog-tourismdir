@@ -12,44 +12,26 @@
             </div>
         </div>
     </div>
-    
     {% for city,destinations in populardestinations.items %}
-        <div class="row">
-            <div class="col-lg-3 col-md-3">
-                <div class="package-slider-wrap">
-                    {% thumbnail city.thumbnail "270x372" quality=100 as im  %}
-                        <img src="{{im.url}}"  class="img-fluid" style="width:100%;"  alt="{{city.alttag}}">
-                    {% endthumbnail %}
-                    
-                    <div class="pakage-overlay">
-                        <strong>{{city}}</strong>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-9 col-md-9">
-                <div class="row owl-carousel destinations-1">
-                    {% for destination in destinations %}
-                        <div class="package-card">
-                            <div class="package-thumb">
-                                {% thumbnail destination.getthumbnail.image "310x225" as im %}
-                                    <img src="{{im.url}}" style="height:225px;width:100%;" class="img-fluid" alt="{{destination.getthumbnail.alttag}}">
-                                {% endthumbnail %}
-                            </div>
-                            <div class="package-details">
-                                <div class="package-info">
-                                    {% comment %} <h5><span>{{destination.price}} {{destination.currency}}</span>/Per Person</h5> {% endcomment %}
-                                </div>
-                                <h3><i class="flaticon-arrival"></i>
-                                    <a href="{{destination.get_absolute_url}}">{{destination.title}}</a>
-                                </h3>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+            <div class="package-slider-wrap">
+                {% thumbnail city.thumbnail  "270x300" crop='center' quality=100 as im  %}
+                    <img src="{{im.url}}"  class="img-fluid" style="width:100%;"  alt="{{city.alttag}}">
+                {% endthumbnail %}
+                <div class="pakage-overlay">
+                    <strong>{{city}}</strong>
                 </div>
             </div>
         </div>
+        <div class="col-lg-9 col-md-9">
+            <div class="row owl-carousel destinations-1">
+                {% for tour in destinations %}
+                    {% include 'tour/components/tour_card.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     {% endfor %}
 
     </div>

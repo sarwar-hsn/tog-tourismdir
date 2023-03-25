@@ -1,36 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block seo %}
-    {% if seo is not None %}
-        <title>{{seo.title}}</title>
-        <meta property="og:title" content="{{seo.title}}">
-        <meta name="description" content="{{seo.description}}">
-        <meta property="og:description" content="{{seo.description}}">
-        <meta name="keywords" content="{{seo.keywords}}">
-        <meta name="og:keywords" content="{{seo.keywords}}">
-        {% if seo.imagelink %}
-            <meta property="og:image" content="{{seo.imagelink}}">
-        {% endif %}
-    {% else %}
-        <title>tour packages</title>
-    {% endif %}
-{% endblock seo %}
-
-{% comment %} {% block cssfiles %}
-<link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/boxicons.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/font/flaticon.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
-{% endblock cssfiles %} {% endcomment %}
 
 {% block content %}
-    <!-- ===============  breadcrumb area start =============== -->
     {% if messages %}
         {% include 'components/messages.html' with messages=messages%}
     {% endif %}

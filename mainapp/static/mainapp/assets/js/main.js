@@ -473,7 +473,7 @@
     var element = $(".element");
     $(function () {
         element.typed({
-            strings: ["Hampshire", "Indonesia", "Madagascar "],
+            strings: ["Tourism", "Health Tourism"],
             typeSpeed: 190,
             loop: true,
         });

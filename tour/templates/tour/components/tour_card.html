@@ -2,13 +2,13 @@
 {% load thumbnail %}
 
 
-<div class="package-card" style="min-height:406px;">
+<div class="package-card bg-white" style="height:370px;">
     <div class="package-thumb">
         {%thumbnail tour.thumbnail "416x225" crop='center' as im %}
             <img src="{{im.url}}"  width="{{im.width}}" height="{{im.height}}" alt="{{tour.getthumbnail.alttag}}" class="img-fluid">
         {%endthumbnail%}
     </div>
-    <div class="package-details h-100">
+    <div class="package-details" >
         <h3><i class="flaticon-arrival"></i>
             <a href="{{tour.get_absolute_url}}">{{tour.title|truncatewords:8}}</a>
         </h3>

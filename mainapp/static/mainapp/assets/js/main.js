@@ -468,8 +468,7 @@
             }
         }
     });
-
-    //Type js
+    //Typejs
     var element = $(".element");
     $(function () {
         element.typed({
@@ -478,6 +477,4 @@
             loop: true,
         });
     });
-
-
 }(jQuery));

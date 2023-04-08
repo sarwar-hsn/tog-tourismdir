@@ -149,8 +149,6 @@ class Post(ModelMeta,models.Model):
     _metadata = {
         'use_og':True,
         'use_twitter':True,
-        'use_facebook':True,
-        'use_schemaorg':True,
         'title':'get_seo_title',
         'description':'get_seo_description',
         'keywords':'get_seo_keywords',

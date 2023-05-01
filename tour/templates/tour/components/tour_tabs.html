@@ -43,15 +43,15 @@
                     <div class="tab-content-1">
                         <div class="p-overview">
                             <h5>Overview</h5>
-                            <p>{{tour.description|linebreaks}}</p>
+                            <p>{{tour.description|safe}}</p>
                         </div>
                         <div class="p-overview mt-20">
                             <h5>Accommodation</h5>
-                            <p>{{tour.accommodation|linebreaks}}</p>
+                            <p>{{tour.accommodation|safe}}</p>
                         </div>
                         <div class="p-overview mt-20">
                             <h5>Transportation</h5>
-                            <p>{{tour.transportation|linebreaks}}</p>
+                            <p>{{tour.transportation|safe}}</p>
                         </div>
                     </div>
                 </div>

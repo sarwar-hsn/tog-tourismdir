@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', # new
     'django.contrib.sitemaps', # new 
     #installed app
+    'tinymce',
     'sorl.thumbnail',
     'compressor',
     'django_filters',
@@ -218,9 +219,9 @@ else:
 META_SITE_PROTOCOL = "https"
 META_SITE_TYPE = 'website'
 META_SITE_NAME = "Ottoman Travels"
-META_INCLUDE_KEYWORDS = ['ottoman travels','ottoman-travels','ottoman-travel', 'ottoman group','tog',]
+META_INCLUDE_KEYWORDS = ['ottoman travels','ottoman-travels','ottoman-travel', 'ottoman group','tog']
 META_DEFAULT_KEYWORDS = [
-   'ottoman travels','ottoman-travels','ottoman-travel', 'ottoman group','tog',
+   'ottoman travels','ottoman-travels','ottoman-travel', 'ottoman group','tog'
 ]
 
 META_USE_TITLE_TAG = True
@@ -228,3 +229,30 @@ META_USE_SITES = True
 META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 META_USE_SCHEMAORG_PROPERTIES = True
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'theme': 'silver',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+}

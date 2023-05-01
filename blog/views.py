@@ -52,29 +52,32 @@ def categorydetails(request,category_slug):
 
 #blog details page
 def blogdetails(request,category_slug,blog_slug):
-    context = utils.build_blog_details(request,blog_slug)
-    blog = context.get('blog',None)
-    
-    if blog is not None:
-        object_view_signal.send(sender=blog.__class__ , instance = blog, request = request);
-        #setting recent post for the session
-        if utils.RCTPST not in request.session:
-            request.session[utils.RCTPST] = [blog.id]
-        else:
-            #retriving the last read list
-            if blog.id in request.session: 
-                request.session[utils.RCTPST].remove(blog.id)                
-            recent_blogs  =  Post.objects.filter(pk__in=request.session[utils.RCTPST])
-            #adding the current blog to the read list
-            request.session[utils.RCTPST].insert(0,blog.id)
-            request.session.modified = True
-            #allowing only 6 items
-            if len(request.session[utils.RCTPST]) > 6:
-                request.session[utils.RCTPST].pop()
-            context['recent_blogs']=recent_blogs
-            context['contact']=retrive_contacts()
-            context['meta']=blog.as_meta()
+    try:
+        context = utils.build_blog_details(request,blog_slug)
+        blog = context.get('blog',None)
+        if blog is not None:
+            object_view_signal.send(sender=blog.__class__ , instance = blog, request = request);
+            #setting recent post for the session
+            if utils.RCTPST not in request.session:
+                request.session[utils.RCTPST] = [blog.id]
+            else:
+                #retriving the last read list
+                if blog.id in request.session: 
+                    request.session[utils.RCTPST].remove(blog.id)                
+                recent_blogs  =  Post.objects.filter(pk__in=request.session[utils.RCTPST])
+                #adding the current blog to the read list
+                request.session[utils.RCTPST].insert(0,blog.id)
+                request.session.modified = True
+                #allowing only 6 items
+                if len(request.session[utils.RCTPST]) > 6:
+                    request.session[utils.RCTPST].pop()
+                context['recent_blogs']=recent_blogs
+                context['contact']=retrive_contacts()
+    except:
+        pass  
     return render(request, 'blog/views/blog_detail.html',context=context)
+
+   
     
 def blog_search(request):
     form = BlogSearchForm()

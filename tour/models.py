@@ -7,7 +7,10 @@ from datetime import datetime
 from django.urls import reverse
 from meta.models import ModelMeta
 from django.core.exceptions import ValidationError
-    
+from tinymce.models import HTMLField
+
+
+
 def validate_image_size(value):
     filesize = value.size
     if filesize > 1048576:
@@ -73,9 +76,9 @@ class Tour(ModelMeta,models.Model):
     durations = models.CharField(max_length=50)
     thumbnail = models.ImageField(upload_to=tour_thumbnail_path,validators=[validate_image_size])
     destinations = models.ManyToManyField(Destination)
-    description = models.TextField()
-    accommodation = models.TextField()
-    transportation = models.TextField()
+    description = HTMLField()
+    accommodation = HTMLField()
+    transportation = HTMLField()
     isActive = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
     view_count = models.PositiveIntegerField(default=0)

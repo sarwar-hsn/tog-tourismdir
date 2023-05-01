@@ -52,6 +52,7 @@ def build_blog_details(request,blog_slug):
         'blog':post,
         'tags':tags,
         'categories':ctg,
+        'meta':post.as_meta(),
     }
     return context
 

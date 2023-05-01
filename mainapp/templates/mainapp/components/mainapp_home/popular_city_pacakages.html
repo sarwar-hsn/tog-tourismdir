@@ -15,14 +15,16 @@
     {% for city,destinations in populardestinations.items %}
     <div class="row">
         <div class="col-lg-3 col-md-3">
-            <div class="package-slider-wrap">
-                {% thumbnail city.thumbnail  "270x345" crop='center' quality=100 as im  %}
-                    <img src="{{im.url}}"  class="img-fluid" style="width:100%;"  alt="{{city.alttag}}">
-                {% endthumbnail %}
-                <div class="pakage-overlay">
-                    <strong>{{city}}</strong>
+            <a href="{% url 'tour-home' %}?destinations={{city.pk}}">
+                <div class="package-slider-wrap">
+                    {% thumbnail city.thumbnail  "270x345" crop='center' quality=100 as im  %}
+                        <img src="{{im.url}}"  class="img-fluid" style="width:100%;"  alt="{{city.alttag}}">
+                    {% endthumbnail %}
+                    <div class="pakage-overlay">
+                        <strong>{{city}}</strong>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-lg-9 col-md-9">
             <div class="row owl-carousel destinations-1">

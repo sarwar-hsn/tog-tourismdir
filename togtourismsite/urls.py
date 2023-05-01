@@ -44,6 +44,7 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('blogs/',include(blogurls)),
     path('tours/',include(toururls)),
     path('auth/',include('django.contrib.auth.urls')),

@@ -12,6 +12,7 @@ from django.db.models.signals import post_delete,post_save,pre_save
 from django.dispatch import receiver
 import shutil
 from meta.models import ModelMeta
+from tinymce.models import HTMLField
 
 def validate_file_size(value):
     filesize= value.size
@@ -113,7 +114,7 @@ class Post(ModelMeta,models.Model):
     alttag = models.CharField(max_length=100)
     overview = models.TextField()
     tags = models.ManyToManyField(Tag,blank=True)
-    content = models.TextField(blank=True,null=True)
+    content = HTMLField()
     status = models.CharField(max_length=20,default=DRAFT,choices=post_status)
     rating = models.IntegerField(default=0)
     view_count = models.PositiveIntegerField(default=0)
@@ -132,14 +133,17 @@ class Post(ModelMeta,models.Model):
             for tag in self.tags.all():
                 keywords.append(tag.name)
         return keywords
+    
     def get_seo_title(self):
         if self.seo_title:
             return self.seo_title
         return self.title
+
     def get_seo_description(self):
         if self.seo_description:
             return self.seo_description;
         return self.overview;
+
     def get_seo_image(self):
         if self.seo_imagelink:
             return self.seo_imagelink;
@@ -149,6 +153,8 @@ class Post(ModelMeta,models.Model):
     _metadata = {
         'use_og':True,
         'use_twitter':True,
+        'use_facebook':True,
+        'use_schemaorg':True,
         'title':'get_seo_title',
         'description':'get_seo_description',
         'keywords':'get_seo_keywords',

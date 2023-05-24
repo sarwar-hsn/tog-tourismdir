@@ -3,9 +3,6 @@
 {% load thumbnail %}
 
 
-
-
-
 {% block content %}
     <div class="blog-details-wrapper pt-90">
         <div class="container ">
@@ -16,6 +13,9 @@
                             <h1 style="font-size:1.5rem;">{{blog.title}}</h1>
                             <div class="blog-info-xl">
                                 <a class="blog-writer"><i class="flaticon-user"></i>{{blog.author.user.username}}</a>
+                                {% if ref_blog %}
+                                    <a  href="{{ref_blog.get_absolute_url}}" class="blog-writer"><i class="flaticon-translate"></i>Read In {{swlang_}}</a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="blog-img-xl">

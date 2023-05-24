@@ -39,6 +39,8 @@ sitemaps = {
     'tour':sitemaps.TourSiteMap,
     'blogcategories':sitemaps.CategorySitemap,
     'blogtags':sitemaps.TagSitemap,
+    'bangla_blog':sitemaps.BanglaBlogSiteMap,
+    'bangla_blog_category':sitemaps.CategoryBanglaSitemap
 }
 
 

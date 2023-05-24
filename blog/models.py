@@ -44,6 +44,9 @@ class Category(models.Model):
     def is_uniqueslug(self):
         #trying to find a slug by category name 
         try:
+            ban_category = CategoryBangla.objects.filter(slug=self.slug)
+            if ban_category:
+                return None
             category = Category.objects.get(slug=slug)
             return category #if category is present then we return the category
         except: #if we encounter any error then we will return the error
@@ -119,6 +122,7 @@ class Post(ModelMeta,models.Model):
     rating = models.IntegerField(default=0)
     view_count = models.PositiveIntegerField(default=0)
     featured = models.BooleanField(default=False)
+    
 
     class Meta:
         ordering = ['-id']
@@ -167,6 +171,9 @@ class Post(ModelMeta,models.Model):
     def is_uniqueslug(self):
         #trying to find a slug by category name 
         try:
+            bangla_blog = BanglaBlog.objects.filter(slug=self.slug)
+            if bangla_blog: #a;ready bangla blog with same name present
+                return None
             post = Post.objects.get(slug=slug)
             return post #if category is present then we return the category
         except: #if we encounter any error then we will return the error
@@ -214,4 +221,158 @@ class PostImages(models.Model):
 
     def __str__(self):
         return f"{self.post.slug}_{self.post.pk}"
+
+
+#bangla blog start 
+
+class CategoryBangla(models.Model):
+    title = models.CharField(max_length=20)
+    slug = models.SlugField(unique=True,blank=True,null=True)
+    view_count = models.PositiveIntegerField(default=0)
+    # thumbnail = models.ImageField()
+
+    def get_absolute_url(self):
+        return reverse('blog-categorydetails', kwargs={"category_slug": self.category.slug})
+
+    def is_uniqueslug(self):
+        #trying to find a slug by category name 
+        try:
+            eng_category = Category.objects.filter(slug=self.slug)
+            if eng_category:
+                return None
+            category = CategoryBangla.objects.get(slug=slug)
+            return category #if category is present then we return the category
+        except: #if we encounter any error then we will return the error
+            return None
     
+    def clean(self):
+        if self.slug is None:
+            self.slug = slugify(self.title)
+        category = self.is_uniqueslug()
+        if category is None: #that mean the slug is unique, no category using this slug
+            return
+        else: #if the category is found that means the slug is not unique
+            raise ValidationError(f"slug: {self.slug} is not unique. change it manually")
+
+    def save(self, *args, **kwargs):
+        super(CategoryBangla,self).save(*args, **kwargs)  # Call the "real" save() method.
+    class Meta:
+        ordering = ['-id']
+        verbose_name = "categorybangla"
+        verbose_name_plural = 'categoriesbangla'
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog-categorydetails", kwargs={"category_slug": self.slug})
+class BanglaBlog(ModelMeta,models.Model):
+    DRAFT = 'draft'
+    PUBLISHED = 'published'
+
+    post_status =(
+        (DRAFT,DRAFT),
+        (PUBLISHED,PUBLISHED)
+    )
+    seo_title = models.CharField(max_length=200,blank=True,null=True)
+    seo_description = models.TextField(blank=True,null=True)
+    seo_keywords = models.TextField(blank=True,null=True)
+    seo_imagelink = models.URLField(null=True,blank=True)
+    #seolinks
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True,blank=True,null=True)
+    category = models.ForeignKey(CategoryBangla, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author,null=True, on_delete=models.SET_NULL)
+    thumbnail = models.ImageField(upload_to=post_thumbnail_path,validators=[validate_file_size,])
+    alttag = models.CharField(max_length=100,blank=True,null=True)
+    overview = models.TextField()
+    content = HTMLField()
+    status = models.CharField(max_length=20,default=DRAFT,choices=post_status)
+    rating = models.IntegerField(default=0)
+    view_count = models.PositiveIntegerField(default=0)
+    featured = models.BooleanField(default=False)
+    ref_blog= models.ForeignKey(Post,null=True,blank=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        ordering = ['-id']
+        
+    #seo meta
+    #expects array of string
+    def get_seo_keywords(self):
+        if self.seo_keywords:
+            return str.split(self.seo_keywords,sep=",")
+        else:
+            return None
+    
+    def get_seo_title(self):
+        if self.seo_title:
+            return self.seo_title
+        return self.title
+
+    def get_seo_description(self):
+        if self.seo_description:
+            return self.seo_description;
+        return self.overview;
+
+    def get_seo_image(self):
+        if self.seo_imagelink:
+            return self.seo_imagelink;
+        else:
+            return self.thumbnail.url;
+                    
+    _metadata = {
+        'use_og':True,
+        'use_twitter':True,
+        'use_facebook':True,
+        'use_schemaorg':True,
+        'title':'get_seo_title',
+        'description':'get_seo_description',
+        'keywords':'get_seo_keywords',
+        'image': 'get_seo_image',
+        'url':'get_absolute_url',
+        'locale':'en_US',
+    }
+    #end se0
+
+    def is_uniqueslug(self):
+        #trying to find a slug by category name 
+        try:
+            post = Post.objects.filter(slug=self.slug)
+            if post: #already a english blog with same slug present
+                return None
+            blog = BanglaBlog.objects.get(slug=slug)
+            return blog #if category is present then we return the category
+        except: #if we encounter any error then we will return the error
+            return None
+
+    def clean(self):
+        if self.slug is None:
+            self.slug = slugify(self.title)
+        blog = self.is_uniqueslug()
+        if blog is None: #that mean the slug is unique, no category using this slug
+            return
+        else: #if the category is found that means the slug is not unique
+            raise ValidationError(f"slug: {self.slug} is not unique. change it manually")
+
+    def save(self, *args, **kwargs):
+        super(BanglaBlog,self).save(*args, **kwargs)  # Call the "real" save() method.
+
+    def __str__(self):
+        return self.title
+
+    def getthumbnail(self):
+        try:
+            thumbnail = self.thumbnail
+        except:
+            thumbnail = None
+        return thumbnail
+
+    def get_absolute_url(self):
+        return reverse('blog-detail', kwargs={"category_slug": self.category.slug,"blog_slug":self.slug})
+
+class BanglaPostImages(models.Model):
+    post = models.ForeignKey(BanglaBlog,  on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=post_image_path,validators=[validate_file_size,])
+    alttag = models.CharField(max_length=200,null=True,blank=True)

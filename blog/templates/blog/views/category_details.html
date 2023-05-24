@@ -34,6 +34,7 @@
     {% endblock breadcrumb %}
 
     {% block left %}
+        {% include 'blog/components/utils/search_sidebar.html' %}
         <div class="col-lg-8">
             {% if page_obj.object_list %}
                 {% include 'blog/components/utils/blog_paginator.html' %}

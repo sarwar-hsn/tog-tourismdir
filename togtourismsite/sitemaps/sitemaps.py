@@ -1,7 +1,7 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from tour.models import Tour,TourImage
-from blog.models import Post,Category,Tag
+from blog.models import Post,Category,Tag,BanglaBlog,CategoryBangla
 
 
 
@@ -35,6 +35,16 @@ class BlogSiteMap(Sitemap):
 
     def lastmod(self,obj):
         return obj.last_modified
+
+class BanglaBlogSiteMap(Sitemap):
+    changefreq = "daily"
+    priority = 0.9
+    protocol = 'https'
+    def items(self):
+        return BanglaBlog.objects.filter(status='published').order_by('-created_at').distinct()
+
+    def lastmod(self,obj):
+        return obj.last_modified
         
 
 
@@ -44,6 +54,14 @@ class CategorySitemap(Sitemap):
     protocol = 'https'
     def items(self):
         return Category.objects.all().distinct()
+
+
+class CategoryBanglaSitemap(Sitemap):
+    changefreq = "daily"
+    priority = .7
+    protocol = 'https'
+    def items(self):
+        return CategoryBangla.objects.all().distinct()
 
 class TagSitemap(Sitemap):
     changefreq = "daily"

@@ -2,14 +2,15 @@
     <div class="d-flex">
         <div class="input-group">
             <form action="{% url 'blog-search' %}" method="get">
-                {% csrf_token %}
                 <input name="q" class="form-control me-2" type="search" placeholder="search a item" aria-label="Search">
-                <button class="btn-common-sm mt-2" style="height:40px;width:100px; padding:0;" type="submit">Search</button>
+                <button class="btn btn-primary mt-2" style="height:40px;width:100px; padding:0;background:#031c39" type="submit">Search</button>
             </form>
         </div>
         <form action="{% url 'blog-switchlang' %}" method="post">
             {% csrf_token %}
-            <button class="btn-common-sm" style="height:40px;width:100px; padding:0;" type="submit">{{swlang}}</button>
+            <button class="btn btn-primary" style="font-weight:bold; height:50px;width:100px; padding:0;background:#031c39" type="submit">{{swlang}}</button>
         </form>
     </div>
 </div>
+
+

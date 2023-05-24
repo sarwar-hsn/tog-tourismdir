@@ -185,6 +185,7 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, PUBLIC_MEDIA_LOCATION)
 COMPRESS_STORAGE = STATICFILES_STORAGE
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, 'static')
+
 STATICFILES_FINDERS = (
 'django.contrib.staticfiles.finders.FileSystemFinder',
 'django.contrib.staticfiles.finders.AppDirectoriesFinder',

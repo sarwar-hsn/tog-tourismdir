@@ -101,6 +101,7 @@ def blog_search(request):
     lang = utils.retrieve_blog_lang(request)
     form = BlogSearchForm()
     results = []
+    ctg =tags= None
     if 'q' in request.GET:
         form = BlogSearchForm(request.GET)
         if form.is_valid():
@@ -116,9 +117,15 @@ def blog_search(request):
                 ).distinct().filter(status=Post.PUBLISHED)
                 ctg = Category.objects.all()
                 tags = Tag.objects.all()
+        else:
+            if lang == 'bn':
+                ctg = CategoryBangla.objects.all()
+                tags = None
+            else:
+                ctg = Category.objects.all()
+                tags = Tag.objects.all()
 
     page_obj = utils.build_pagination(request,results, 6)
-
     context = {
         'form':form,
         'results':results,

@@ -390,6 +390,7 @@ table tfoot tr th {
   padding: 10px;
 }
 
+button,
 a.btn-common-sm {
   display: inline-block;
   padding: 11px 20px 11px 30px;
@@ -402,11 +403,13 @@ a.btn-common-sm {
   z-index: 9;
 }
 
+button,
 a.btn-common-sm:hover::before {
   -webkit-clip-path: circle(150% at 0% 0%);
   clip-path: circle(150% at 0% 0%);
 }
 
+button,
 a.btn-common-sm::before {
   height: 100%;
   width: 100%;

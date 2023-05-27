@@ -40,14 +40,11 @@ def build_pagination(request,itemlist,iter_per_page):
 #need to improve the algorithm here
 def popular_blogs(request):
     lang = retrieve_blog_lang(request)
-    
-    if(lang == 'en'):
-        blogs = Post.objects.filter(status=Post.PUBLISHED).order_by('-view_count')[:6]
-        return blogs
-    elif lang == 'bn':
+    if lang == 'bn':
         blogs = BanglaBlog.objects.filter(status=BanglaBlog.PUBLISHED).order_by('-view_count')[:6]
         return blogs
-    return blogs
+    else:
+        return Post.objects.filter(status=Post.PUBLISHED).order_by('-view_count')[:6]
 
 #blog recommendation
 def blog_recommend(last_reads):

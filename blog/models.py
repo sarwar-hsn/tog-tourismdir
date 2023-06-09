@@ -336,6 +336,7 @@ class BanglaBlog(ModelMeta,models.Model):
     }
     #end se0
 
+    #Change. there is logic error. need to fix
     def is_uniqueslug(self):
         #trying to find a slug by category name 
         try:

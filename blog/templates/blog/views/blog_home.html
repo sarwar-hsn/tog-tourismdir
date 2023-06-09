@@ -34,10 +34,10 @@
     <!-- ===============  Blog wrapper area start =============== -->
     <div class="blog-sidebar-wrapper mt-30">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
                 {% block left %}
                     {% include 'blog/components/utils/search_sidebar.html' %}
-                    <div class="col-lg-8 mt-30">
+                    <div class="col-lg-7 mt-30">
                         {% if page_obj.object_list %}
                             {% include 'blog/components/utils/blog_paginator.html' %}
                         {% else %}
@@ -51,7 +51,6 @@
                 {% block right %}
                     <div class="col-lg-4">
                         <div class="blog-sidebar">
-                            
                             <div class="row">
                                 {% include 'blog/components/utils/category_sidebar.html' %}
                                 {% include 'blog/components/utils/popularblog_sidebar.html' with title="Popular blogs" blogs=popular_blogs %}

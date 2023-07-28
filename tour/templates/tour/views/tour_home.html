@@ -1,42 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block seo %}
-    {% if seo is not None %}
-        <title>{{seo.title}}</title>
-        <meta property="og:title" content="{{seo.title}}">
-        <meta name="description" content="{{seo.description}}">
-        <meta property="og:description" content="{{seo.description}}">
-        <meta name="keywords" content="{{seo.keywords}}">
-        <meta name="og:keywords" content="{{seo.keywords}}">
-        {% if seo.imagelink %}
-            <meta property="og:image" content="{{seo.imagelink}}">
-        {% endif %}
-    {% else %}
-        <title>tour packages</title>
-    {% endif %}
-{% endblock seo %}
-
-{% block cssfiles %}
-<link rel="shortcut icon" type="image/png" href="{% static 'mainapp/assets/images/favicon.png' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/animate.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/magnific-popup.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/bootstrap.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/boxicons.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/font/flaticon.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/owl.carousel.min.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/style.css' %}">
-<link rel="stylesheet" href="{% static 'mainapp/assets/css/responsive.css' %}">
-{% endblock cssfiles %}
 
 {% block content %}
-    <!-- ===============  breadcrumb area start =============== -->
     {% if messages %}
         {% include 'components/messages.html' with messages=messages%}
     {% endif %}
     <div
         class="breadcrumb-area" 
-        style="background-image: url('{% static 'mainapp/assets/images/banners/world-1920.jpg' %}');">
+        style="
+        background-image: url('{% static 'mainapp/assets/images/banners/tour_packages.png' %}');
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -76,7 +53,7 @@
                         <div class="row">
                             {% include 'tour/components/filter_tour.html' %}
                             <div class="mt-40">
-                                {% include 'tour/components/request_tour.html' with title="Request a Tour Package" btn="Book Now" %}
+                                <a href="tour-booking-ext" class="btn btn-secondary w-100">create a custom package</a>
                             </div>
                         </div>
                     </div>

@@ -4,64 +4,21 @@
 
 
 
-{% block seo %}
-    {% if tour is not None %}
-        <title>{{tour.title}}</title>
-        <meta property="og:title" content="{{tour.title}}">
-        <meta name="description" content="{{tour.overview}}">
-        <meta property="og:description" content="{{tour.overview}}">
-        <meta name="keywords" content="{{tour.meta}}">
-        <meta name="og:keywords" content="{{tour.meta}}">
-        {% if seo.imagelink %}
-            <meta property="og:image" content="{{tour.imagelink}}">
-        {% endif %}
-    {% else %}
-        <title>tour packages</title>
-    {% endif %}
-{% endblock seo %}
-
-
-
-
 {% block content %}
-    <!-- ===============  breadcrumb area start =============== -->
-    <div class="breadcrumb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="breadcrumb-wrap">
-                        <h2>Tour Package Details</h2>
-                        <ul class="breadcrumb-links">
-                            <li>
-                                <a href="{% url 'mainapp:mainapp-home' %}">Home</a>
-                                <i class="bx bx-chevron-right"></i>
-                            </li>
-                            <li>Package Details</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ===============  breadcrumb area end =============== -->
     <div class="package-details-wrapper pt-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="package-details">
                         <div class="package-thumb">
-                            <img src="{{tour.getthumbnail.image.url}}" alt="{{tour.alttag}}">
+                            <img src="{{tour.getthumbnail.url}}" alt="{{tour.alttag}}">
                         </div>
                         <div class="package-header">
                             <div class="package-title">
-                                <h3>{{tour.title}}</h3>
-                                <strong><i class="flaticon-arrival"></i>
-                                    {% for dest in tour.destinations.all %}
-                                        {{dest.city}}
-                                    {% endfor %}, {{tour.destinations.all.0.country}}
-                                </strong>
+                                <h1 style="font-size:1.5rem;">{{tour.title}}</h1>
                             </div>
                         </div>
+                        
                         {% include 'tour/components/tour_tabs.html' with tour=tour %}
                     </div>
                 </div>
@@ -70,13 +27,36 @@
                     <div class="package-d-sidebar">
                         <div class="row">
                             {% comment %} tour request {% endcomment %}
-                            {% include 'tour/components/request_tour.html' with title="Request a Tour Package" btn="Book Now" %}
+                            {% include 'tour/components/request_tour.html' with title="Request This Tour Package" btn="Book Now" %}
                             <div class="col-lg-12 col-md-6">
                                 <div class="p-sidebar-cards mt-40">
                                     {% include 'tour/components/popular_tours.html' with popular_tours=popular_tours %}
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="blog-bottom">
+                    <div class="blog-social">
+                        share on
+                        <ul>
+                            <li>
+                                {% with base_url="https://ottomantravels.com" %}
+                                <a target="_blank"
+                                    href="https://www.facebook.com/sharer/sharer.php?u={{ base_url|urlencode }}{{ request.get_full_path|urlencode }}&t={{ object.title }}">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                                <a target="_blank"
+                                    href="https://twitter.com/share?url={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                                <a target="_blank"
+                                    href="https://wa.me/?text={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                    <i class='bx bxl-whatsapp'></i>
+                                </a>
+                                {% endwith %}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

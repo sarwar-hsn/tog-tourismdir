@@ -1,18 +1,21 @@
+{% load thumbnail %}
 <h5 class="package-d-head">Popular Packages</h5>
 <ul class="package-cards">
     {% for tour in popular_tours %}
         <li class="package-card-sm">
             <div class="p-sm-img">
-                <img src="{{tour.getthumbnail.image.url}}" alt="{{tour.alttag}}">
+                {%thumbnail tour.getthumbnail "135x100" crop='center' as im%}
+                    <img src="{{im.url}}" alt = "{{tour.alttag}}" width="{{im.width}}" height="{{im.height}}" alt="{{tour.getthumbnail.alttag}}" class="img-fluid">
+                {%endthumbnail%}
             </div>
             <div class="package-info">
                 <div class="package-date-sm">
                     <strong><i class="flaticon-calendar"></i>{{tour.durations}}</strong>
                 </div>
                 <h3><i class="flaticon-arrival"></i>
-                    <a href="package-details.html">{{tour.title}}</a>
+                    <a href="{{tour.get_absolute_url}}">{{tour.title}}</a>
                 </h3>
-                <h5><span>{{tour.price}}{{tour.currency}}</span>/ Per Person</h5>
+                {% comment %} <h5><span>{{tour.price}} {{tour.currency}}</span>/ Per Person</h5> {% endcomment %}
             </div>
         </li>
     {% endfor %}

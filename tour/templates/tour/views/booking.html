@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    {% if messages %}
+        {% include 'components/messages.html' with messages=messages%}
+    {% endif %}
+    <div class=' d-flex justify-content-center align-items-center '>
+        
+        <form action="{% url 'tour-booking-ext' %}" method="post" class="my-class">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center">
+                <input type="submit" value="submit">
+            </div>
+        </form>
+        {% comment %} to make the class list in a row  {% endcomment %}
+        <script>
+            const child = document.getElementsByClassName('form-check')
+            let i = 0
+            for(i = 0 ; i < child.length; i++){
+                console.log(child[i].classList.add('col-3','text-capitalize'))
+            }
+            if (child.length !== 0){
+                child[0].parentElement.classList.add('d-flex','flex-wrap','justify-content-between');                
+            }
+        </script>
+    </div>
+{% endblock content %}

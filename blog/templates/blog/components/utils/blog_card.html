@@ -2,12 +2,14 @@
 {% load thumbnail %}
 
 <div class="blog-card">
-    <div class="blog-img">
-        {%thumbnail blog.getthumbnail "370x228"  as im %}
-            <img src="{{im.url}}" style="height:228px;width=370px" alt="{{blog.alttag}}" class="img-fluid">
-        {%endthumbnail%}
-        <div class="blog-date"><i class="flaticon-calendar"></i>{{blog.last_modified |date}}</div>
-    </div>
+    <a href="{{blog.get_absolute_url}}">
+        <div class="blog-img">
+            {%thumbnail blog.getthumbnail "370x228" quality=75  as im %}
+                <img src="{{im.url}}" style="height:228px;width=370px" alt="{{blog.alttag}}" class="img-fluid">
+            {%endthumbnail%}
+            <div class="blog-date"><i class="flaticon-calendar"></i>{{blog.last_modified |date}}</div>
+        </div>
+    </a>
     <div class="blog-details">
         <div class="blog-info">
             <a class="blog-writer"><i class="flaticon-user"></i>{{blog.author.user.username}}</a>

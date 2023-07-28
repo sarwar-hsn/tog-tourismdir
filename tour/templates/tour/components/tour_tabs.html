@@ -3,25 +3,23 @@
         <i class="flaticon-clock"></i>
         <div class="info-texts">
             <strong>Duration</strong>
-            <p>{{tour.durations}}r</p>
+            <p>{{tour.durations}}</p>
         </div>
     </div>
     
     <div class="single-info">
-        <i class="flaticon-traveller"></i>
-        <div class="info-texts">
-            <strong>Group Size</strong>
-            <p>{{tour.size}} People</p>
-        </div>
-    </div>
-    <div class="single-info">
-        <i class="flaticon-translate"></i>
-        <div class="info-texts">
-            <strong>Languages</strong>
-            <p>Any Language</p>
-        </div>
+        <h6>
+            <i class="flaticon-arrival"></i>
+            {% for dest in tour.destinations.all %}
+                {{dest.city|title}}
+                {% if not forloop.last %}
+                ,
+                {% endif %}
+            {% endfor %}-{{tour.destinations.all.0.country|title}}
+        </h6>
     </div>
 </div>
+
 
 
 
@@ -45,15 +43,15 @@
                     <div class="tab-content-1">
                         <div class="p-overview">
                             <h5>Overview</h5>
-                            <p>{{tour.description|linebreaks}}</p>
+                            <p>{{tour.description|safe}}</p>
                         </div>
-                        <div class="p-overview">
+                        <div class="p-overview mt-20">
                             <h5>Accommodation</h5>
-                            <p>{{tour.accommodation|linebreaks}}</p>
+                            <p>{{tour.accommodation|safe}}</p>
                         </div>
-                        <div class="p-overview">
+                        <div class="p-overview mt-20">
                             <h5>Transportation</h5>
-                            <p>{{tour.transportation|linebreaks}}</p>
+                            <p>{{tour.transportation|safe}}</p>
                         </div>
                     </div>
                 </div>

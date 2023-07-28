@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+
+Host: https://ottomantravels.com
+Sitemap: https://ottomantravels.com/sitemap.xml

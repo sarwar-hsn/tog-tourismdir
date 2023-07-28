@@ -209,10 +209,14 @@
     // sticky navabr js
     $(window).on('scroll', function () {
         var scroll = $(window).scrollTop();
+        var $image = $('#nav-logo');
         if (scroll >= 10) {
             $(".header-area").addClass("sticky");
+            $('header .header-area .main-nav ul li a').addClass('sticky-nav-text-color');
         } else {
             $(".header-area").removeClass("sticky");
+            $("header .header-area .main-nav ul li a").removeClass("sticky-nav-text-color")
+            $('header .header-area .main-nav ul li a').addClass('sntcp');
         }
     });
 
@@ -464,18 +468,13 @@
             }
         }
     });
-
-    //Type js
-    // var element = $(".element");
-    // $(function () {
-    //     element.typed({
-    //         strings: ["Hampshire", "Indonesia", "Madagascar "],
-    //         typeSpeed: 190,
-    //         loop: true,
-    //     });
-    // });
-
-
+    //Typejs
+    var element = $(".element");
+    $(function () {
+        element.typed({
+            strings: ["Tourism", "Health Tourism",],
+            typeSpeed: 190,
+            loop: true,
+        });
+    });
 }(jQuery));
-
-

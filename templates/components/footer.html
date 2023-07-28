@@ -1,17 +1,16 @@
 {% load static %}
 
-<div class="footer-area">
+<div class="footer-area mt-40">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="footer-info">
                     <div class="footer-logo">
                         <a href="{% url 'mainapp:mainapp-home' %}" class="navbar-brand"> 
-                            <img height="100px" src="{% static 'mainapp/assets/images/logos/ott_200.png' %}" 
+                            <img height="100px" src="{% static 'mainapp/assets/images/logos/footer_logo.png' %}" 
                         alt="logo"></a>
                     </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid maxime aut ut voluptate
-                        dolorum nisi ducimus ratione</p>
+                    <p>Ottoman Tours and Travels, a reputed international tourist agency. We provide a one-stop tourism solution. Ottoman Tourism is your reliable guide for discovering the beauty of the world. Come to us and explore new adventures.</p>
                     <div class="footer-social-icons">
                         <h5>Follow Us:</h5>
                         <ul>
@@ -43,8 +42,8 @@
                             </div>
                             <div class="contact-box">
                                 <span><i class="bx bx-location-plus"></i></span>
-                                <div>
-                                    <a href="#">{{contact.address}}</a>
+                                <div >
+                                    <a target="_blank" style="padding-left:10px;" href="{{contact.google_map}}">{{contact.address}}</a>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +68,7 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="copyrigth-area">
-                <p>Copyright 2022 <a target="_blank" href="{{contact.website}}">Ottoman Group</a></p>
+                <p>Copyright 2022 <a target="_blank" href="https://ottomangrp.com">Ottoman Group</a></p>
             </div>
             </div>
         </div>

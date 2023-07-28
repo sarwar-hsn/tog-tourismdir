@@ -3,15 +3,16 @@
 
 
 
-{% block seo %}
-    {% include 'components/seo.html' with title="about-ottoman tours and travels" %}
-{% endblock seo %}
-
 {% block content %}
     <!-- ===============  breadcrumb area start =============== -->
     <div 
     class="breadcrumb-area"
-    style="background-image: url('{% static 'mainapp/assets/images/banners/world-1920.jpg' %}');">
+    style="
+        background-image: url('{% static 'mainapp/assets/images/banners/about_us.png' %}');
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;"
+    >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -34,50 +35,51 @@
     <div class="about-wrapper mt-120">
         <div class="container">
             <div class="row">
+                <div class="col-lg-5 col-md-12">
+                    <div class="about-wrapper-right section-head head-left">
+                        <h5>About Ottoman Travels</h5>
+                        <h2>The Most committed Travel Agency</h2>
+                        <p>Ottoman Tours and Travels, a reputed international tourist agency. We provide a one-stop tourism solution. We provide a one-stop tourism solution. You can get all types of tourism services from us. Ottoman Tourism is your reliable guide for discovering the beauty of the world. Come to us and explore new adventures.</p>
+                        <p>
+                            Our services - Tour Packages & guides, Hotel Booking & Transportation, Hajj & Umrah, Business Tourism, Health tourism, Other services on demand
+                        </p>
+                        <ul class="about-list">
+                            <li><i class="flaticon-double-checking"></i> Reliability</li>
+                            <li><i class="flaticon-double-checking"></i> Flexibility</li>
+                            <li><i class="flaticon-double-checking"></i> Quality</li>
+                        </ul>
+                        <ul class="about-list">
+                            <li><i class="flaticon-double-checking"></i> Value for money</li>
+                            <li><i class="flaticon-double-checking"></i> Local knowledge</li>
+                            <li><i class="flaticon-double-checking"></i> Sustainability</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-lg-7 col-md-12">
                     <div class="about-wrapper-left">
                         <div class="about-img wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{% static 'mainapp/assets/images/about-1.png' %}" alt="" class="img-fluid">
+                             <img style="height:320px;width:540px;" src="https://img.youtube.com/vi/-2948XlUR5A/hqdefault.jpg" alt="" class="img-fluid">
+                            <a class="video-icon" href="http://www.youtube.com/watch?v=-2948XlUR5A">
+                                <i class="flaticon-play-button-arrowhead"></i>
+                            </a>
                         </div>
-                        <div class="about-video wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms"> 
-                             <img src="{% static 'mainapp/assets/images/about-2.png' %}" alt="" class="img-fluid">
-                             <a class="video-icon" href="https://youtu.be/-tJYN-eG1zk"><i class="flaticon-play-button-arrowhead"></i>
-                             </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-12">
-                    <div class="about-wrapper-right section-head head-left">
-                        <h5>About TourX</h5>
-                        <h2>The Best Travel Agency 
-                            Company.</h2>
-                        <p>Fusce aliquam luctus est, eget tincidunt velit scelerisque 
-                            rhoncus. Aliquam lacinia ipsum ornare, porttitor risus nec, 
-                            mattis mauris. Nunc nec ornare nisi, vel elementum est. 
-                            Proin malesuada venenatis ex, eu fringilla justo scelerisque
-                            sit amet. Sed fringilla nec purus non venenatis. Aliquam 
-                            nec turpis pharetra, bibendum lorem in, sollicitudin nibh. 
-                            Nulla sit amet lacus diam.</p>
 
-                        <ul class="about-list">
-                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
-                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
-                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
-                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
-                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
-                            <li><i class="flaticon-double-checking"></i> Donec viverra orci On a</li>
-                        </ul>
-                        <div class="about-wrapper-btn">
-                            <a href="#" class="btn-common">Read More</a>
+                        
+                        <div class="about-video wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms"> 
+                            <img src="https://img.youtube.com/vi/1ejMsOgROZI/mqdefault.jpg" alt="" class="img-fluid">
+                            <a class="video-icon" href="http://www.youtube.com/watch?v=1ejMsOgROZI">
+                                <i class="flaticon-play-button-arrowhead"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
     <!-- ===============  About wrapper area end =============== -->
     <!-- ===============  Guide wrapper start =============== -->
-    <div class="guide-wrapper mt-120">
+    {% comment %} <div class="guide-wrapper mt-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -187,7 +189,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <!-- ===============  Guide wrapper end =============== -->
 
 {% endblock content %}

@@ -5,13 +5,15 @@ from datetime import datetime
 from .models import Tour
 from .filter import TourFilter
 from .forms import BookingForm
+from .forms import BookingFormExtended
 from django.core.mail import send_mail,BadHeaderError
 from analyticsapp.signals import object_view_signal
 from mainapp.models import Seo,SocialMedia
 from mainapp.utils import get_seo,retrive_contacts
 from django.conf import settings
-# Create your views here.
+from mainapp import utils as seo_utils
 
+#tour/packages homepage
 def home(request):
     tours = Tour.objects.all().order_by('-created_at')
     f = TourFilter(request.GET, queryset=tours)
@@ -36,7 +38,7 @@ def home(request):
         'page_obj':page_obj,
         'hasFilter':has_filter,
         'form':BookingForm,
-        'seo':get_seo('tour'),
+        'meta':seo_utils.meta_packages_home(),
         'contact':retrive_contacts(),
 
     }
@@ -53,6 +55,7 @@ def detail(request,tour_slug):
         object_view_signal.send(sender=tour.__class__,instance=tour,request=request)
     context = {
         'tour':tour,
+        'meta' : tour.as_meta(),
         'form':BookingForm,
         'popular_tours':popular_tours,
         'contact':retrive_contacts(),
@@ -62,6 +65,7 @@ def detail(request,tour_slug):
 
 def booking(request):
     if request.POST:
+        tourid = request.POST.get('packageid')
         form = BookingForm(request.POST)
         if form.is_valid():
             obj = form.save(commit=False)
@@ -69,8 +73,14 @@ def booking(request):
             obj.email =str(obj.email)
             obj.phone_number = str(obj.phone_number)
             obj.message = str(obj.message)
-            obj.save()
-            mail_body =f"time:{str(obj.created_at)}\nemail:{obj.email}\nnumber:{obj.phone_number}\nname:{obj.name}\ncontact preference:{obj.contact_pref}\nmessage:{obj.message}\n"
+            if tourid is not None:
+                obj.packageId = tourid
+            try:
+                obj.save()
+            except:
+                pass
+            
+            mail_body =f"requested tour id: {tourid}\ntime:{str(obj.created_at)}\nemail:{obj.email}\nnumber:{obj.phone_number}\nname:{obj.name}\ncontact preference:{obj.contact_pref}\nmessage:{obj.message}\n"
             try:
                 send_mail(
                     'booking query',
@@ -84,4 +94,25 @@ def booking(request):
         else:
             messages.error(request, "invalid form input")
     return redirect("tour-home")
+
+def bookingExt(request):
+    if request.POST:
+        form = BookingFormExtended(request.POST)
+        if form.is_valid():
+            obj = form.save()
+            mail_body = obj.get_property_values()
+            try:
+                send_mail(
+                    'custom booking query',
+                    mail_body,
+                    'it@ottomangrp.com',
+                    ['info@ottomantravels.com'],
+                )
+                messages.success(request, "we received your request. we will contact soon")
+            except:
+                messages.error(request, "form submission failed")
+            return redirect("tour-home")
+    else:
+        form = BookingFormExtended()
+    return render(request, 'tour/views/booking.html',context={'form':form})
 

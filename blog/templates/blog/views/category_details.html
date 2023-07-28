@@ -1,17 +1,15 @@
 {% extends 'blog/views/blog_home.html' %}
+{% load static %}
 
-    {% block seo %}
-        {% if category is not None %}
-            <title>category-{{category.title|lower}}</title>
-            <meta property="og:title" content="category-{{category.title|lower}}">
-        {% else %}
-            <title>category ottoman tours and travels</title>
-            <meta property="og:title" content="category-ottoman tours and travels">
-        {% endif %}
-    {% endblock seo %}
 
     {% block breadcrumb %}
-        <div class="breadcrumb-area">
+        <div 
+        class="breadcrumb-area"
+        style="
+        background: url('{% static 'mainapp/assets/images/banners/blogs.png' %}');
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -36,6 +34,7 @@
     {% endblock breadcrumb %}
 
     {% block left %}
+        {% include 'blog/components/utils/search_sidebar.html' %}
         <div class="col-lg-8">
             {% if page_obj.object_list %}
                 {% include 'blog/components/utils/blog_paginator.html' %}

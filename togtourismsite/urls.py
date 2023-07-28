@@ -25,31 +25,42 @@ from newsletterapp import urls as newsletterurls
 from django.contrib.sitemaps import GenericSitemap # new
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import sitemaps
-# from robots import urls as roboturls
+from django.contrib.sitemaps import views
+from django.views.generic.base import TemplateView
 
-sitemaps={
+
+admin.site.site_header = "Ottoman Tours & Travels"
+admin.site.site_title = "TOG Tourism Admin Portal"
+admin.site.index_title = "Welcome to TOG"
+
+sitemaps = {
+    'static':sitemaps.StaticViewSitemap,
     'blog':sitemaps.BlogSiteMap,
     'tour':sitemaps.TourSiteMap,
-    'static':sitemaps.StaticViewSitemap,
     'blogcategories':sitemaps.CategorySitemap,
     'blogtags':sitemaps.TagSitemap,
+    'bangla_blog':sitemaps.BanglaBlogSiteMap,
+    'bangla_blog_category':sitemaps.CategoryBanglaSitemap
 }
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path('blogs/',include(blogurls)),
     path('tours/',include(toururls)),
     path('auth/',include('django.contrib.auth.urls')),
     path('newsletter/',include(newsletterurls)),
     path('',include(mailappappurls)),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap'),
-    # path('robots.txt',include(roboturls)),
+    path('sitemap.xml', views.index, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.index'),
+    path('sitemap-<section>.xml', views.sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 
 handler404 = 'mainapp.views.error_404_view'
 
-# if settings.DEBUG is True:
-#     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG is True:
+    urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

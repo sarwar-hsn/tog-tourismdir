@@ -1,6 +1,20 @@
 {% load static %}
 
- <header>
+<script type='text/javascript'>
+    window.addEventListener('scroll', function() {
+    var scroll = window.scrollY;
+    if (scroll >= 10) {
+        var image = document.getElementById('nav-logo');
+        image.src='https://togtourism.ams3.cdn.digitaloceanspaces.com/static%2Fmainapp%2Fassets%2Fimages%2Flogos%2FOTT_logo_footer_200px.png'
+    } else {
+        var image = document.getElementById('nav-logo');
+        image.src='https://togtourism.ams3.cdn.digitaloceanspaces.com/static%2Fmainapp%2Fassets%2Fimages%2Flogos%2Fott_200.png'
+    }
+    });
+</script>
+
+
+<header>
     <div class="header-area">
         <div class="container">
             <div class="row">
@@ -8,7 +22,7 @@
                     <div class="navbar-wrap">
                         <div class="logo d-flex justify-content-between">
                             <a href="{% url 'mainapp:mainapp-home' %}" class="navbar-brand"> 
-                                <img height="100px" src="{% static 'mainapp/assets/images/logos/ott_200.png' %}" 
+                                <img height="100px" id="nav-logo" src="{% static 'mainapp/assets/images/logos/ott_200.png' %}" 
                             alt="logo"></a>
                         </div>
                         <div class="navbar-icons">
@@ -30,15 +44,10 @@
                             <li><a href="{% url 'mainapp:mainapp-home' %}">Home</a></li>
                             <li><a href="{% url 'mainapp:mainapp-about' %}">About us </a></li>
                             <li><a href="{% url 'tour-home' %}">Packages</a></li>
+                            <li><a href="{% url 'tour-booking-ext' %}">Custom Tour</a></li>
                             <li><a href="{% url 'blog-home' %}">Blogs</a></li>
                             <li><a href="{% url 'mainapp:mainapp-contact' %}">Contact Us </a></li>
                         </ul>
-                        <div class="sidebar-contact">
-                            <ul>
-                                <li class="sidebar-single-contact"><i class='bx bxs-phone'></i> <a href="tel:{{contact.phone}}">+8801746900663</a></li>
-                                <li class="sidebar-single-contact"><i class='bx bxs-envelope'></i><a href="mailto:info@example.com">info@ottomantravels.com</a></li>
-                            </ul>
-                        </div>
                     </nav>
                 </div>
             </div>

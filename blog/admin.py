@@ -1,11 +1,13 @@
 from django.contrib import admin
-from .models import Author,Category,Tag,Post,PostImages
+from .models import Author,Category,Tag,Post,PostImages,BanglaBlog,BanglaPostImages,CategoryBangla
 from django import forms
 from django.forms import CheckboxSelectMultiple
 
 
+
 admin.site.register(Author)
 admin.site.register(Category)
+admin.site.register(CategoryBangla)
 admin.site.register(Tag)
 
 class PostImagesAdmin(admin.StackedInline):
@@ -19,4 +21,14 @@ class PostAdmin(admin.ModelAdmin):
         return form
 
 admin.site.register(Post,PostAdmin)
+
+
+class BanglaPostImagesAdmin(admin.StackedInline):
+    model = BanglaPostImages
+class BanglaBlogAdmin(admin.ModelAdmin):
+    inlines =[BanglaPostImagesAdmin]
+
+admin.site.register(BanglaBlog,BanglaBlogAdmin)
+
+
 

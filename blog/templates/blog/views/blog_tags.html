@@ -1,17 +1,15 @@
 {% extends 'blog/views/category_details.html' %}
+{% load static %}
 
-{% block seo %}
-    {% if tag is not None %}
-        <title>tags-{{tag.name|lower}}</title>
-        <meta property="og:title" content="tags-{{tag.name|lower}}">
-    {% else %}
-            <title>tags-ottoman tours and travels</title>
-            <meta property="og:title" content="tags-ottoman tours and travels">
-    {% endif %}
-{% endblock seo %}
 
 {% block breadcrumb %}
-    <div class="breadcrumb-area">
+    <div 
+    class="breadcrumb-area"
+    style="
+    background: url('{% static 'mainapp/assets/images/banners/blogs.png' %}');
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">

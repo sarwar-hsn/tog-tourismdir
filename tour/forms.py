@@ -1,22 +1,51 @@
 from django.forms import ModelForm
 from django import forms
 from .models import Booking
+from .models import BookingExtended,Destination
 
 class BookingForm(ModelForm):
     class Meta:
         model = Booking
         fields = ['name','email','phone_number','contact_pref','message']
+
+class BookingFormExtended(ModelForm):
+
+    class Meta:
+        model = BookingExtended
+        fields =['name','email','phone_number','arrival','depart','adult','child','transportation','accommodation','destinations','contact_pref','message',]
+        widgets = {
+            'arrival': forms.DateInput(attrs={
+                'class': 'input-field check-in',
+                'placeholder':'dd-mm-yy',
+            }),
+            'depart': forms.DateInput(attrs={
+                'class': 'input-field check-in',
+                'placeholder':'dd-mm-yy',
+            }),
+            'adult':forms.TextInput(
+                attrs={
+                    'placeholder':'number of adults'
+                }
+            ),
+            'child':forms.TextInput(
+                attrs={
+                    'placeholder':'number of children'
+                }
+            ),
+            'message': forms.Textarea(attrs={'rows':3}),
+            'destinations':forms.CheckboxInput(
+                attrs={
+                    'class':'d-flex'
+                }
+            )
+        }
+
+    destinations = forms.ModelMultipleChoiceField(
+            queryset=Destination.objects.all(),
+            widget=forms.CheckboxSelectMultiple,
+            required=True)
+
+    
    
     
     
-# class BookingForm(forms.Form):
-#     contact_choice = [
-#         ('whatsapp','whatsapp'),
-#         ('email','email'),
-#         ('phone','phone')
-#     ]
-#     name = forms.CharField(label='name', max_length=100, required=True, widget=forms.TextInput(attrs={'placeholder': 'name'}))
-#     email = forms.EmailField(label="email", required=True, widget=forms.TextInput(attrs={'placeholder': 'email'}))
-#     phone_number = forms.CharField(label="phone number", max_length=15, required=True,widget=forms.TextInput(attrs={'placeholder': 'phone number'}))
-#     contact_pref = forms.ChoiceField(choices = contact_choice)
-#     description = forms.CharField(widget=forms.Textarea(attrs={"rows":"7",'placeholder':'description'}))

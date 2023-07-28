@@ -3,64 +3,59 @@
 {% load thumbnail %}
 
 
-
-{% block seo %}
-    {% if blog is not None %}
-        <title>{{blog.title}}</title>
-        <meta property="og:title" content="{{blog.title}}">
-        <meta name="description" content="{{blog.overview}}">
-        <meta property="og:description" content="{{blog.overview}}">
-        <meta name="keywords" content="{{blog.meta}}">
-        <meta name="og:keywords" content="{{blog.meta}}">
-        {% if blog.imagelink %}
-            <meta property="og:image" content="{{blog.imagelink}}">
-        {% endif %}
-    {% endif %}
-{% endblock seo %}
-
-
 {% block content %}
     <div class="blog-details-wrapper pt-90">
-        <div class="container">
+        <div class="container ">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog-details">
                         <div class="blog-title-xl">
-                            <h3>{{blog.title}}</h3>
+                            <h1 style="font-size:1.5rem;">{{blog.title}}</h1>
                             <div class="blog-info-xl">
                                 <a class="blog-writer"><i class="flaticon-user"></i>{{blog.author.user.username}}</a>
+                                {% if ref_blog %}
+                                    <a  href="{{ref_blog.get_absolute_url}}" class="blog-writer"><i class="flaticon-translate"></i>Read In {{swlang_}}</a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="blog-img-xl">
                             {%thumbnail blog.getthumbnail '400x450' quality=75 as im%}
-                                <img src="{{im.url|resolution:"2x"}}" alt="{{blog.alttag}}" width={{im.width}} >
+                                <img src="{{im.url|resolution:"2x"}}" alt="{{blog.alttag}}" width={{im.width}}>
                             {%endthumbnail%}
                             <div class="blog-date"><i class="flaticon-calendar"></i>{{blog.last_modified | date}}</div>
                         </div>
                         <div class="blog-texts mt-30">
-                            {{blog.content | safe}}
-                        </div>
-                        <div class="blog-bottom">
-                            <div class="blog-social">
-                                <ul>
-                                    <li>
-                                        {% with base_url="https://ottomantravels.com" %} 
-                                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ base_url|urlencode }}{{ request.get_full_path|urlencode }}&t={{ object.title }}">
-                                                <i class='bx bxl-facebook' ></i>
-                                            </a> 
-                                            <a target="_blank" href="https://twitter.com/share?url={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
-                                                <i class='bx bxl-twitter' ></i>
-                                            </a> 
-                                            <a target="_blank" href="https://wa.me/?text={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
-                                             <i class='bx bxl-whatsapp' ></i>
-                                            </a>
-                                        {% endwith %}
-                                    </li>
-                                </ul>
+                            <div style="text-align: justify;">
+                                {{blog.content | safe}}
                             </div>
+                            {% comment %} blog social media share start {% endcomment %}
+                            <div class="blog-bottom">
+                                <div class="blog-social">
+                                    <ul>
+                                        <li>
+                                            {% with base_url="https://ottomantravels.com" %}
+                                            <a target="_blank"
+                                                href="https://www.facebook.com/sharer/sharer.php?u={{ base_url|urlencode }}{{ request.get_full_path|urlencode }}&t={{ object.title }}">
+                                                <i class='bx bxl-facebook'></i>
+                                            </a>
+                                            <a target="_blank"
+                                                href="https://twitter.com/share?url={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                                <i class='bx bxl-twitter'></i>
+                                            </a>
+                                            <a target="_blank"
+                                                href="https://wa.me/?text={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                                <i class='bx bxl-whatsapp'></i>
+                                            </a>
+                                            {% endwith %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% comment %} blog social media share end {% endcomment %}
                         </div>
                     </div>
                 </div>
+                {% comment %} blog details sidebar start {% endcomment %}
                 <div class="col-lg-4">
                     <div class="blog-sidebar mt-30">
                         {% include 'blog/components/utils/search_sidebar.html' %}
@@ -74,6 +69,7 @@
                         </div>
                     </div>
                 </div>
+                {% comment %} blog details sidebar end {% endcomment %}
             </div>
         </div>
     </div>

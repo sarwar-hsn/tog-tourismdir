@@ -18,6 +18,7 @@
                                 <h1 style="font-size:1.5rem;">{{tour.title}}</h1>
                             </div>
                         </div>
+                        
                         {% include 'tour/components/tour_tabs.html' with tour=tour %}
                     </div>
                 </div>
@@ -33,6 +34,29 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="blog-bottom">
+                    <div class="blog-social">
+                        share on
+                        <ul>
+                            <li>
+                                {% with base_url="https://ottomantravels.com" %}
+                                <a target="_blank"
+                                    href="https://www.facebook.com/sharer/sharer.php?u={{ base_url|urlencode }}{{ request.get_full_path|urlencode }}&t={{ object.title }}">
+                                    <i class='bx bxl-facebook'></i>
+                                </a>
+                                <a target="_blank"
+                                    href="https://twitter.com/share?url={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                                <a target="_blank"
+                                    href="https://wa.me/?text={{ base_url|urlencode }}{{ request.get_full_path|urlencode}}">
+                                    <i class='bx bxl-whatsapp'></i>
+                                </a>
+                                {% endwith %}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
